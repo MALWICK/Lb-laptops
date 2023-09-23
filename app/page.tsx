@@ -1,7 +1,9 @@
+"use client"
+import HomeNavbar from "@/components/homepage/HomeNavbar"
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     <p>lkfdflk</p>
+    <main className="w-full">
+    <HomeNavbar />
     </main>
   )
 }
