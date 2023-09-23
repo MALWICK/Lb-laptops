@@ -1,7 +1,9 @@
+"use client"
+import HomeNavbar from "@/components/homepage/HomeNavbar"
 export default function Home() {
   return (
     <main className="w-full">
-     <p className="text-3xl font-bold uppercase">My First Trial</p>
+    <HomeNavbar />
     </main>
   )
 }
