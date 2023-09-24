@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../homepage/HomeNavbar.css";
+import Image from "next/image";
+import Lblogo from "../../assets/images/lB-logo.png"
 
 function HomeNavbar() {
   const [isSticky, setIsSticky] = useState(false);
@@ -45,7 +47,9 @@ function HomeNavbar() {
         }`}
       >
         <div className="container mx-auto flex items-center justify-between h-full px-4">
-          <div className="text-lg font-bold">Logo</div>
+          <div className="logo text-lg font-bold"> 
+          <Image src={Lblogo} alt="my-logo"/>
+          </div>
           <div className="md:hidden">
             <button
               type="button"
