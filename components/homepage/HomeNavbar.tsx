@@ -30,9 +30,13 @@ function HomeNavbar() {
         }`}
       >
         <div className="innerBanner flex items-center  justify-around  ">
-          <i className="bg-white text-white bi bi-tags-fill"></i>{" "}
-          <p> Low Prices, 60-day money-back policy, and more.Now to sep 30</p>{" "}
-          <span className="exp">Explore now</span>
+          <p>
+            <i className="bg-white bi bi-tags-fill"></i> Low Prices, 60-day
+            money-back policy, and more.Now to sep 30
+          </p>
+          <span className="exp underline">
+            Explore now <i className="bi bi-arrow-right"></i>
+          </span>
         </div>
       </div>
       <nav
