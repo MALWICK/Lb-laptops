@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "../homepage/HomeNavbar.css";
 
 function HomeNavbar() {
   const [isSticky, setIsSticky] = useState(false);
@@ -24,11 +25,15 @@ function HomeNavbar() {
   return (
     <div className="min-h-screen">
       <div
-        className={`bg-red-900 h-16 transition-all duration-300 ${
+        className={`bg-red-700 h-14 flex items-center justify-center transition-all duration-300 ${
           isSticky ? "sticky top-0" : ""
         }`}
       >
-        Banners
+        <div className="innerBanner flex items-center  justify-around  ">
+          <i className="bg-white text-white bi bi-tags-fill"></i>{" "}
+          <p> Low Prices, 60-day money-back policy, and more.Now to sep 30</p>{" "}
+          <span className="exp">Explore now</span>
+        </div>
       </div>
       <nav
         className={`bg-white h-16 transition-all duration-300 ${
@@ -73,4 +78,3 @@ function HomeNavbar() {
 }
 
 export default HomeNavbar;
- 
