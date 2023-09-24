@@ -25,11 +25,11 @@ function HomeNavbar() {
   return (
     <div className="min-h-screen">
       <div
-        className={`bg-red-700 h-14 flex items-center justify-center transition-all duration-300 ${
+        className={`bg-red-700 h-14 cursor-pointer flex items-center justify-center transition-all duration-300 ${
           isSticky ? "sticky top-0" : ""
         }`}
       >
-        <div className="innerBanner flex items-center  justify-around  ">
+        <div className="innerBanner flex items-center  justify-center gap-10  ">
           <p>
             <i className="bg-white bi bi-tags-fill"></i> Low Prices, 60-day
             money-back policy, and more.Now to sep 30
