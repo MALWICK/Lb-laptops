@@ -28,7 +28,7 @@ function HomeNavbar() {
           isSticky ? "sticky top-0" : ""
         }`}
       >
-        Banner
+        Banners
       </div>
       <nav
         className={`bg-white h-16 transition-all duration-300 ${
