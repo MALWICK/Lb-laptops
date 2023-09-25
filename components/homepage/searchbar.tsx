@@ -16,9 +16,6 @@ function searchbar() {
         </button>
       </div>
       <div className="absolute top-20 p-4 bg-slate-800 text-black w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2">
-        <span>Text1</span>
-        <span>Text2</span>
-        <span>Text3</span>
       </div>
     </form>
   );
