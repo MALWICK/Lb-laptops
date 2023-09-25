@@ -1,8 +1,20 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { words } from "@/data/data";
 
 function searchbar() {
+  const [activeSearch, setActiveSearch] = useState<string[]>([]);
+
+  const handleSearch = (e:any) => {
+    e.preventDefault();
+    if (e.target.value === "") {
+      setActiveSearch([]);
+      return false;
+    }
+    setActiveSearch(
+      words.filter((w) => w.includes(e.target.value)).slice(0, 8)
+    );
+  };
   return (
     <form className="w-[500px] relative">
       <div className="relative">
