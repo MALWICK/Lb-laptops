@@ -79,7 +79,7 @@ function HomeNavbar() {
       </nav>
       {isMenuOpen && (
         <ul className="md:hidden">
-          <li><i className="bi bi-bell"></i> Notifications</li>
+          <li><i className="bi bi-bell"></i><i className="bi bi-bell"></i> Notifications </li>
           <li>About</li>
           <li>Services</li>
           <li>Contact</li>

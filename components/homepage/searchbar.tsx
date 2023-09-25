@@ -4,17 +4,23 @@ import { words } from "@/data/data";
 function SearchBar() {
   const [activeSearch, setActiveSearch] = useState<string[]>([]);
   const [searchValue, setSearchValue] = useState<string>("");
-  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState<number>(-1);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] =
+    useState<number>(-1);
   const suggestionsRef = useRef<HTMLDivElement>(null);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
     const value = e.target.value;
     setSearchValue(value);
     if (value === "") {
       setActiveSearch([]);
       return false;
     }
-    setActiveSearch(words.filter((w) => w.toLowerCase().includes(value.toLowerCase())).slice(0, 8));
+    setActiveSearch(
+      words
+        .filter((w) => w.toLowerCase().includes(value.toLowerCase()))
+        .slice(0, 8)
+    );
   };
 
   const handleSuggestionClick = (suggestion: string) => {
@@ -28,7 +34,9 @@ function SearchBar() {
       setSelectedSuggestionIndex((prevIndex) => Math.max(prevIndex - 1, -1));
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
-      setSelectedSuggestionIndex((prevIndex) => Math.min(prevIndex + 1, activeSearch.length - 1));
+      setSelectedSuggestionIndex((prevIndex) =>
+        Math.min(prevIndex + 1, activeSearch.length - 1)
+      );
     } else if (e.key === "Enter") {
       if (selectedSuggestionIndex >= 0) {
         e.preventDefault();
@@ -45,7 +53,10 @@ function SearchBar() {
 
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
-      if (suggestionsRef.current && !suggestionsRef.current.contains(e.target as Node)) {
+      if (
+        suggestionsRef.current &&
+        !suggestionsRef.current.contains(e.target as Node)
+      ) {
         setActiveSearch([]);
       }
     };
@@ -59,15 +70,23 @@ function SearchBar() {
 
   useEffect(() => {
     if (selectedSuggestionIndex >= 0 && suggestionsRef.current) {
-      const selectedSuggestion = suggestionsRef.current.querySelector(`[data-index="${selectedSuggestionIndex}"]`);
+      const selectedSuggestion = suggestionsRef.current.querySelector(
+        `[data-index="${selectedSuggestionIndex}"]`
+      );
       if (selectedSuggestion) {
         selectedSuggestion.scrollIntoView({ block: "nearest" });
       }
     }
   }, [selectedSuggestionIndex]);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // Perform any additional actions here, such as handling the form submission
+    // without refreshing the page
+  };
+
   return (
-    <form className="w-[500px] relative">
+    <form className="w-[500px] relative" onSubmit={handleSubmit}>
       <div className="relative">
         <input
           type="search"
