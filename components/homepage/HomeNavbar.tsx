@@ -2,16 +2,11 @@ import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../homepage/HomeNavbar.css";
 import Image from "next/image";
-import Lblogo from "../../assets/images/lB-logo.png";
+import Lblogo from "../../assets/images/lB-logo.png"
 
 function HomeNavbar() {
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,27 +47,11 @@ function HomeNavbar() {
         }`}
       >
         <div className="container mx-auto flex items-center justify-between h-full px-4">
-          <div className="logo text-lg font-bold">
-            <Image src={Lblogo} alt="my-logo" />
+          <div className="logo text-lg font-bold"> 
+          <Image src={Lblogo} alt="my-logo"/>
           </div>
 
-          <div className="relative">
-            <button
-              className="text-black focus:outline-none"
-              onClick={toggleSearch}
-            >
-              <i className="bi bi-search"></i>
-            </button>
-            {isSearchOpen && (
-              <div className="absolute right-0 mt-2 bg-black rounded-md shadow-lg">
-                <input
-                  className="w-64 px-4 py-2 border border-gray-300 rounded-sm focus:outline-none"
-                  type="text"
-                  placeholder="Search..."
-                />
-              </div>
-            )}
-          </div>
+          
 
           <div className="md:hidden">
             <button
