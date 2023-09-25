@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import "../homepage/HomeNavbar.css";
+import Image from "next/image";
+import Lblogo from "../../assets/images/lB-logo.png"
+import Searchbar from "./searchbar";
 
 function HomeNavbar() {
   const [isSticky, setIsSticky] = useState(false);
@@ -24,11 +28,19 @@ function HomeNavbar() {
   return (
     <div className="min-h-screen">
       <div
-        className={`bg-gray-200 h-16 transition-all duration-300 ${
+        className={`bg-red-700 h-14 cursor-pointer flex items-center justify-center transition-all duration-300 ${
           isSticky ? "sticky top-0" : ""
         }`}
       >
-        Banner
+        <div className="innerBanner flex items-center  justify-center gap-10  ">
+          <p>
+            <i className="bg-white bi bi-tags-fill"></i> Low Prices, 60-day
+            money-back policy, and more.Now to sep 30
+          </p>
+          <span className="exp underline">
+            Explore now <i className="bi bi-arrow-right"></i>
+          </span>
+        </div>
       </div>
       <nav
         className={`bg-white h-16 transition-all duration-300 ${
@@ -36,7 +48,12 @@ function HomeNavbar() {
         }`}
       >
         <div className="container mx-auto flex items-center justify-between h-full px-4">
-          <div className="text-lg font-bold">Logo</div>
+          <div className="logo text-lg font-bold"> 
+          <Image src={Lblogo} alt="my-logo"/>
+          </div>
+
+          <Searchbar />
+
           <div className="md:hidden">
             <button
               type="button"
