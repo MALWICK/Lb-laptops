@@ -70,7 +70,7 @@ function HomeNavbar() {
           <ul
             className={`hidden md:flex space-x-4 ${isMenuOpen ? "" : "hidden"}`}
           >
-            <li>Home</li>
+            <li className="notification"><i className="bi bi-bell"></i></li>
             <li>About</li>
             <li>Services</li>
             <li>Contact</li>
@@ -79,7 +79,7 @@ function HomeNavbar() {
       </nav>
       {isMenuOpen && (
         <ul className="md:hidden">
-          <li>Home</li>
+          <li><i className="bi bi-bell"></i> Notifications</li>
           <li>About</li>
           <li>Services</li>
           <li>Contact</li>
