@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { words } from "@/data/data";
 
 function SearchBar() {
   const [activeSearch, setActiveSearch] = useState<string[]>([]);
   const [searchValue, setSearchValue] = useState<string>("");
   const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState<number>(-1);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -13,7 +14,7 @@ function SearchBar() {
       setActiveSearch([]);
       return false;
     }
-    setActiveSearch(words.filter((w) => w.includes(value)).slice(0, 8));
+    setActiveSearch(words.filter((w) => w.toLowerCase().includes(value.toLowerCase())).slice(0, 8));
   };
 
   const handleSuggestionClick = (suggestion: string) => {
@@ -42,6 +43,29 @@ function SearchBar() {
     setSelectedSuggestionIndex(-1);
   }, [activeSearch]);
 
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (suggestionsRef.current && !suggestionsRef.current.contains(e.target as Node)) {
+        setActiveSearch([]);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (selectedSuggestionIndex >= 0 && suggestionsRef.current) {
+      const selectedSuggestion = suggestionsRef.current.querySelector(`[data-index="${selectedSuggestionIndex}"]`);
+      if (selectedSuggestion) {
+        selectedSuggestion.scrollIntoView({ block: "nearest" });
+      }
+    }
+  }, [selectedSuggestionIndex]);
+
   return (
     <form className="w-[500px] relative">
       <div className="relative">
@@ -60,12 +84,16 @@ function SearchBar() {
       </div>
 
       {activeSearch.length > 0 && (
-        <div className="absolute top-20 p-4 bg-slate-100 text-black w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2">
+        <div
+          className="absolute top-20 p-4 bg-slate-100 text-black w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2"
+          ref={suggestionsRef}
+        >
           {activeSearch.map((suggestion, index) => (
             <span
               key={suggestion}
               onClick={() => handleSuggestionClick(suggestion)}
               className={selectedSuggestionIndex === index ? "selected" : ""}
+              data-index={index}
             >
               {suggestion}
             </span>
