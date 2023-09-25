@@ -34,10 +34,10 @@ function HomeNavbar() {
       >
         <div className="innerBanner flex items-center  justify-center gap-10  ">
           <p>
-            <i className="bg-white bi bi-tags-fill"></i> Low Prices, 60-day
+            <i className="bg-white bi bi-tags-fill text-[#FE3B02]"></i> Low Prices, 60-day
             money-back policy, and more.Now to sep 30
           </p>
-          <span className="exp underline">
+          <span className="exp underline text-[#FE3B02]">
             Explore now <i className="bi bi-arrow-right"></i>
           </span>
         </div>
@@ -84,7 +84,7 @@ function HomeNavbar() {
           <li>Services</li>
           <li>Contact</li>
         </ul>
-      )}
+      )},
     </div>
   );
 }
