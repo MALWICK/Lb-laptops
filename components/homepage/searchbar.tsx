@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import React from "react";
+import { words } from "@/data/data";
 
 function searchbar() {
   return (
@@ -15,8 +16,7 @@ function searchbar() {
           <i className="bi bi-search"></i>
         </button>
       </div>
-      <div className="absolute top-20 p-4 bg-slate-800 text-black w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2">
-      </div>
+      <div className="absolute top-20 p-4 bg-slate-800 text-black w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2"></div>
     </form>
   );
 }
