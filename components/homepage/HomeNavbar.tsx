@@ -3,6 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "../homepage/HomeNavbar.css";
 import Image from "next/image";
 import Lblogo from "../../assets/images/lB-logo.png"
+import Searchbar from "./searchbar";
 
 function HomeNavbar() {
   const [isSticky, setIsSticky] = useState(false);
@@ -51,7 +52,7 @@ function HomeNavbar() {
           <Image src={Lblogo} alt="my-logo"/>
           </div>
 
-          
+          <Searchbar />
 
           <div className="md:hidden">
             <button
