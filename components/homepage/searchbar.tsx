@@ -31,12 +31,10 @@ function SearchBar() {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "ArrowUp") {
       e.preventDefault();
-      setSelectedSuggestionIndex((prevIndex) => Math.max(prevIndex - 1, -1));
+      setSelectedSuggestionIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : activeSearch.length - 1));
     } else if (e.key === "ArrowDown") {
       e.preventDefault();
-      setSelectedSuggestionIndex((prevIndex) =>
-        Math.min(prevIndex + 1, activeSearch.length - 1)
-      );
+      setSelectedSuggestionIndex((prevIndex) => (prevIndex < activeSearch.length - 1 ? prevIndex + 1 : 0));
     } else if (e.key === "Enter") {
       if (selectedSuggestionIndex >= 0) {
         e.preventDefault();
@@ -45,6 +43,10 @@ function SearchBar() {
         setActiveSearch([]);
       }
     }
+  };
+
+  const handleFocus = () => {
+    setSelectedSuggestionIndex(-1);
   };
 
   useEffect(() => {
@@ -96,6 +98,7 @@ function SearchBar() {
           value={searchValue}
           onChange={handleSearch}
           onKeyDown={handleKeyDown}
+          onFocus={handleFocus}
         />
         <button className="absolute right-1 top-1/2 -translate-y-1/2 p-4 bg-slate-300 rounded-full h-12 flex items-center justify-items-center w-12">
           <i className="bi bi-search"></i>

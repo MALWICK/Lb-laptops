@@ -27,3 +27,9 @@
     border: 1px solid lightgray;
     cursor: pointer;
 }
+
+@media(max-width:768px) {
+    .innerBanner {
+        width: 90%;
+    }
+}

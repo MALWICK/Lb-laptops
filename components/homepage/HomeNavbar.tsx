@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../homepage/HomeNavbar.css";
 import Image from "next/image";
-import Lblogo from "../../assets/images/lB-logo.png"
+import Lblogo from "../../assets/images/lB-logo.png";
 import Searchbar from "./searchbar";
 
 function HomeNavbar() {
@@ -32,10 +32,10 @@ function HomeNavbar() {
           isSticky ? "sticky top-0" : ""
         }`}
       >
-        <div className="innerBanner flex items-center  justify-center gap-10  ">
+        <div className="innerBanner flex items-center justify-center gap-10">
           <p>
             <i className="bg-white bi bi-tags-fill text-[#FE3B02]"></i> Low Prices, 60-day
-            money-back policy, and more.Now to sep 30
+            money-back policy, and more. Now to sep 30
           </p>
           <span className="exp underline text-[#FE3B02]">
             Explore now <i className="bi bi-arrow-right"></i>
@@ -45,11 +45,11 @@ function HomeNavbar() {
       <nav
         className={`bg-white h-16 transition-all duration-300 ${
           isSticky ? "sticky top-0 shadow" : ""
-        }`}
+        } ${window.innerWidth <= 768 ? "fixed" : ""}`}
       >
         <div className="container mx-auto flex items-center justify-between h-full px-4">
-          <div className="logo text-lg font-bold"> 
-          <Image src={Lblogo} alt="my-logo"/>
+          <div className="logo text-lg font-bold">
+            <Image src={Lblogo} alt="my-logo" />
           </div>
 
           <Searchbar />
@@ -67,10 +67,10 @@ function HomeNavbar() {
               )}
             </button>
           </div>
-          <ul
-            className={`hidden md:flex space-x-4 ${isMenuOpen ? "" : "hidden"}`}
-          >
-            <li className="notification"><i className="bi bi-bell"></i></li>
+          <ul className={`hidden md:flex space-x-4 ${isMenuOpen ? "" : "hidden"}`}>
+            <li className="notification">
+              <i className="bi bi-bell"></i>
+            </li>
             <li>About</li>
             <li>Services</li>
             <li>Contact</li>
@@ -79,12 +79,15 @@ function HomeNavbar() {
       </nav>
       {isMenuOpen && (
         <ul className="md:hidden">
-          <li><i className="bi bi-bell"></i><i className="bi bi-bell"></i> Notifications </li>
+          <li>
+            <i className="bi bi-bell"></i>
+            <i className="bi bi-bell"></i> Notifications
+          </li>
           <li>About</li>
           <li>Services</li>
           <li>Contact</li>
         </ul>
-      )},
+      )}
     </div>
   );
 }
