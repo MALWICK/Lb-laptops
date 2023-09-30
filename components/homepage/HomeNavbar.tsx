@@ -5,6 +5,8 @@ import { BsList, BsX } from "react-icons/bs";
 import LogoImg from "@/assets/images/lB-logo.png";
 import Image from "next/image";
 import SearchBar from "./components/searchbar";
+import Dropdown from "./components/Dropdown";
+
 
 function HomeNavbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -34,11 +36,14 @@ function HomeNavbar() {
             <Image src={LogoImg} alt="logo" priority={true} />
           </div>
           <SearchBar />
+          <Dropdown />
+     
            <div className={`menu ${showMenu ? "show" : ""}`}>
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
+            
 
             <div>
               
