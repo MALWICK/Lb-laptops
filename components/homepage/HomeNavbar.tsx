@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./HomeNavbar.css"
+import { BsList, BsX } from 'react-icons/bs';
+
 
 
 function HomeNavbar() {
@@ -36,9 +38,7 @@ function HomeNavbar() {
             <a href="#">Contact</a>
           </div>
           <div className="hamburger-menu" onClick={handleMenuToggle}>
-            <div className={`bar ${showMenu ? 'change' : ''}`}></div>
-            <div className={`bar ${showMenu ? 'change' : ''}`}></div>
-            <div className={`bar ${showMenu ? 'change' : ''}`}></div>
+          {showMenu ? <BsX /> : <BsList />}
           </div>
         </div>
       </nav>
