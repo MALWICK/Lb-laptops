@@ -7,7 +7,6 @@ import Image from "next/image";
 import SearchBar from "./components/searchbar";
 import Dropdown from "./components/Dropdown";
 
-
 function HomeNavbar() {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -32,31 +31,28 @@ function HomeNavbar() {
     <div>
       <nav className="navbar">
         <div className="container">
+          <Dropdown />
           <div className="logo">
             <Image src={LogoImg} alt="logo" priority={true} />
           </div>
           <SearchBar />
-          <Dropdown />
-     
-           <div className={`menu ${showMenu ? "show" : ""}`}>
+
+          <div className={`menu ${showMenu ? "show" : ""}`}>
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
-            
 
-            <div>
-              
-            </div>
+            <div></div>
           </div>
           <div className="hamburger-menu" onClick={handleMenuToggle}>
             {showMenu ? <BsX /> : <BsList />}
-          </div> 
-            
-
+          </div>
         </div>
       </nav>
-      <div className="banner"></div>
+      <div className="banner">
+        
+      </div>
     </div>
   );
 }

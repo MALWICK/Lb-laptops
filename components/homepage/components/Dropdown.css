@@ -12,14 +12,16 @@
   
   .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: 230%;
     left: 0;
     display: block;
-    padding: 0;
+    padding: 2px;
     margin: 0;
     list-style: none;
     background-color: #fff;
     border: 1px solid #ddd;
+    width: 400px;
+    border-radius: 12px;
   }
   
   .dropdown-menu li {

@@ -33,9 +33,7 @@ const Dropdown = () => {
   return (
     <div className="dropdown" ref={dropdownRef}>
       <button className="dropdown-toggle" onClick={toggleDropdown}>
-        Services <i className
-        
-        ="bi bi-caret-down-fill"></i>
+      <i className="bi bi-list"></i>
       </button>
       {isOpen && (
         <ul className="dropdown-menu">
