@@ -33,7 +33,9 @@ const Dropdown = () => {
   return (
     <div className="dropdown" ref={dropdownRef}>
       <button className="dropdown-toggle" onClick={toggleDropdown}>
-        Services
+        Services <i className
+        
+        ="bi bi-caret-down-fill"></i>
       </button>
       {isOpen && (
         <ul className="dropdown-menu">
