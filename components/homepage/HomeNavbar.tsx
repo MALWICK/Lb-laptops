@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "./HomeNavbar.css"
-import { BsList, BsX } from 'react-icons/bs';
-
-
+import "./HomeNavbar.css";
+import { BsList, BsX } from "react-icons/bs";
+import LogoImg from "@/assets/images/lB-logo.png";
+import Image from "next/image";
 
 function HomeNavbar() {
-
   const [showMenu, setShowMenu] = useState(false);
 
   // Function to handle menu toggle
@@ -22,29 +21,34 @@ function HomeNavbar() {
   };
 
   useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <div>
       <nav className="navbar">
         <div className="container">
-          <div className="logo">Logo</div>
-          <div className={`menu ${showMenu ? 'show' : ''}`}>
+          <div className="logo">
+            <Image src={LogoImg} alt="logo" priority={true} />
+          </div>
+          <div className={`menu ${showMenu ? "show" : ""}`}>
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Contact</a>
+
+            <div>
+              
+            </div>
           </div>
           <div className="hamburger-menu" onClick={handleMenuToggle}>
-          {showMenu ? <BsX /> : <BsList />}
+            {showMenu ? <BsX /> : <BsList />}
           </div>
         </div>
       </nav>
       <div className="banner"></div>
     </div>
   );
-
-  }
-export default HomeNavbar; 
+}
+export default HomeNavbar;
