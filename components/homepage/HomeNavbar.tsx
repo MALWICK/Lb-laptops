@@ -4,6 +4,7 @@ import "./HomeNavbar.css";
 import { BsList, BsX } from "react-icons/bs";
 import LogoImg from "@/assets/images/lB-logo.png";
 import Image from "next/image";
+import SearchBar from "./components/searchbar";
 
 function HomeNavbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -32,7 +33,8 @@ function HomeNavbar() {
           <div className="logo">
             <Image src={LogoImg} alt="logo" priority={true} />
           </div>
-          <div className={`menu ${showMenu ? "show" : ""}`}>
+          <SearchBar />
+           <div className={`menu ${showMenu ? "show" : ""}`}>
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Services</a>
@@ -44,7 +46,9 @@ function HomeNavbar() {
           </div>
           <div className="hamburger-menu" onClick={handleMenuToggle}>
             {showMenu ? <BsX /> : <BsList />}
-          </div>
+          </div> 
+            
+
         </div>
       </nav>
       <div className="banner"></div>
