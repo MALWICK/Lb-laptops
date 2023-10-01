@@ -75,7 +75,7 @@ const App = () => {
   };
 
   return (
-    <Menu mode="inline" openKeys={openKeys} onOpenChange={onOpenChange} style={{ width: 256, background: 'red' }}>
+    <Menu mode="inline" openKeys={openKeys} onOpenChange={onOpenChange} style={{ width: 256 }}>
       {renderMenuItems(items)}
     </Menu>
   );
