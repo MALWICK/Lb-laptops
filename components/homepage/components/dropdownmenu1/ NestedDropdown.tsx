@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import styles from './NestedDropdown.module.css';
 
 interface Option {
@@ -19,6 +20,7 @@ const NestedDropdown: React.FC<NestedDropdownProps> = ({
   onItemClick,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const router = useRouter();
 
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
@@ -28,15 +30,11 @@ const NestedDropdown: React.FC<NestedDropdownProps> = ({
     if (onItemClick) {
       onItemClick(pageLink);
     }
-    setIsExpanded(false);
-    window.location.href = pageLink; // Redirect to the clicked page
+    router.push(pageLink); // Redirect to the clicked page
   };
 
   return (
-    <div
-      className={`${styles.dropdown} ${isExpanded ? styles.open : ''}`}
-      onMouseLeave={() => setIsExpanded(false)}
-    >
+    <div className={styles.dropdown}>
       <button className={styles.dropdownToggle} onClick={handleToggle}>
         {title}
       </button>
