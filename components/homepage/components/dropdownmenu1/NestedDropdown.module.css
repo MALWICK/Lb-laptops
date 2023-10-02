@@ -1,0 +1,28 @@
+.dropdown {
+    position: relative;
+  }
+  
+  .dropdownToggle {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid #ccc;
+  }
+  
+  .dropdownMenuItem {
+    margin-bottom: 5px;
+  }
+  
+  .dropdownMenuItem:last-child {
+    margin-bottom: 0;
+  }
