@@ -26,3 +26,15 @@
   .dropdownMenuItem:last-child {
     margin-bottom: 0;
   }
+
+
+.nestedDropdownMenu {
+  /* Styling for the nested dropdown menu */
+  background: yellow;
+}
+
+.nestedDropdownMenuItem {
+  /* Styling for the nested dropdown menu items */
+  background: green;
+}
+

@@ -12,12 +12,13 @@ interface NestedDropdownProps {
   title: string;
   options: Option[];
   onItemClick?: (pageLink: string) => void;
+  className?: string;
 }
-
 const NestedDropdown: React.FC<NestedDropdownProps> = ({
   title,
   options,
   onItemClick,
+  className,
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const router = useRouter();
@@ -39,9 +40,12 @@ const NestedDropdown: React.FC<NestedDropdownProps> = ({
         {title}
       </button>
       {isExpanded && (
-        <ul className={styles.dropdownMenu}>
+        <ul className={`${styles.dropdownMenu} ${className}`}>
           {options.map((option, index) => (
-            <li key={index} className={styles.dropdownMenuItem}>
+            <li
+              key={index}
+              className={option.options ? styles.nestedDropdownMenuItem : styles.dropdownMenuItem}
+            >
               <a
                 href={option.pageLink}
                 onClick={(e) => {
@@ -56,6 +60,7 @@ const NestedDropdown: React.FC<NestedDropdownProps> = ({
                   title={option.title}
                   options={option.options}
                   onItemClick={onItemClick}
+                  className={styles.nestedDropdownMenu}
                 />
               )}
             </li>

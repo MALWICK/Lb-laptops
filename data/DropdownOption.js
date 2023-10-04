@@ -1,4 +1,4 @@
-
+/* 
 export const options = [
   {
     title: 'Computers',
@@ -30,3 +30,32 @@ export const options = [
   },
 ];
 
+ */
+
+
+const Options = [
+  {
+    title: 'Laptops',
+    pageLink: '/Laptops',
+    options: [
+      {
+        title: 'Option 1',
+        pageLink: '/laptops/option1',
+      },
+      {
+        title: 'Option 2',
+        pageLink: '/Laptops/option2',
+      },
+    ],
+  },
+  {
+    title: 'PC',
+    pageLink: '/Pc',
+  },
+  {
+    title: 'PS5',
+    pageLink: '/ps5',
+  },
+];
+
+export default Options;
