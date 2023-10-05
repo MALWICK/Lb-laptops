@@ -34,18 +34,20 @@ const Dropdown = () => {
   };
 
   const pageLinks = [
-    { title: "PC", url: "/pc" },
-    { title: "Laptops", url: "/laptops" },
-    { title: "CPUs", url: "/cpus" },
-    { title: "RAMs", url: "/rams" },
+    { title: "Today's Best Deals", url: "/pc" },
+    { title: "Flash Deals", url: "/laptops" },
+    { title: "Build Your Own Custom Pc", url: "/cpus" },
+    { title: "Gamer Pc Finder", url: "/rams" },
+    { title: "Best Sellers", url: "/rams" },
+    { title: "Discounted Deals", url: "/rams" },
   ];
 
   const AllProductsLinks = [
-    { title: "components& Storage", url: "components&storage"},
-    { title: "Computer System", url: "/computerSystem"},
-    { title: "Computer Peripherals", url: "/computerperipherals"},
+    { title: "components& Storage", url: "components&storage" },
+    { title: "Computer System", url: "/computerSystem" },
+    { title: "Computer Peripherals", url: "/computerperipherals" },
     { title: "Appliances", url: "/appliances" },
-    { title: "Tv & Home Theater ", url: "/tv&homeTheater"},
+    { title: "Tv & Home Theater ", url: "/tv&homeTheater" },
     { title: "Gaming & VR", url: "/gaming&vr" },
     { title: "Smart Home & Security", url: "/smartHome" },
     { title: "Office Solutions", url: "/officeSolution" },
@@ -76,7 +78,10 @@ const Dropdown = () => {
           <div className="secondcolumn">
             <ul className="dropdown-menus">
               {AllProductsLinks.map((productlink) => (
-                <li key={productlink.title} onClick={() => handleItemClick(productlink.url)}>
+                <li
+                  key={productlink.title}
+                  onClick={() => handleItemClick(productlink.url)}
+                >
                   {productlink.title}
                 </li>
               ))}
