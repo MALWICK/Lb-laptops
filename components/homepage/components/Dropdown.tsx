@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import "./Dropdown.css";
 
 const Dropdown = () => {
@@ -26,22 +27,31 @@ const Dropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleItemClick = () => {
+  const handleItemClick = (url: string) => {
     setIsOpen(false);
+    // Redirect to the selected page
+    window.location.href = url;
   };
+
+  const pageLinks = [
+    { title: "PC", url: "/pc" },
+    { title: "Laptops", url: "/laptops" },
+    { title: "CPUs", url: "/cpus" },
+    { title: "RAMs", url: "/rams" },
+  ];
 
   return (
     <div className="dropdown" ref={dropdownRef}>
       <button className="dropdown-toggle" onClick={toggleDropdown}>
-      <i className="bi bi-list"></i>
+        <i className="bi bi-list"></i>
       </button>
       {isOpen && (
         <ul className="dropdown-menu">
-          <li onClick={handleItemClick}>Item 1</li>
-          <li onClick={handleItemClick}>Item 2</li>
-          <li onClick={handleItemClick}>Item 3</li>
-          <li onClick={handleItemClick}>Item 4</li>
-          <li onClick={handleItemClick}>Item 5</li>
+          {pageLinks.map((link) => (
+            <li key={link.title} onClick={() => handleItemClick(link.url)}>
+              {link.title}
+            </li>
+          ))}
         </ul>
       )}
     </div>
