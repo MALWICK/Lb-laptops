@@ -22,6 +22,10 @@
     border: 1px solid #ddd;
     width: 400px;
     border-radius: 7px;
+    display: flex;
+    height: 700px;
+    width: min( 500px )
+
   }
   
   .dropdown-menu li {
