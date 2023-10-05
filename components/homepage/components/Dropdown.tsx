@@ -46,13 +46,17 @@ const Dropdown = () => {
         <i className="bi bi-list"></i>
       </button>
       {isOpen && (
-        <ul className="dropdown-menu">
-          {pageLinks.map((link) => (
-            <li key={link.title} onClick={() => handleItemClick(link.url)}>
-              {link.title}
-            </li>
-          ))}
-        </ul>
+        <div className="dropdown-menu ">
+          <div className="firstcolumn">
+            <ul className="dropdown-menus">
+              {pageLinks.map((link) => (
+                <li key={link.title} onClick={() => handleItemClick(link.url)}>
+                  {link.title}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       )}
     </div>
   );
