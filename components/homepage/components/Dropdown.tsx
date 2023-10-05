@@ -43,9 +43,13 @@ const Dropdown = () => {
   ];
 
   const AllProductsLinks = [
-    { title: "components& Storage", url: "components&storage" },
-    { title: "Computer System", url: "/computerSystem" },
-    { title: "Computer Peripherals", url: "/computerperipherals" },
+    { title: "Laptops", url: "/laptops" },
+    { title: "Gaming PC", url: "/gamingpc" },
+    { title: "Mobile Phones & Accesories", url: "/mobilePhones&Accesories" },
+    { title: "Tabletts", url: "/tabletts" },
+    { title: "SmartWatches", url: "/smartWatches" },
+    { title: "components & Storage", url: "components&storage" },
+    { title: "Computer Accessories", url: "/computerAccessories" },
     { title: "Appliances", url: "/appliances" },
     { title: "Tv & Home Theater ", url: "/tv&homeTheater" },
     { title: "Gaming & VR", url: "/gaming&vr" },
@@ -53,9 +57,8 @@ const Dropdown = () => {
     { title: "Office Solutions", url: "/officeSolution" },
     { title: "Software & Services", url: "/softwareServices" },
     { title: "Automotive & Tools", url: "/automotiveTools" },
-    { title: "Appliances", url: "/homeOutdoors" },
-    { title: "Health & Sports", url: "/healthSports" },
     { title: "Toys & Drones", url: "/toys&drones" },
+    { title: "Speakers", url: "/speakers" },
   ];
 
   return (
