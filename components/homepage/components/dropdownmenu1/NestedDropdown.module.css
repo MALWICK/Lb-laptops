@@ -1,40 +1,45 @@
 .dropdown {
-    position: relative;
-  }
-  
-  .dropdownToggle {
-    background-color: #f5f5f5;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .dropdownMenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    padding: 10px;
-    list-style-type: none;
-    border: 1px solid #ccc;
-  }
-  
-  .dropdownMenuItem {
-    margin-bottom: 5px;
-  }
-  
-  .dropdownMenuItem:last-child {
-    margin-bottom: 0;
-  }
+  position: relative;
+}
 
+.dropdownToggle {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  position: absolute;
+  width: 150px;
+  top: 100%;
+  left: 0;
+  background-color: f5f5f5;
+  padding: 10px;
+  list-style-type: none;
+  border: 1px solid #ccc;
+}
+
+.undefine {
+  width: 300px;
+}
+
+.dropdownMenuItem {
+  margin-bottom: 5px;
+}
+
+.dropdownMenuItem:last-child {
+  margin-bottom: 0;
+}
 
 .nestedDropdownMenu {
   /* Styling for the nested dropdown menu */
-  background: yellow;
+  left: 165px;
+  top: -26px;
+  width: 200px;
 }
 
 .nestedDropdownMenuItem {
   /* Styling for the nested dropdown menu items */
   background: green;
 }
-
