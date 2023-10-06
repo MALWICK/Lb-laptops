@@ -34,12 +34,12 @@ const Dropdown = () => {
   };
 
   const pageLinks = [
-    { title: "Today's Best Deals", url: "/pc" },
-    { title: "Flash Deals", url: "/laptops" },
-    { title: "Build Your Own Custom Pc", url: "/cpus" },
-    { title: "Gamer Pc Finder", url: "/rams" },
-    { title: "Best Sellers", url: "/rams" },
-    { title: "Discounted Deals", url: "/rams" },
+    { title: "Today's Best Deals", url: "/todaysBestDeals" },
+    { title: "Flash Deals", url: "/flashDeals" },
+    { title: "Build Your Own Custom Pc", url: "/customizepc" },
+    { title: "Gamer Pc Finder", url: "/findGamerpc" },
+    { title: "Best Sellers", url: "/bestSellers" },
+    { title: "Discounted Deals", url: "/discountdeals" },
   ];
 
   const AllProductsLinks = [
@@ -51,14 +51,15 @@ const Dropdown = () => {
     { title: "components & Storage", url: "components&storage" },
     { title: "Computer Accessories", url: "/computerAccessories" },
     { title: "Appliances", url: "/appliances" },
-    { title: "Tv & Home Theater ", url: "/tv&homeTheater" },
-    { title: "Gaming & VR", url: "/gaming&vr" },
+    { title: "Tv & Home Theater ", url: "/tvhomeTheater" },
+    { title: "Gaming & VR", url: "/gamingvr" },
     { title: "Smart Home & Security", url: "/smartHome" },
     { title: "Office Solutions", url: "/officeSolution" },
     { title: "Software & Services", url: "/softwareServices" },
-    { title: "Automotive & Tools", url: "/automotiveTools" },
-    { title: "Toys & Drones", url: "/toys&drones" },
+    { title: "Cameras", url: "/cameras" },
+    { title: "Toys & Drones", url: "/toysdrones" },
     { title: "Speakers", url: "/speakers" },
+    { title: "Refurbished Phones & Laptops", url: "/refurbishedPhonesLaptops" },
   ];
 
   return (

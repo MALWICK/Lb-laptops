@@ -24,7 +24,7 @@
   border-radius: 7px;
   display: flex;
   height: 700px;
-  width: min(500px);
+  width: min(600px);
 }
 
 .dropdown-menu li {
