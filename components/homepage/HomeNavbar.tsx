@@ -57,7 +57,11 @@ function HomeNavbar() {
       </nav>
       <div className="banner">
         <ul className="innerbanner">
-
+          {BannerData.map((data) => (
+            <li key={data.title} onClick={() => handleLinks(data.url)}>
+              {data.title}
+            </li>
+          ))}
         </ul>
       </div>
     </div>
