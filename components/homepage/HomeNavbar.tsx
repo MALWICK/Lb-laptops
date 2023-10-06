@@ -1,92 +1,59 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../homepage/HomeNavbar.css";
+import "./HomeNavbar.css";
+import { BsList, BsX } from "react-icons/bs";
+import LogoImg from "@/assets/images/lB-logo.png";
 import Image from "next/image";
-import Lblogo from "../../assets/images/lB-logo.png"
-import Searchbar from "./searchbar";
+import SearchBar from "./components/searchbar";
+import Dropdown from "./components/Dropdown";
 
 function HomeNavbar() {
-  const [isSticky, setIsSticky] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrollingDown = window.scrollY > 0;
-      setIsSticky(isScrollingDown);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  // Function to handle menu toggle
+  const handleMenuToggle = () => {
+    setShowMenu(!showMenu);
   };
 
+  // Function to handle window resize
+  const handleResize = () => {
+    if (window.innerWidth > 600) {
+      setShowMenu(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <div className="min-h-screen">
-      <div
-        className={`bg-red-700 h-14 cursor-pointer flex items-center justify-center transition-all duration-300 ${
-          isSticky ? "sticky top-0" : ""
-        }`}
-      >
-        <div className="innerBanner flex items-center  justify-center gap-10  ">
-          <p>
-            <i className="bg-white bi bi-tags-fill"></i> Low Prices, 60-day
-            money-back policy, and more.Now to sep 30
-          </p>
-          <span className="exp underline">
-            Explore now <i className="bi bi-arrow-right"></i>
-          </span>
-        </div>
-      </div>
-      <nav
-        className={`bg-white h-16 transition-all duration-300 ${
-          isSticky ? "sticky top-0 shadow" : ""
-        }`}
-      >
-        <div className="container mx-auto flex items-center justify-between h-full px-4">
-          <div className="logo text-lg font-bold"> 
-          <Image src={Lblogo} alt="my-logo"/>
+    <div>
+      <nav className="navbar">
+        <div className="container">
+          <Dropdown />
+          <div className="logo">
+            <Image src={LogoImg} alt="logo" priority={true} />
           </div>
+          <SearchBar />
 
-          <Searchbar />
+          <div className={`menu ${showMenu ? "show" : ""}`}>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
 
-          <div className="md:hidden">
-            <button
-              type="button"
-              className="block text-gray-700 hover:text-gray-900 focus:text-gray-900 focus:outline-none"
-              onClick={toggleMenu}
-            >
-              {isMenuOpen ? (
-                <i className="bi bi-x-lg"></i>
-              ) : (
-                <i className="bi bi-list"></i>
-              )}
-            </button>
+            <div></div>
           </div>
-          <ul
-            className={`hidden md:flex space-x-4 ${isMenuOpen ? "" : "hidden"}`}
-          >
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
-          </ul>
+          <div className="hamburger-menu" onClick={handleMenuToggle}>
+            {showMenu ? <BsX /> : <BsList />}
+          </div>
         </div>
       </nav>
-      {isMenuOpen && (
-        <ul className="md:hidden">
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Contact</li>
-        </ul>
-      )}
+      <div className="banner">
+        
+      </div>
     </div>
   );
 }
-
 export default HomeNavbar;

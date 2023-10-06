@@ -1,0 +1,28 @@
+.search-bar {
+    width: 500px;
+    background-color: red;
+  }
+  
+  .search-icon {
+    display: none;
+    /* Styles for the search icon */
+  }
+  
+  @media (max-width: 768px) {
+    .search-bar {
+      width: auto;
+    }
+  
+    .search-icon {
+      display: inline-block;
+      /* Styles for the search icon */
+    }
+  
+    .search-overlay {
+      /* Styles for the overlay */
+    }
+  
+    .search-popup {
+      /* Styles for the popup */
+    }
+  }
