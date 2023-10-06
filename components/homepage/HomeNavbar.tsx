@@ -6,6 +6,7 @@ import LogoImg from "@/assets/images/lB-logo.png";
 import Image from "next/image";
 import SearchBar from "./components/searchbar";
 import Dropdown from "./components/Dropdown";
+import BannerData from "@/data/BannerData"
 
 function HomeNavbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -21,6 +22,10 @@ function HomeNavbar() {
       setShowMenu(false);
     }
   };
+
+  const handleLinks = (url:string) => {
+    window.location.href = url;
+  }
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -51,7 +56,9 @@ function HomeNavbar() {
         </div>
       </nav>
       <div className="banner">
-        
+        <ul className="innerbanner">
+
+        </ul>
       </div>
     </div>
   );
