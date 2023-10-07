@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./HomeNavbar.css";
-import { BsList, BsX , BsSunFill } from "react-icons/bs";
-import {WiMoonAltWaningCrescent2} from "react-icons/wi";
+import { BsList, BsX, BsSunFill, BsBell } from "react-icons/bs";
+import { WiMoonAltWaningCrescent2 } from "react-icons/wi";
 import LogoImg from "@/assets/images/lB-logo.png";
 import Image from "next/image";
 import SearchBar from "./components/searchbar";
@@ -14,7 +14,10 @@ interface HomeNavbarProps {
   toggleDarkMode: () => void;
 }
 
-const HomeNavbar: React.FC<HomeNavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
+const HomeNavbar: React.FC<HomeNavbarProps> = ({
+  isDarkMode,
+  toggleDarkMode,
+}) => {
   const [showMenu, setShowMenu] = useState(false);
 
   // Function to handle menu toggle
@@ -39,7 +42,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({ isDarkMode, toggleDarkMode }) =
   }, []);
 
   return (
-    <div className={`bg-${isDarkMode ? 'black' : 'white'} `}>
+    <div className={`bg-${isDarkMode ? "black" : "white"} `}>
       <nav className="navbar">
         <div className="container">
           <Dropdown />
@@ -49,15 +52,20 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({ isDarkMode, toggleDarkMode }) =
           <SearchBar />
 
           <div className={`menu ${showMenu ? "show" : ""}`}>
-            <a href="#">Home</a>
-            <a href="#">About</a>
+            <span className="notification">
+              <BsBell />{" "}
+            </span>
+            <div className="loginsign">About</div>
             <a href="#">Services</a>
             <a href="#">Contact</a>
 
             <div></div>
           </div>
-          <button className="fixed top-4 right-4 p-2 rounded-full bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-200" onClick={toggleDarkMode}>
-            {isDarkMode ? <BsSunFill />: <WiMoonAltWaningCrescent2 />}
+          <button
+            className=" top-4 right-4 p-2 rounded-full bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-200"
+            onClick={toggleDarkMode}
+          >
+            {isDarkMode ? <BsSunFill /> : <WiMoonAltWaningCrescent2 />}
           </button>
           <div className="hamburger-menu" onClick={handleMenuToggle}>
             {showMenu ? <BsX /> : <BsList />}

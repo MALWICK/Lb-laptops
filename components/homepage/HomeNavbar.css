@@ -113,6 +113,23 @@
   display: block;
 }
 
+.notification {
+  display: block;
+  position: relative;
+  top: auto;
+  left: auto;
+  border-radius: 50%;
+  border: 1px solid #212121;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hove:hover {
 border-bottom: 3px solid #DF3D22;
 }
