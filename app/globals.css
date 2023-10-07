@@ -13,6 +13,16 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --color-primary: theme('colors.dark.primary');
+  }
+}
+
+
+/* Light theme */
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  :root {
+    --color-primary: theme('colors.light.primary');
+    /* Add other light theme styles using the light theme color variables */
   }
 }
 
