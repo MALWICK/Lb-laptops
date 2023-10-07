@@ -1,5 +1,3 @@
-"use client"
-
 import React, { createContext, useState } from 'react';
 
 interface NotificationContextProps {
@@ -9,14 +7,14 @@ interface NotificationContextProps {
   setMessage: (message: string) => void;
 }
 
-export const NotificationContext = createContext<NotificationContextProps>({
+export const GlobalContext= createContext<NotificationContextProps>({
   count: 0,
   message: '',
   incrementCount: () => {},
   setMessage: () => {},
 });
 
-export const NotificationProvider: React.FC = ({ children }:any) => {
+export const contextProvider: React.FC = ({ children }:any) => {
   const [count, setCount] = useState(0);
   const [message, setMessage] = useState('');
 
@@ -25,8 +23,8 @@ export const NotificationProvider: React.FC = ({ children }:any) => {
   };
 
   return (
-    <NotificationContext.Provider value={{ count, message, incrementCount, setMessage }}>
+    <GlobalContext.Provider value={{ count, message, incrementCount, setMessage }}>
       {children}
-    </NotificationContext.Provider>
+    </GlobalContext.Provider>
   );
 };
