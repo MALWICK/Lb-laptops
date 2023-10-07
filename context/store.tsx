@@ -1,31 +1,35 @@
-"use client"
-import React, { createContext, useState } from 'react';
+"use client";
+import React, { createContext, useContext, useState } from "react";
 
-interface GlobalContextProps{
+interface GlobalContextProps {
   count: number;
   message: string;
   incrementCount: () => void;
   setMessage: (message: string) => void;
 }
 
-export const GlobalContext= createContext<GlobalContextProps>({
+export const GlobalContext = createContext<GlobalContextProps>({
   count: 0,
-  message: '',
+  message: "",
   incrementCount: () => {},
   setMessage: () => {},
 });
 
-export const contextProvider: React.FC = ({ children }:any) => {
+export const contextProvider: React.FC = ({ children }: any) => {
   const [count, setCount] = useState(0);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   const incrementCount = () => {
     setCount((prevCount) => prevCount + 1);
   };
 
   return (
-    <GlobalContext.Provider value={{ count, message, incrementCount, setMessage }}>
+    <GlobalContext.Provider
+      value={{ count, message, incrementCount, setMessage }}
+    >
       {children}
     </GlobalContext.Provider>
   );
 };
+
+export const useGlobalContext = useContext(GlobalContext);
