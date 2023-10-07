@@ -17,7 +17,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1300px;
+  max-width: 1440x;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -132,6 +132,37 @@
 
 .hove:hover {
 border-bottom: 3px solid #DF3D22;
+}
+
+.signup {
+  -ms-flex-negative: 0;
+  background-color: #f60;
+  border-radius:24px;
+  color: #fff!important;
+  cursor: pointer;
+  display: block;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 700;
+  height: 36px;
+  line-height: 36px;
+  outline: none;
+  padding: 0 28px;
+  text-align: center;
+}
+
+.signup:hover{
+  background-color: rgb(156, 64, 3);
+}
+
+.login{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.login:hover {
+  border-bottom: 4px solid rgb(223, 61, 34);
 }
 
 @media (max-width: 600px) {

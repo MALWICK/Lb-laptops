@@ -3,6 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./HomeNavbar.css";
 import { BsList, BsX, BsSunFill, BsBell } from "react-icons/bs";
 import { WiMoonAltWaningCrescent2 } from "react-icons/wi";
+import {AiOutlineShoppingCart} from "react-icons/ai"
 import LogoImg from "@/assets/images/lB-logo.png";
 import Image from "next/image";
 import SearchBar from "./components/searchbar";
@@ -51,12 +52,15 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
           </div>
           <SearchBar />
 
-          <div className={`menu ${showMenu ? "show" : ""}`}>
+          <div className={`menu flex justify-around items-center gap-4  ${showMenu ? "show" : ""}`}>
             <span className="notification">
               <BsBell />{" "}
             </span>
-            <div className="loginsign">About</div>
-            <a href="#">Services</a>
+            <div className="loginsign flex items-center justify-around gap-2 ">
+              <button className="login">Login</button>
+              <button className="signup">SignUp</button>
+            </div>
+            <a href="#"> <AiOutlineShoppingCart /> </a>
             <a href="#">Contact</a>
 
             <div></div>
@@ -73,7 +77,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
         </div>
       </nav>
       <div className="banner flex justify-center items-center ">
-        <ul className="innerbanner flex justify-around items-center w-[80%]  text-base cursor-pointer">
+        <ul className="innerbanner flex justify-around items-center w-[75%]  text-base cursor-pointer">
           {BannerData.map((data) => (
             <li
               key={data.title}
