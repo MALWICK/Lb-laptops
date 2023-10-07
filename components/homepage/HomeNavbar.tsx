@@ -55,10 +55,10 @@ function HomeNavbar() {
           </div>
         </div>
       </nav>
-      <div className="banner">
-        <ul className="innerbanner">
+      <div className="banner flex justify-center items-center ">
+        <ul className="innerbanner flex justify-around items-center w-[80%]  text-base cursor-pointer">
           {BannerData.map((data) => (
-            <li key={data.title} onClick={() => handleLinks(data.url)}>
+            <li key={data.title} className="hove" onClick={() => handleLinks(data.url)}>
               {data.title}
             </li>
           ))}

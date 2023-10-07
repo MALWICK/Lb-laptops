@@ -62,7 +62,7 @@
 
 .banner {
   height: 70px;
-  background-color: #f1f1f1;
+  background-color: #fdfdfd;
   margin-top: 60px;
   border-bottom: 2px solid #e8e8e8;
 }
@@ -111,6 +111,10 @@
 
 .dropdown-menu.show {
   display: block;
+}
+
+.hove:hover {
+border-bottom: 3px solid #DF3D22;
 }
 
 @media (max-width: 600px) {
