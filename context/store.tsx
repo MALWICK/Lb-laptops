@@ -1,13 +1,14 @@
+"use client"
 import React, { createContext, useState } from 'react';
 
-interface NotificationContextProps {
+interface GlobalContextProps{
   count: number;
   message: string;
   incrementCount: () => void;
   setMessage: (message: string) => void;
 }
 
-export const GlobalContext= createContext<NotificationContextProps>({
+export const GlobalContext= createContext<GlobalContextProps>({
   count: 0,
   message: '',
   incrementCount: () => {},
