@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./HomeNavbar.css";
-import { BsList, BsX, BsSunFill, BsBell } from "react-icons/bs";
+import { BsList, BsX, BsSunFill } from "react-icons/bs";
 import { WiMoonAltWaningCrescent2 } from "react-icons/wi";
 import {AiOutlineShoppingCart} from "react-icons/ai"
 import LogoImg from "@/assets/images/lB-logo.png";
@@ -9,6 +9,7 @@ import Image from "next/image";
 import SearchBar from "./components/searchbar";
 import Dropdown from "./components/Dropdown";
 import BannerData from "@/data/BannerData";
+import NotificationIcon from "./components/notificationdropdown/NotificationIcon";
 
 interface HomeNavbarProps {
   isDarkMode: boolean;
@@ -54,7 +55,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 
           <div className={`menu flex justify-around items-center gap-4  ${showMenu ? "show" : ""}`}>
             <span className="notification">
-              <BsBell />{" "}
+              <NotificationIcon />
             </span>
             <div className="loginsign flex items-center justify-around gap-2 ">
               <button className="login">Login</button>

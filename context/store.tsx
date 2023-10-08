@@ -1,35 +1,44 @@
 "use client";
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, ReactNode } from 'react';
+import Messages from "@/data/Messages"
 
-interface GlobalContextProps {
-  count: number;
-  message: string;
-  incrementCount: () => void;
-  setMessage: (message: string) => void;
+
+interface GlobalContextData {
+  notifications: number;
+  messages: string[];
+  updateNotifications: (notifications: number) => void;
+  updateMessages: (messages: string[]) => void;
 }
 
-export const GlobalContext = createContext<GlobalContextProps>({
-  count: 0,
-  message: "",
-  incrementCount: () => {},
-  setMessage: () => {},
+const GlobalContext = createContext<GlobalContextData>({
+  notifications: 5,
+  messages: [],
+  updateNotifications: () => {},
+  updateMessages: () => {},
 });
 
-export const contextProvider: React.FC = ({ children }: any) => {
-  const [count, setCount] = useState(0);
-  const [message, setMessage] = useState("");
+export const useGlobalContext = (): GlobalContextData => useContext(GlobalContext);
 
-  const incrementCount = () => {
-    setCount((prevCount) => prevCount + 1);
+export const GlobalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [notifications, setNotifications] = useState(0);
+  const [messages, setMessages] = useState<string[]>([]);
+
+  const updateNotifications = (newNotifications: number) => {
+    setNotifications(newNotifications);
+  };
+
+  const updateMessages = (newMessages: string[]) => {
+    setMessages(newMessages);
+  };
+
+  const contextValue: GlobalContextData = {
+    notifications,
+    messages,
+    updateNotifications,
+    updateMessages,
   };
 
   return (
-    <GlobalContext.Provider
-      value={{ count, message, incrementCount, setMessage }}
-    >
-      {children}
-    </GlobalContext.Provider>
+    <GlobalContext.Provider value={contextValue}>{children}</GlobalContext.Provider>
   );
 };
-
-export const useGlobalContext = useContext(GlobalContext);
