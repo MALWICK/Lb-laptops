@@ -1,9 +1,8 @@
-// pages/page.tsx
+
 "use client";
-// pages/page.tsx
 import React, { useEffect, useState } from "react";
 import HomeNavbar from "@/components/homepage/HomeNavbar";
-import { GlobalProvider } from "@/context/store";
+
 
 const Page: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -22,7 +21,7 @@ const Page: React.FC = () => {
   };
 
   return (
-    <GlobalProvider>
+   
       <main
         className={`w-full h-[150vh] ${isDarkMode ? "bg-black" : "bg-white"}`}
       >
@@ -34,7 +33,7 @@ const Page: React.FC = () => {
         </button>
         <HomeNavbar isDarkMode={isDarkMode} toggleDarkMode={handleToggle} />
       </main>
-    </GlobalProvider>
+ 
   );
 };
 
