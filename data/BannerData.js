@@ -1,4 +1,4 @@
-export const BannerItem = [
+ const BannerItem = [
     { title: "FantasTech || Starts Oct 9", url: "/fantTech" },
     { title: "Today's Best Deals ", url: "/todaysBestDeals" },
     { title: "Best Sellers ", url: "/Best Sellers" },
@@ -10,3 +10,5 @@ export const BannerItem = [
     { title: "Home Showcase ", url: "/homeShowcase" },
     { title: "Refurbished Phones ", url: "/refurbishedPhones" },
 ]
+
+export default BannerItem;
