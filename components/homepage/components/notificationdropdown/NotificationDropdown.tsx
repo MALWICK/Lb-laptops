@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 
-import Messages from "@/data/Messages";
 
 const MyComponent: React.FC = () => {
 
