@@ -123,7 +123,7 @@ export default function VerticalDemo() {
 
     return (
         <div className="card">
-            <MegaMenu model={items} orientation="vertical" breakpoint="767px" />
+            <MegaMenu model={items} orientation="vertical" breakpoint="767px" className='menu' />
         </div>
     )
 }
