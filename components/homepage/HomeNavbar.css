@@ -176,6 +176,12 @@ border-bottom: 3px solid #DF3D22;
   }
 }
 
+@media (max-width:768px){
+  .loginsign {
+    display: none !important;
+  }
+}
+
 @media (max-width: 600px) {
   .menu {
     display: none;
