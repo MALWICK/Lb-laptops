@@ -5,7 +5,7 @@
   width: 100%;
   height: 70px;
   color: black !important;
-  background-color: #fff;
+  background-color: white;
   display: flex;
   align-items: center;
   z-index: 1000;
@@ -16,10 +16,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  max-width: 1440x;
+  width: 100% !important;
   margin: 0 auto;
   padding: 0 20px;
+  background-color:  white;
 }
 
 .logo {
@@ -163,6 +163,12 @@ border-bottom: 3px solid #DF3D22;
 
 .login:hover {
   border-bottom: 4px solid rgb(223, 61, 34);
+}
+
+.innerbanner {
+  width: 87%;
+  max-width: 1440px !important;
+  font-size: 14px;
 }
 
 @media(max-width:1440px){

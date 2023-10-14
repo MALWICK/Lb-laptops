@@ -78,7 +78,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
         </div>
       </nav>
       <div className="banner flex justify-center items-center ">
-        <ul className="innerbanner flex justify-around items-center w-[75%]  text-base cursor-pointer">
+        <ul className="innerbanner flex justify-around items-center   text-base cursor-pointer">
           {BannerData.map((data) => (
             <li
               key={data.title}
