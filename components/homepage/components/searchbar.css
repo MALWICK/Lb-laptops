@@ -3,6 +3,10 @@
     background-color: red;
   }
   
+
+  .sub {
+    background-color: #f60;
+  }
   .search-icon {
     display: none;
     /* Styles for the search icon */
