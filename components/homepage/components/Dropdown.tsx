@@ -80,6 +80,7 @@ const Dropdown = () => {
           </div>
 
           <div className="secondcolumn">
+            <h2 className="text-xl font-extrabold underline">All Products</h2>
             <ul className="dropdown-menus">
               {AllProductsLinks.map((productlink) => (
                 <li

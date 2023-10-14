@@ -165,6 +165,23 @@ border-bottom: 3px solid #DF3D22;
   border-bottom: 4px solid rgb(223, 61, 34);
 }
 
+@media(max-width:1440px){
+  .innerbanner {
+    width: 87% !important;
+    font-size: 14px;
+  }
+
+  .menu {
+    margin-left: 12px;
+  }
+}
+
+@media (max-width:768px){
+  .loginsign {
+    display: none !important;
+  }
+}
+
 @media (max-width: 600px) {
   .menu {
     display: none;

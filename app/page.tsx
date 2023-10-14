@@ -2,6 +2,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import HomeNavbar from "@/components/homepage/HomeNavbar";
+import 'primeflex/primeflex.css';
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import ParentContainer from "@/components/homepage/components/ParentContainer";
 
 
 const Page: React.FC = () => {
@@ -32,6 +37,7 @@ const Page: React.FC = () => {
           {isDarkMode ? "Light Mode" : "Dark Mode"}
         </button>
         <HomeNavbar isDarkMode={isDarkMode} toggleDarkMode={handleToggle} />
+        <ParentContainer />
       </main>
  
   );
