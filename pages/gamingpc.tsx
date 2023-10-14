@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 function Landing() {
   return (
-    <div>gaming pc</div>
-  )
+    <div>
+
+    </div>
+  );
 }
 
 export default Landing;
