@@ -7,11 +7,12 @@ import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import "@/components/homepage/components/sidebar/sideBar.css"
+import {PiDesktopTowerBold} from "react-icons/pi"
 
 export default function VerticalDemo() {
     const items: MenuItem[] = [
         {
-            label: 'Videos', 
+            label: 'Computer & Storage', icon: 'pi pi-fw pi-desktop',
             items: [
                 [
                     {
@@ -36,7 +37,7 @@ export default function VerticalDemo() {
             ]
         },
         {
-            label: 'Users', icon: 'pi pi-fw pi-users',
+            label: 'Computer System', icon: 'pi pi-fw pi-microsoft',
             items: [
                 [
                     {
@@ -71,7 +72,7 @@ export default function VerticalDemo() {
             ]
         },
         {
-            label: 'Events', icon: 'pi pi-fw pi-calendar',
+            label: 'Computer Peripherals', icon: 'pi pi-fw pi-hourglass ',
             items: [
                 [
                     {
@@ -96,7 +97,7 @@ export default function VerticalDemo() {
             ]
         },
         {
-            label: 'Settings', icon: 'pi pi-fw pi-cog',
+            label: 'TV & Home Theather', icon: 'pi pi-fw pi-stop',
             items: [
                 [
                     {
@@ -119,7 +120,57 @@ export default function VerticalDemo() {
                     }
                 ]
             ]
-        }
+        },
+        {
+          label: 'Electronics', icon: 'pi pi-fw pi-print',
+          items: [
+              [
+                  {
+                      label: 'Video 1',
+                      items: [{ label: 'Video 1.1' }, { label: 'Video 1.2' }]
+                  },
+                  {
+                      label: 'Video 2',
+                      items: [{ label: 'Video 2.1' }, { label: 'Video 2.2' }]
+                  }
+              ],
+              [
+                  {
+                      label: 'Video 3',
+                      items: [{ label: 'Video 3.1' }, { label: 'Video 3.2' }]
+                  },
+                  {
+                      label: 'Video 4',
+                      items: [{ label: 'Video 4.1' }, { label: 'Video 4.2' }]
+                  }
+              ]
+          ]
+      },
+      {
+        label: 'Gaming & VR', icon: 'pi pi-fw pi-prime',
+        items: [
+            [
+                {
+                    label: 'Video 1',
+                    items: [{ label: 'Video 1.1' }, { label: 'Video 1.2' }]
+                },
+                {
+                    label: 'Video 2',
+                    items: [{ label: 'Video 2.1' }, { label: 'Video 2.2' }]
+                }
+            ],
+            [
+                {
+                    label: 'Video 3',
+                    items: [{ label: 'Video 3.1' }, { label: 'Video 3.2' }]
+                },
+                {
+                    label: 'Video 4',
+                    items: [{ label: 'Video 4.1' }, { label: 'Video 4.2' }]
+                }
+            ]
+        ]
+    },
     ];
 
     return (
