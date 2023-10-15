@@ -14,7 +14,15 @@ const images = [
   "https://promotions.newegg.com/rosewill/23-1440/1920x660.jpg",
   "https://sc02.alicdn.com/kf/H3c9c37f5d15044a2b27709dcd96b3811q.jpg",
   "https://sc02.alicdn.com/kf/Haa646e0ed54d4852bfc96e44e34b93d6F.jpg",
-  "https://sc02.alicdn.com/kf/Hed51c95586184ef89ece2a3a0da66019d.jpg"
+  "https://sc02.alicdn.com/kf/Hed51c95586184ef89ece2a3a0da66019d.jpg",
+  "https://promotions.newegg.com/marketplace/23-1508/1920x660.jpg",
+  "https://sc02.alicdn.com/kf/H3180e119228a465e99e208ade10b83f4Y.jpg",
+  "https://s.alicdn.com/@sc02/kf/H3e3b35770a9b469490bc3910e8e01987H.jpg_q80.jpg",
+  "https://sc02.alicdn.com/kf/H73060d93d2984bf3ad6a33f6ba04999en.jpg",
+  "https://images-na.ssl-images-amazon.com/images/G/01/consumerelectronics/CAC/Category_Storefronts/1367476_us_he_handpicked_laptops_1500x440.jpg",
+  "https://s.alicdn.com/@sc02/kf/H14cb730c2f9c401cab08114c8ec05aedJ.jpg_q80.jpg"
+
+
 ];
 
 
