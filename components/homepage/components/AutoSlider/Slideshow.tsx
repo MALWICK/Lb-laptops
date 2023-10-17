@@ -1,11 +1,11 @@
 "use client"
 import { useEffect, useState } from 'react';
 import "./Slideshow.css"
+import RightSidebar from '../RigthSidebar/RightSidebar';
 
 interface SlideshowProps {
   images: string[];
 }
-
 const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -35,12 +35,14 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
   const handleTogglePlay = () => {
     setIsPlaying((prevIsPlaying) => !prevIsPlaying);
   };
-
+  
+  const slideStyle = {
+    backgroundImage: `url(${images[currentImageIndex]})`,
+  };
+  
   return (
     <div className="slideshow">
-      <div className="slide">
-        <img src={images[currentImageIndex]} alt="Slideshow Image" />
-      </div>
+      <div className="slide" style={slideStyle}></div>
       <div className="controls">
         <button onClick={handlePrev}>Previous</button>
         <button onClick={handleNext}>Next</button>
