@@ -42,12 +42,14 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
   
   return (
     <div className="slideshow">
-      <div className="slide" style={slideStyle}></div>
+      <div className="slide" style={slideStyle}>
       <div className="controls">
         <button onClick={handlePrev}>Previous</button>
         <button onClick={handleNext}>Next</button>
         <button onClick={handleTogglePlay}>{isPlaying ? 'Stop' : 'Play'}</button>
       </div>
+      </div>
+      
     </div>
   );
 };

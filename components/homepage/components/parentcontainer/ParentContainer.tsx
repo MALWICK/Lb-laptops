@@ -20,7 +20,12 @@ const images = [
   "https://s.alicdn.com/@sc02/kf/H3e3b35770a9b469490bc3910e8e01987H.jpg_q80.jpg",
   "https://sc02.alicdn.com/kf/H73060d93d2984bf3ad6a33f6ba04999en.jpg",
   "https://images-na.ssl-images-amazon.com/images/G/01/consumerelectronics/CAC/Category_Storefronts/1367476_us_he_handpicked_laptops_1500x440.jpg",
-  "https://s.alicdn.com/@sc02/kf/H14cb730c2f9c401cab08114c8ec05aedJ.jpg_q80.jpg"
+  "https://s.alicdn.com/@sc02/kf/H14cb730c2f9c401cab08114c8ec05aedJ.jpg_q80.jpg",
+  "https://promotions.newegg.com/nepro/23-1538/1920x660.jpg",
+  "https://promotions.newegg.com/nepro/23-1540/1920x660.jpg",
+  "https://promotions.newegg.com/corsair/23-1499/1920x660.jpg",
+  "https://promotions.newegg.com/nepro/23-1164/1920x660.jpg"
+  
 
 
 ];
