@@ -35,7 +35,7 @@ function parentcontainer() {
   return (
     <div className="w-full parent bg-red flex items-center justify-center flex-col ">
       <div className="parentinner bg-red flex items-center justify-center flex-col ">
-        <div className="swipe-container flex items-center justify-center w-[100%]">
+        <div className="swipe-container flex w-[100%]">
           <RightSidebar />
           <Slideshow images={images}  />
         </div>

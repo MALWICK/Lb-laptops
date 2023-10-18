@@ -44,9 +44,10 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
     <div className="slideshow">
       <div className="slide" style={slideStyle}>
       <div className="controls">
-        <button onClick={handlePrev}>Previous</button>
-        <button onClick={handleNext}>Next</button>
+        <button onClick={handlePrev}><i className="bi bi-chevron-left"></i></button>
+        
         <button onClick={handleTogglePlay}>{isPlaying ? 'Stop' : 'Play'}</button>
+        <button onClick={handleNext}><i className="bi bi-chevron-right"></i></button>
       </div>
       </div>
       
