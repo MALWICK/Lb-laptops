@@ -44,10 +44,10 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
     <div className="slideshow">
       <div className="slide" style={slideStyle}>
       <div className="controls">
-        <button onClick={handlePrev}><i className="bi bi-chevron-left"></i></button>
+        <button className='swiper-button-prev ' onClick={handlePrev}><i className="bi bi-chevron-left"></i></button>
         
         <button onClick={handleTogglePlay}>{isPlaying ? 'Stop' : 'Play'}</button>
-        <button onClick={handleNext}><i className="bi bi-chevron-right"></i></button>
+        <button className='swiper-button-prev ' onClick={handleNext}><i className="bi bi-chevron-right"></i></button>
       </div>
       </div>
       
