@@ -46,7 +46,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
 
   return (
     <div className="slideshow">
-      <div className="slide" style={slideStyle}>
+      <div className="slide relative" style={slideStyle}>
         <div className="controls">
           <button className="swiper-button-prev " onClick={handlePrev}>
             <i className="bi bi-chevron-left"></i>
