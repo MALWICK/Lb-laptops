@@ -1,14 +1,14 @@
 .slideshow {
   height: 600px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.705);
+  background: rgba(175, 174, 174, 0.445);
 }
 
 .slide {
   margin-bottom: 1rem;
   height: 100%;
   width: 100%;
-  background-size: contain;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   object-fit: cover;
@@ -46,4 +46,12 @@
 
 .swiper-button-prev:hover {
   background-color: rgba(58, 56, 56, 0.952);
+}
+
+.swiper-button-prev i {
+  font-size: 30px;
+}
+
+.big__icon {
+  font-size: 30px;
 }
