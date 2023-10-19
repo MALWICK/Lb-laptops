@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 
 interface cardsItem {
   images: string[];
@@ -29,12 +30,32 @@ const Card: React.FC<cardsItem> = ({ backgroundImage, images, text,title }) => {
   };
 
   return (
-    <div className="card" style={backgroundImageStyle}>
-      {images.map((image, index) => (
-        <img key={index} src={image} alt={`Card Image ${index + 1}`} />
+    <div className="card flex flex-col shadow-md w-[330px]" style={backgroundImageStyle}>
+     
+      
+      
+      <div className="section-title">
+            <div className="section-title-text font-normal text-base">
+              "Intel Core 14 Gen Combo"
+              <p>{title}</p>
+              <strong className="text-red-600"><p>{text}</p></strong>
+            </div>
+            <div className="section-right"></div>
+          </div>
+          <div className="flex relative">
+            <div className="personalized-combo-goods">
+            {images.map((image, index) => (
+       
+        <div className="personalized-combo-items bg-white rounded-md">
+           <Image key={index} src={image} alt={`Card Image ${index + 1}`} className="w-[30%] h-[64px]" 
+            width={64}
+            height={48}/>
+        </div>
       ))}
-      <p>{text}</p>
-      <p>{title}</p>
+             
+            </div>
+          </div>
+     
     </div>
   );
 };
@@ -45,20 +66,10 @@ function bottomCards() {
   return (
     <div className="w-full flex items-center justify-center">
       <div className="inner__cards w-4/5 flex items-center justify-center gap-2">
-        <div className="flex flex-col shadow-md w-[330px] ">
-          <div className="section-title">
-            <div className="section-title-text font-normal text-base">
-              "Intel Core 14 Gen Combo"
-              <strong className="text-red-600">Savings $110.00</strong>
-            </div>
-            <div className="section-right"></div>
-          </div>
-          <div className="flex relative">
-            <div className="personalized-combo-goods">
-              <div className="personalized-combo-items bg-white rounded-md"></div>
-            </div>
-          </div>
-        </div>
+        {cardsItem.map((card, index) => (
+          <Card key={index} backgroundImage={card.backgroundImage} images={card.images} text={card.text} title={card.title} />
+        ))}
+       
       </div>
     </div>
   );

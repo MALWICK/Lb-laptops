@@ -4,6 +4,7 @@ import "./Slideshow.css";
 import RightSidebar from "../RigthSidebar/RightSidebar";
 import { FaPlay } from "react-icons/fa";
 import { BsStopCircle } from "react-icons/bs";
+import BottomCards from "./bottomCards/bottomCards";
 
 interface SlideshowProps {
   images: string[];
@@ -60,6 +61,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
           </button>
         </div>
       </div>
+      <BottomCards />
     </div>
   );
 };
