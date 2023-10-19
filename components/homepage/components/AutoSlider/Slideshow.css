@@ -44,6 +44,17 @@
   cursor: pointer;
 }
 
+.stopper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(31, 30, 30, 0.89);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .swiper-button-prev:hover {
   background-color: rgba(58, 56, 56, 0.952);
 }

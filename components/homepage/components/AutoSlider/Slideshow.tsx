@@ -52,7 +52,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
             <i className="bi bi-chevron-left"></i>
           </button>
 
-          <button onClick={handleTogglePlay}>
+          <button className="stopper" onClick={handleTogglePlay}>
             {isPlaying ? <BsStopCircle className="big__icon" /> : <FaPlay className="big__icon" />}
           </button>
           <button className="swiper-button-prev " onClick={handleNext}>
