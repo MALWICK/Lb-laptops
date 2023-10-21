@@ -61,7 +61,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
           </button>
         </div>
       </div>
-      <BottomCards />
+     {/*  <BottomCards /> */}
     </div>
   );
 };

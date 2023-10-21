@@ -57,12 +57,41 @@ const cardsItems: CardItem[] = [
         src: "https://c1.neweggimages.com/ProductImageCompressAll300/35-181-337-01.png",
         title: "Water/Liquid",
       },
+      
     ],
     text: "INTEL 14th Gen COMBO",
     title: "SAVINGS $110.00",
-    discountPrice: "$800",
-    originalPrice: "$12000",
+    discountPrice: "$950",
+    originalPrice: "$15000",
   },
+  {
+    backgroundImage:
+      "https://c1.neweggimages.com/WebResource/Themes/Nest/images/bgs/Combo_bg.png",
+    images: [
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/19-118-462-01.jpg",
+        title: "Processors -Desktop",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
+        title: "Desktop Memory",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-145-477-01.jpg",
+        title: " Intel Motherb...",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/35-181-337-01.png",
+        title: "Water/Liquid",
+      },
+      
+    ],
+    text: "INTEL 14th Gen COMBO",
+    title: "SAVINGS $110.00",
+    discountPrice: "$950",
+    originalPrice: "$15000",
+  },
+  
 ];
 
 const Card: React.FC<CardItem> = ({
@@ -80,7 +109,7 @@ const Card: React.FC<CardItem> = ({
 
   return (
     <div
-      className="card flex flex-col shadow-md w-[620px] h-[210px] rounded-md bg-cover bg-center"
+      className="card flex flex-col shadow-md w-[490px] h-[210px] rounded-md bg-cover bg-center "
       style={backgroundImageStyle}
     >
       <div className="section-title">
@@ -93,10 +122,10 @@ const Card: React.FC<CardItem> = ({
         <div className="section-right"></div>
       </div>
       <div className="flex relative ml-2 gap-2">
-        <div className="personalized-combo-goods flex flex-wrap w-[450px] gap-1">
+        <div className="personalized-combo-goods flex flex-wrap w-[400px]">
           {images.map((image, index) => (
             <div
-              className="personalized-combo-items bg-slate-100 flex items-center justify-start rounded-md w-[220px] h-[70px]"
+              className="personalized-combo-items bg-slate-100 flex items-center justify-start rounded-md w-[170px] h-[70px] "
               key={index}
             >
               <Image
