@@ -5,4 +5,5 @@
 .parentinner {
   width: 100%;
   max-width: 1740px;
+  justify-content: space-around;
 }

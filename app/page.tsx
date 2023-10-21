@@ -7,6 +7,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import ParentContainer from "@/components/homepage/components/parentcontainer/ParentContainer";
 import RightSidebar from "@/components/homepage/components/RigthSidebar/RightSidebar";
+import BottomCards from "@/components/homepage/components/AutoSlider/bottomCards/bottomCards";
 
 const Page: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -41,8 +42,10 @@ const Page: React.FC = () => {
         <RightSidebar />
         <ParentContainer />
       </div>
-      <div className="main__parent">
-        
+      <div className="main__parent w-full flex items-center justify-center flex-col" >
+        <div className="cards__container w-[95%] flex justify-space items-center gap-5 ">
+          <BottomCards/>
+        </div>
       </div>
     </main>
   );

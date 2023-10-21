@@ -90,6 +90,32 @@ const cardsItems: CardItem[] = [
     title: "SAVINGS $110.00",
     discountPrice: "$950",
     originalPrice: "$15000",
+  }, {
+    backgroundImage:
+      "https://c1.neweggimages.com/WebResource/Themes/Nest/images/bgs/Combo_bg.png",
+    images: [
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/19-118-462-01.jpg",
+        title: "Processors -Desktop",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
+        title: "Desktop Memory",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-145-477-01.jpg",
+        title: " Intel Motherb...",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/35-181-337-01.png",
+        title: "Water/Liquid",
+      },
+      
+    ],
+    text: "INTEL 14th Gen COMBO",
+    title: "SAVINGS $110.00",
+    discountPrice: "$950",
+    originalPrice: "$15000",
   },
   
 ];
@@ -108,8 +134,9 @@ const Card: React.FC<CardItem> = ({
   };
 
   return (
-    <div
-      className="card flex flex-col shadow-md w-[490px] h-[210px] rounded-md bg-cover bg-center "
+    <div className="cardcont w-full items-center justify-between gap-3">
+        <div
+      className="card flex flex-col shadow-md w-[23vw] h-[210px] rounded-md bg-cover bg-center "
       style={backgroundImageStyle}
     >
       <div className="section-title">
@@ -121,11 +148,11 @@ const Card: React.FC<CardItem> = ({
         </div>
         <div className="section-right"></div>
       </div>
-      <div className="flex relative ml-2 gap-2">
-        <div className="personalized-combo-goods flex flex-wrap w-[400px]">
+      <div className="flex relative ml-2 gap-1 w-[98%]">
+        <div className="personalized-combo-goods flex flex-wrap w-[80%]  gap-1">
           {images.map((image, index) => (
             <div
-              className="personalized-combo-items bg-slate-100 flex items-center justify-start rounded-md w-[170px] h-[70px] "
+              className="personalized-combo-items bg-slate-100 flex items-center justify-start rounded-md w-[47%] h-[70px] ml-2"
               key={index}
             >
               <Image
@@ -140,11 +167,13 @@ const Card: React.FC<CardItem> = ({
           ))}
         </div>
         <div className="price flex items-center justify-center flex-col">
-         <p className="flex items-center justify-between w-full line-through text-slate-500">from  {originalPrice}</p>
-          <p className="flex items-center justify-between w-full">Price: {discountPrice}</p>
+         <p className="flex items-center justify-between w-full line-through text-slate-500">  {originalPrice}</p>
+          <p className="flex items-center justify-between w-full">= {discountPrice}</p>
         </div>
       </div>
     </div>
+    </div>
+  
   );
 };
 
