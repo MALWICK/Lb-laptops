@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import "./bottomCards.css"
 
 interface CardItem {
   images: { src: string; title: string }[];
@@ -129,15 +130,31 @@ const Card: React.FC<CardItem> = ({
   originalPrice,
   
 }) => {
+
+  //hover image
+  const [hoveredImage, setHoveredImage] = useState<{ src: string; title: string } | null>(null);
+
   const backgroundImageStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
 
+  //setting images to hoverablecards
+  const handleImageHover = (image: { src: string; title: string }) => {
+    setHoveredImage(image);
+  };
+
+  const handleImageLeave = () => {
+    setHoveredImage(null);
+  };
+
+
+
   return (
     <div className="cardcont w-full items-center justify-between gap-3">
         <div
-      className="card flex flex-col shadow-md w-[23vw] h-[210px] rounded-md bg-cover bg-center "
+      className="card flex flex-col shadow-md w-[23vw] h-[210px] rounded-md bg-cover bg-center relative "
       style={backgroundImageStyle}
+      
     >
       <div className="section-title">
         <div className="section-title-text font-normal text-base flex gap-2 ml-2 mt-1 mb-3">
@@ -154,6 +171,8 @@ const Card: React.FC<CardItem> = ({
             <div
               className="personalized-combo-items bg-slate-100 flex items-center justify-start rounded-md w-[47%] h-[70px] ml-2"
               key={index}
+              onMouseEnter={() => handleImageHover(image)}
+              onMouseLeave={handleImageLeave}
             >
               <Image
                 src={image.src}
@@ -172,6 +191,40 @@ const Card: React.FC<CardItem> = ({
         </div>
       </div>
     </div>
+ {/*    {hoveredImage && (
+        <div className="hover-popup w-[240px] h-[320px] z-40">
+          <Image
+            src={hoveredImage.src}
+            alt={hoveredImage.title}
+            width={200}
+            height={50}
+          />
+          <div>
+            <p>{hoveredImage.title}</p>
+            <p>Discount Price: {discountPrice}</p>
+            <p>Promo Combo: {text}</p>
+          </div>
+        </div>
+      )} */}
+
+{hoveredImage && (
+        <div className="hover-popup  w-[50%] ">
+          <div className="hover-popup-backdrop"></div> {/* Added backdrop */}
+          <div className="hover-popup-content w-[340px] h-[340px] absolute z-10 text-black">
+            <Image
+              src={hoveredImage.src}
+              alt={hoveredImage.title}
+              width={200}
+              height={150}
+            />
+            <div>
+              <p>{hoveredImage.title}</p>
+              <p>Discount Price: {discountPrice}</p>
+              <p>Promo Combo: {text}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   
   );
