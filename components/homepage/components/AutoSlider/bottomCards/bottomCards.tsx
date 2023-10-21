@@ -1,34 +1,51 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 
-interface cardsItem {
-  images: string[];
+interface CardItem {
+  images: { src: string; title: string }[];
   text: string;
   title: string;
   backgroundImage: string;
+  discountPrice: string;
+  originalPrice: string;
 }
 
-const cardsItem: cardsItem[] = [
+const cardsItems: CardItem[] = [
   {
     backgroundImage:
       "https://c1.neweggimages.com/WebResource/Themes/Nest/images/bgs/Combo_bg.png",
     images: [
-      "https://c1.neweggimages.com/ProductImageCompressAll300/19-118-462-01.jpg",
-      "	https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
-      "https://c1.neweggimages.com/ProductImageCompressAll300/20-821-556-04.jpg",
-      "https://c1.neweggimages.com/ProductImageCompressAll300/20-318-013-05.png",
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/19-118-462-01.jpg",
+        title: "Image 1",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
+        title: "Image 2",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/20-821-556-04.jpg",
+        title: "Image 3",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/20-318-013-05.png",
+        title: "Image 4",
+      },
     ],
     text: "INTEL 14th Gen COMBO",
     title: "SAVINGS $110.00",
+    discountPrice: "$800",
+    originalPrice: "$12000",
   },
 ];
 
-const Card: React.FC<cardsItem> = ({
+const Card: React.FC<CardItem> = ({
   backgroundImage,
   images,
   text,
   title,
+  discountPrice,
+  originalPrice,
 }) => {
   const backgroundImageStyle = {
     backgroundImage: `url(${backgroundImage})`,
@@ -51,39 +68,43 @@ const Card: React.FC<cardsItem> = ({
       <div className="flex relative ml-2 gap-2">
         <div className="personalized-combo-goods flex flex-wrap w-[450px] gap-1">
           {images.map((image, index) => (
-            <div className="personalized-combo-items bg-slate-100   flex  items-center justify-start rounded-md w-[220px] h-[70px] ">
+            <div
+              className="personalized-combo-items bg-slate-100 flex items-center justify-start rounded-md w-[220px] h-[70px]"
+              key={index}
+            >
               <Image
-                key={index}
-                src={image}
-                alt={`Card Image ${index + 1}`}
-                className="w-[50%] h-[50%] object-cover "
+                src={image.src}
+                alt={image.title}
+                className="w-[50%] h-[50%] object-cover"
                 width={65}
                 height={48}
               />
-              malor
+              <p>{image.title}</p>
             </div>
-            
           ))}
         </div>
-        <div className="price  flex items-center justify-center">
-          price= $1250
+        <div className="price flex items-center justify-center flex-col">
+         <p className="flex items-center justify-between w-full">from  {originalPrice}</p>
+          <p className="flex items-center justify-between w-full">Price: {discountPrice}</p>
         </div>
       </div>
     </div>
   );
 };
 
-function bottomCards() {
+function BottomCards() {
   return (
     <div className="w-full flex items-center justify-center">
       <div className="inner__cards w-4/5 flex items-center justify-center gap-2">
-        {cardsItem.map((card, index) => (
+        {cardsItems.map((card, index) => (
           <Card
             key={index}
             backgroundImage={card.backgroundImage}
             images={card.images}
             text={card.text}
             title={card.title}
+            discountPrice={card.discountPrice}
+            originalPrice={card.originalPrice}
           />
         ))}
       </div>
@@ -91,4 +112,4 @@ function bottomCards() {
   );
 }
 
-export default bottomCards;
+export default BottomCards;

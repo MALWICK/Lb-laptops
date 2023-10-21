@@ -45,8 +45,8 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 
   return (
     <div className={`bg-${isDarkMode ? "black" : "white"} `}>
-      <nav className="navbar">
-        <div className="container">
+      <nav className="navbar w-full">
+        <div className="container w-full ">
           <Dropdown />
           <div className="logo">
             <Image src={LogoImg} alt="logo" priority={true} />
