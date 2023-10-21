@@ -37,6 +37,32 @@ const cardsItems: CardItem[] = [
     discountPrice: "$800",
     originalPrice: "$12000",
   },
+  {
+    backgroundImage:
+      "https://c1.neweggimages.com/WebResource/Themes/Nest/images/bgs/Combo_bg.png",
+    images: [
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/19-118-462-01.jpg",
+        title: "Processors -Desktop",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
+        title: "Desktop Memory",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-145-477-01.jpg",
+        title: " Intel Motherb...",
+      },
+      {
+        src: "https://c1.neweggimages.com/ProductImageCompressAll300/35-181-337-01.png",
+        title: "Water/Liquid",
+      },
+    ],
+    text: "INTEL 14th Gen COMBO",
+    title: "SAVINGS $110.00",
+    discountPrice: "$800",
+    originalPrice: "$12000",
+  },
 ];
 
 const Card: React.FC<CardItem> = ({
@@ -46,6 +72,7 @@ const Card: React.FC<CardItem> = ({
   title,
   discountPrice,
   originalPrice,
+  
 }) => {
   const backgroundImageStyle = {
     backgroundImage: `url(${backgroundImage})`,
