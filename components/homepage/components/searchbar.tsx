@@ -89,41 +89,6 @@ function SearchBar() {
   };
 
   return (
-   /*  <form className="w-[500px] relative" onSubmit={handleSubmit}>
-      <div className="relative">
-        <input
-          type="search"
-          className="w-full p-4 rounded-full bg-slate-100"
-          id="searchinput"
-          placeholder="Type Here"
-          value={searchValue}
-          onChange={handleSearch}
-          onKeyDown={handleKeyDown}
-          onFocus={handleFocus}
-        />
-        <button className="absolute right-1 top-1/2 -translate-y-1/2 p-4 bg-slate-300 rounded-full h-12 flex items-center justify-items-center w-12">
-          <i className="bi bi-search"></i>
-        </button>
-      </div>
-
-      {activeSearch.length > 0 && (
-        <div
-          className="absolute top-20 p-4 bg-slate-100 text-black w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2"
-          ref={suggestionsRef}
-        >
-          {activeSearch.map((suggestion, index) => (
-            <span
-              key={suggestion}
-              onClick={() => handleSuggestionClick(suggestion)}
-              className={selectedSuggestionIndex === index ? "selected" : ""}
-              data-index={index}
-            >
-              {suggestion}
-            </span>
-          ))}
-        </div>
-      )}
-    </form> */
 
 <form  className="w-[500px] relative" onSubmit={handleSubmit}>   
     <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
@@ -134,7 +99,7 @@ function SearchBar() {
             </svg>
         </div>
         <input type="search" id="searchinput" className="block w-full p-3 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-orange-500 focus:border-orange-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-        placeholder="Search Mockups, Logos..." required 
+        placeholder="Search pc, Laptops..." required 
         value={searchValue}
           onChange={handleSearch}
           onKeyDown={handleKeyDown}

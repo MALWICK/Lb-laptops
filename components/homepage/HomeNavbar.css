@@ -19,7 +19,8 @@
   width: 100% !important;
   margin: 0 auto;
   padding: 0 20px;
-  background-color:  white;
+  background-color: white;
+  max-width: 1740px;
 }
 
 .logo {
@@ -72,7 +73,7 @@
   cursor: pointer;
 }
 
-.closebtn{
+.closebtn {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -131,14 +132,14 @@
 }
 
 .hove:hover {
-border-bottom: 3px solid #DF3D22;
+  border-bottom: 3px solid #df3d22;
 }
 
 .signup {
   -ms-flex-negative: 0;
   background-color: #f60;
-  border-radius:24px;
-  color: #fff!important;
+  border-radius: 24px;
+  color: #fff !important;
   cursor: pointer;
   display: block;
   -webkit-flex-shrink: 0;
@@ -152,11 +153,11 @@ border-bottom: 3px solid #DF3D22;
   text-align: center;
 }
 
-.signup:hover{
+.signup:hover {
   background-color: rgb(156, 64, 3);
 }
 
-.login{
+.login {
   font-size: 20px;
   font-weight: 700;
 }
@@ -171,7 +172,7 @@ border-bottom: 3px solid #DF3D22;
   font-size: 14px;
 }
 
-@media(max-width:1440px){
+@media (max-width: 1440px) {
   .innerbanner {
     width: 87% !important;
     font-size: 14px;
@@ -182,8 +183,24 @@ border-bottom: 3px solid #DF3D22;
   }
 }
 
-@media (max-width:768px){
+@media (max-width: 1024px) {
+  .innerbanner {
+    width: 100% !important;
+  }
+  .innerbanner li {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 768px) {
   .loginsign {
+    display: none !important;
+  }
+  .banner {
+    display: none !important;
+  }
+
+  .banner .flex {
     display: none !important;
   }
 }
@@ -220,5 +237,5 @@ border-bottom: 3px solid #DF3D22;
   .logo {
     font-size: 24px;
     width: 213px;
-}
+  }
 }

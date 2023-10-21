@@ -1,16 +1,68 @@
 .slideshow {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-  }
-  
-  .slide {
-    margin-bottom: 1rem;
-  }
-  
-  .controls {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-  }
+  height: 600px;
+  width: 100%;
+  background: rgba(175, 174, 174, 0.445);
+}
+
+.slide {
+  margin-bottom: 1rem;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+
+ .swiper-button-prev {
+  width: 80px;
+  height: 120px;
+  background-color: rgba(58, 56, 56, 0.747);
+  border-radius: 24px;
+  color: white;
+  opacity: .6;
+  transition: background-color .7s;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.stopper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(31, 30, 30, 0.89);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-button-prev:hover {
+  background-color: rgba(58, 56, 56, 0.952);
+}
+
+.swiper-button-prev i {
+  font-size: 30px;
+}
+
+.big__icon {
+  font-size: 30px;
+}

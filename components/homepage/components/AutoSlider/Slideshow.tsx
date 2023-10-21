@@ -1,11 +1,14 @@
-"use client"
-import { useEffect, useState } from 'react';
-import "./Slideshow.css"
+"use client";
+import { useEffect, useState } from "react";
+import "./Slideshow.css";
+import RightSidebar from "../RigthSidebar/RightSidebar";
+import { FaPlay } from "react-icons/fa";
+import { BsStopCircle } from "react-icons/bs";
+import BottomCards from "./bottomCards/bottomCards";
 
 interface SlideshowProps {
   images: string[];
 }
-
 const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -25,7 +28,9 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
   }, [isPlaying]);
 
   const handlePrev = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
   };
 
   const handleNext = () => {
@@ -36,16 +41,27 @@ const Slideshow: React.FC<SlideshowProps> = ({ images }) => {
     setIsPlaying((prevIsPlaying) => !prevIsPlaying);
   };
 
+  const slideStyle = {
+    backgroundImage: `url(${images[currentImageIndex]})`,
+  };
+
   return (
     <div className="slideshow">
-      <div className="slide">
-        <img src={images[currentImageIndex]} alt="Slideshow Image" />
+      <div className="slide relative" style={slideStyle}>
+        <div className="controls">
+          <button className="swiper-button-prev " onClick={handlePrev}>
+            <i className="bi bi-chevron-left"></i>
+          </button>
+
+          <button className="stopper" onClick={handleTogglePlay}>
+            {isPlaying ? <BsStopCircle className="big__icon" /> : <FaPlay className="big__icon" />}
+          </button>
+          <button className="swiper-button-prev " onClick={handleNext}>
+            <i className="bi bi-chevron-right"></i>
+          </button>
+        </div>
       </div>
-      <div className="controls">
-        <button onClick={handlePrev}>Previous</button>
-        <button onClick={handleNext}>Next</button>
-        <button onClick={handleTogglePlay}>{isPlaying ? 'Stop' : 'Play'}</button>
-      </div>
+      <BottomCards />
     </div>
   );
 };

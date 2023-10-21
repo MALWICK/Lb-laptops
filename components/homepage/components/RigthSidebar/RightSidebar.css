@@ -1,4 +1,8 @@
 .p-megamenu.p-megamenu-vertical {
-    width: 21.5rem;
+    width: 18.5rem;
     padding: 0.25rem 0;
+    /* position:relative;
+    left: -90px; */
+    background-color: #f2f2f2;
+
 }
