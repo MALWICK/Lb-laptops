@@ -8,6 +8,11 @@ import RightSidebar from "../RigthSidebar/RightSidebar";
 const images = [
   'https://promotions.newegg.com/nepro/23-1522/1920x660.jpg',
   'https://promotions.newegg.com/mobile/referral/banner/23-1519/1920x660.jpg',
+  "https://promotions.newegg.com/nepro/23-0612/1920x660.jpg",
+  "https://promotions.newegg.com/msi/23-1531/1920x660.jpg",
+  "https://promotions.newegg.com/abs/23-1579/1920x660.jpg",
+  "https://promotions.newegg.com/seagate/23-1548/1920x660.jpg",
+  "https://promotions.newegg.com/intel/23-1527/banner/1920x660.jpg",
   'https://promotions.newegg.com/msi/23-1311/1920x660.jpg',
   "https://promotions.newegg.com/bequiet/23-1468/1920x660.jpg",
   "https://promotions.newegg.com/gigabyte/23-1509/1920x660.jpg",

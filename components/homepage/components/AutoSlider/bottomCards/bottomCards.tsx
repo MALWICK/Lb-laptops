@@ -17,19 +17,19 @@ const cardsItems: CardItem[] = [
     images: [
       {
         src: "https://c1.neweggimages.com/ProductImageCompressAll300/19-118-462-01.jpg",
-        title: "Image 1",
+        title: "Processors -Desktop",
       },
       {
         src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
-        title: "Image 2",
+        title: "Desktop Memory",
       },
       {
         src: "https://c1.neweggimages.com/ProductImageCompressAll300/20-821-556-04.jpg",
-        title: "Image 3",
+        title: " Intel Motherb...",
       },
       {
         src: "https://c1.neweggimages.com/ProductImageCompressAll300/20-318-013-05.png",
-        title: "Image 4",
+        title: "Internal SSDs",
       },
     ],
     text: "INTEL 14th Gen COMBO",
@@ -84,7 +84,7 @@ const Card: React.FC<CardItem> = ({
           ))}
         </div>
         <div className="price flex items-center justify-center flex-col">
-         <p className="flex items-center justify-between w-full">from  {originalPrice}</p>
+         <p className="flex items-center justify-between w-full line-through text-slate-500">from  {originalPrice}</p>
           <p className="flex items-center justify-between w-full">Price: {discountPrice}</p>
         </div>
       </div>
