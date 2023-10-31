@@ -30,7 +30,13 @@ const images = [
   "https://promotions.newegg.com/nepro/23-1538/1920x660.jpg",
   "https://promotions.newegg.com/nepro/23-1540/1920x660.jpg",
   "https://promotions.newegg.com/corsair/23-1499/1920x660.jpg",
-  "https://promotions.newegg.com/nepro/23-1164/1920x660.jpg"
+  "https://promotions.newegg.com/nepro/23-1164/1920x660.jpg",
+  "https://promotions.newegg.com/nepro/23-0647/1920x660.jpg",
+  "https://promotions.newegg.com/nepro/23-1576/1920x660.jpg",
+  "https://promotions.newegg.com/nepro/23-1550/1920x660.jpg",
+  "https://promotions.newegg.com/intel/23-1544/1920x660.jpg",
+  "https://promotions.newegg.com/fractal/23-1416/1920x660.jpg",
+  "https://promotions.newegg.com/teamgroup/23-1415/1920x660.jpg",
   
 
 

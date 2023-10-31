@@ -8,6 +8,7 @@ import "primeicons/primeicons.css";
 import ParentContainer from "@/components/homepage/components/parentcontainer/ParentContainer";
 import RightSidebar from "@/components/homepage/components/RigthSidebar/RightSidebar";
 import BottomCards from "@/components/homepage/components/AutoSlider/bottomCards/bottomCards";
+import TodaysDeals from "@/components/homepage/components/TodaysDeals/TodaysDeals";
 
 const Page: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -46,6 +47,7 @@ const Page: React.FC = () => {
         <div className="cards__container w-[95%] flex justify-space items-center gap-5 ">
           <BottomCards/>
         </div>
+        <TodaysDeals />
       </div>
     </main>
   );
