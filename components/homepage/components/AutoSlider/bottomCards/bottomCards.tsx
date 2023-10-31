@@ -215,6 +215,9 @@ const Card: React.FC<CardItem> = ({
 };
 
 function BottomCards() {
+
+  
+  
   return (
     <div className="w-full flex items-center justify-center">
       <div className="inner__cards w-4/5 flex items-center justify-center gap-2">
