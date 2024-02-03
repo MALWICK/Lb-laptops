@@ -37,7 +37,10 @@ const images = [
   "https://promotions.newegg.com/intel/23-1544/1920x660.jpg",
   "https://promotions.newegg.com/fractal/23-1416/1920x660.jpg",
   "https://promotions.newegg.com/teamgroup/23-1415/1920x660.jpg",
-  "https://promotions.newegg.com/msi/23-1615/1920x660.jpg"
+  "https://promotions.newegg.com/msi/23-1615/1920x660.jpg",
+  "https://promotions.newegg.com/amd/23-1620/banner/1920x660.jpg",
+  "https://promotions.newegg.com/gskill/23-1500/1920x660.jpg",
+  "https://promotions.newegg.com/asus/23-1242/1920x660.jpg",
   
 
 
