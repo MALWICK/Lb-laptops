@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import "./TodaysDeal.css"
-
+import GridDeals from './components/gridDeals'
 function TodaysDeals() {
   return (
     <div className='w-[94%] flex items-center justify-center mt-[4.4%] bg-red-500'>
@@ -12,7 +12,7 @@ function TodaysDeals() {
             </div>
             <div className="timer"> crease</div>
         </div>
-
+          <GridDeals />
       </div>
     </div>
   )
