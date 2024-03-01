@@ -24,14 +24,6 @@ const cardsItems: CardItem[] = [
         src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
         title: "Desktop Memory",
       },
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/20-821-556-04.jpg",
-        title: " Intel Motherb...",
-      },
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/20-318-013-05.png",
-        title: "Internal SSDs",
-      },
     ],
     text: "INTEL 14th Gen COMBO",
     title: "SAVINGS $110.00",
@@ -47,16 +39,8 @@ const cardsItems: CardItem[] = [
         title: "Processors -Desktop",
       },
       {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
-        title: "Desktop Memory",
-      },
-      {
         src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-145-477-01.jpg",
         title: " Intel Motherb...",
-      },
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/35-181-337-01.png",
-        title: "Water/Liquid",
       },
     ],
     text: "INTEL 14th Gen COMBO",
@@ -76,14 +60,6 @@ const cardsItems: CardItem[] = [
         src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
         title: "Desktop Memory",
       },
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-145-477-01.jpg",
-        title: " Intel Motherb...",
-      },
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/35-181-337-01.png",
-        title: "Water/Liquid",
-      },
     ],
     text: "INTEL 14th Gen COMBO",
     title: "SAVINGS $110.00",
@@ -94,10 +70,7 @@ const cardsItems: CardItem[] = [
     backgroundImage:
       "https://c1.neweggimages.com/WebResource/Themes/Nest/images/bgs/Combo_bg.png",
     images: [
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/19-118-462-01.jpg",
-        title: "Processors -Desktop",
-      },
+  
       {
         src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
         title: "Desktop Memory",
@@ -106,10 +79,7 @@ const cardsItems: CardItem[] = [
         src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-145-477-01.jpg",
         title: " Intel Motherb...",
       },
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/35-181-337-01.png",
-        title: "Water/Liquid",
-      },
+
     ],
     text: "INTEL 14th Gen COMBO",
     title: "SAVINGS $110.00",
@@ -126,29 +96,40 @@ const Card: React.FC<CardItem> = ({
   discountPrice,
   originalPrice,
 }) => {
-  //hover image
   const [hoveredImage, setHoveredImage] = useState<{
     src: string;
     title: string;
   } | null>(null);
 
+  const [isPopupHovered, setPopupHovered] = useState(false);
+
   const backgroundImageStyle = {
     backgroundImage: `url(${backgroundImage})`,
   };
 
-  //setting images to hoverablecards
   const handleImageHover = (image: { src: string; title: string }) => {
     setHoveredImage(image);
   };
 
   const handleImageLeave = () => {
-    setHoveredImage(null);
+    if (!isPopupHovered) {
+      setHoveredImage(null);
+    }
+  };
+
+  const handlePopupEnter = () => {
+    setPopupHovered(true);
+  };
+
+  const handlePopupLeave = () => {
+    setPopupHovered(false);
+    setHoveredImage(null); // Close popup when leaving the popup area
   };
 
   return (
     <div className="cardcont w-full items-center justify-between gap-3" onMouseLeave={handleImageLeave}>
       <div
-        className="card flex flex-col shadow-md w-[23vw] h-[210px] rounded-md bg-cover bg-center relative "
+        className="card flex flex-col shadow-md w-[23vw] h-[210px] rounded-md bg-cover bg-center relative"
         style={backgroundImageStyle}
       >
         <div className="section-title">
@@ -161,7 +142,7 @@ const Card: React.FC<CardItem> = ({
           <div className="section-right"></div>
         </div>
         <div className="flex relative ml-2 gap-1 w-[98%]">
-          <div className="personalized-combo-goods flex flex-wrap w-[80%]  gap-1">
+          <div className="personalized-combo-goods flex flex-wrap w-[80%] gap-1">
             {images.map((image, index) => (
               <div
                 className="personalized-combo-items bg-slate-100 flex items-center justify-start rounded-md w-[47%] h-[70px] ml-2"
@@ -193,8 +174,8 @@ const Card: React.FC<CardItem> = ({
       </div>
 
       {hoveredImage && (
-        <div className="hover-popup  w-[50%] ">
-          <div className="hover-popup-backdrop"></div> {/* Added backdrop */}
+        <div className="hover-popup w-[50%]" onMouseEnter={handlePopupEnter} onMouseLeave={handlePopupLeave}>
+          <div className="hover-popup-backdrop"></div>
           <div className="hover-popup-content w-[340px] h-[340px] absolute z-10 text-black">
             <Image
               src={hoveredImage.src}
@@ -213,6 +194,7 @@ const Card: React.FC<CardItem> = ({
     </div>
   );
 };
+
 
 function BottomCards() {
 
