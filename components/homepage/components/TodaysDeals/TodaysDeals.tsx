@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import "./TodaysDeal.css"
-import DealsCard from './components/DealsCard'
+import DealsCard from './components/dealsCard/DealsCard'
 
 function TodaysDeals() {
   return (
