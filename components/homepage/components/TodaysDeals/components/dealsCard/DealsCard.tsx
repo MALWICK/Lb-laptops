@@ -9,8 +9,8 @@ const cards = [
 
 const DealsCard: React.FC = () => {
     return (
-        <div className= 'grid grid-cols-3 grid-rows-3 gap-2'>
-        <div className="row-span-3 h-[40rem] w-[500px]">1</div>
+        <div className= 'grid grid-cols-3 grid-rows-3 gap-1 p-2'>
+        <div className="row-span-3 h-[46rem] w-[500px]">1</div>
         <div className="flex justify-center items-center bg-green w-[500px] h-[240px]">3</div>
         <div className="flex justify-center items-center bg-greenh-[240px] w-[500px]">4</div>
         <div className="col-start-2 row-start-2 flex justify-center items-center w-[500px] bg-green h-[240px]">5</div>
