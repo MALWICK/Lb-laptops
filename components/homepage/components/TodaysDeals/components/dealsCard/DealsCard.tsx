@@ -2,9 +2,32 @@
 import React from "react";
 import "../dealsCard/deals.css";
 
+interface DealsCard {
+    id: number;
+    Imageurl: string;
+    rating: {
+      star: number;
+      numberOfstars: number;
+    };
+    href: {
+      link: string;
+      title: string;
+    };
+    price: {
+      price: string;
+      rebate: string;
+      duration: string;
+      dueDate: string;
+      benefit: string;
+    };
+    bonusItems: string;
+    shipping: string;
+  }
+  
+
 const cards = [
   {
-    id: "1",
+    id: 1,
     Imageurl: "https://c1.neweggimages.com/WebResource/Themes/Nest/images/bgs/group-buy-bg-2h.png",
     rating:{star:4,numberOfstars:150} ,
     href: {
@@ -23,7 +46,7 @@ const cards = [
     shipping:""
   },
   {
-    id: "2",
+    id:2,
     Imageurl: "https://c1.neweggimages.com/productimage/nb300/11-353-205-V13.jpg",
     rating:{star:4,numberOfstars:150} ,
     href: {
@@ -40,7 +63,7 @@ const cards = [
    shipping:"FREE SHIPPING"
   },
   {
-    id: "3",
+    id: 3,
     Imageurl: "https://c1.neweggimages.com/productimage/nb300/32-732-182-05.png",
     rating:{star:4,numberOfstars:150} ,
     href: {
@@ -57,7 +80,7 @@ const cards = [
    shipping:""
   },
   {
-    id: "4",
+    id: 4,
     Imageurl: "https://c1.neweggimages.com/productimage/nb300/11-353-205-V13.jpg",
     rating:{star:4,numberOfstars:150} ,
     href: {
@@ -73,7 +96,7 @@ const cards = [
    shipping:"FREE SHIPPING"
   },
   {
-    id: "2",
+    id: 5,
     Imageurl: "https://c1.neweggimages.com/productimage/nb300/11-353-205-V13.jpg",
     rating: 4,
     href: {
