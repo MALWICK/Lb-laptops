@@ -115,10 +115,13 @@ interface DealsCard {
 const DealsCard: React.FC = () => {
     const firstDivCards = cards.filter((card) => card.id === 1);
     const secondDivCards = cards.filter((card) => card.id !== 1);
+    console.log(firstDivCards, "ssoisosoioisoiiso")
+
+    
     return (
         <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
             {firstDivCards.map((card) =>
-            <div className="rounded-md rond h-[450px] bg-slate-800 w-[47%]">1</div>
+            <div className="rounded-md rond bg-cover h-[450px] bg-slate-800 w-[47%]"  style={{ backgroundImage: `url(${card.imageUrl})` }}  key={card.id}>1</div>
             )}
           
           <div className="flex container w-[58%] flex-wrap gap-[8px]">
