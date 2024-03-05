@@ -14,14 +14,11 @@ export const GlobalContext = createContext<GlobalContextData>({
   updateNotificationCount: () => {},
 });
 
-export const GlobalProvider: React.FC = ({
+export const GlobalProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
-}: {
-  children: React.ReactNode;
 }) => {
   const [notificationCount, setNotificationCount] = useState(0);
   const [messages, setMessages] = useState<string[]>(Messages);
-  console.log(Messages)
 
   const updateNotificationCount = () => {
     setNotificationCount(messages.length);
