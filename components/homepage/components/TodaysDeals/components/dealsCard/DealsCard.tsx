@@ -121,7 +121,11 @@ const DealsCard: React.FC = () => {
     return (
         <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
             {firstDivCards.map((card) =>
-            <div className="rounded-md rond bg-cover h-[450px] bg-slate-800 w-[47%]"  style={{ backgroundImage: `url(${card.imageUrl})` }}  key={card.id}>1</div>
+            <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]"  >
+              <div className="container holder h-[30.4rem]"  style={{ backgroundImage: `url(${card.imageUrl})` }}  key={card.id}>
+                1
+              </div>
+              </div>
             )}
           
           <div className="flex container w-[58%] flex-wrap gap-[8px]">
