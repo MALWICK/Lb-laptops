@@ -1,18 +1,140 @@
-/* .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 2px;
-  } */
-  
- /*  .grid div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-   
-  } */
-
   .rond {
     border-radius: 8px !important;
   }
+  .fighter-compare-item-l::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130px;
+    height: 58px  ;
+    background: linear-gradient(to right, #737373, #ABABAB);
+    border-radius: 100px 20px 18px 100px;
+    transform: perspective(18px) scale(1.04, 1.14) rotateX(358deg);
+
+}
+
+.fighter-product {
+  padding: 10px 20px 10px 15px;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.fighter-brand {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  white-space: nowrap;
+}
+
+.goods-container .fighter-compare-items .goods-price.is-horizontal {
+  margin-top: 0;
+}
+
+.goods-container .fighter-compare-items .goods-price-was {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.fighter-compare-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  position: absolute;
+  right: -46px;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 2;
+  background: linear-gradient(90deg, #FFCE6E, #FFBD3E);
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 2px 4px rgba(196,111,0,.7);
+  justify-content: center;
+}
+
+.fighter-compare-item-r {
+  position: relative;
+}
+
+.fighter-compare-item-r::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 130px;
+  height: 58px  ;
+  background: linear-gradient(to right, #EC5800, #E19F57);
+  border-radius: 18px 100px 100px 20px;
+  transform: perspective(18px) scale(1.04, 1.15) rotateX(2deg);
+  transform-origin: bottom right;
+}
+
+.fighter-product {
+  padding: 10px 20px 10px 15px;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.fighter-brand {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  margin-bottom: 3px;
+  white-space: nowrap;
+}
+
+.goods-price.is-horizontal {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.goods-price-current, .goods-price-current .goods-price-value {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.fighter-compare-item-r .goods-price-current .goods-price-symbol {
+  font-size: 2em;
+    font-weight: 800;
+    margin-top: 0;
+}
+
+.fighter-compare-item-r .goods-price-current .goods-price-value strong, .is-group-box.col-h-2x .fighter-compare-item-r .goods-price-current .goods-price-value sup {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.fighter-compare-item-r .goods-price-current .goods-price-value sup {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.fighter-compare-items {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  position: relative;}
