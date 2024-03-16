@@ -181,7 +181,7 @@ function BottomCards() {
   
   
   return (
-    <div className="w-full flex items-center relative  justify-end">
+    <div className="w-full flex items-center relative p-0  justify-end">
       <div className="inner__cards w-4/5 flex items-center absolute justify-center gap-[2px]">
         {cardsItems.map((card, index) => (
           <Card
