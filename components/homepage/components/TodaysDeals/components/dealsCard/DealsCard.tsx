@@ -125,7 +125,7 @@ const DealsCard: React.FC = () => {
     <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
       {firstDivCards.map((card) =>
         <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]"  >
-          <div className="container holder h-[30.4rem] relative" style={{ backgroundImage: `url(${card.backgroundImage})` }} key={card.id}>
+          <div className="container holder  h-[30.4rem] relative" style={{ backgroundImage: `url(${card.backgroundImage})` }} key={card.id}>
             <div className="fighter-compare-items flex">
             <div className=" fighter-compare-item-l absolute left-2 top-0 mt-2 transform perspective-[18px] scale-[1.04, 1.14] rotate-x-[358deg] origin-top-left">
               <div className="fighter-product p-1 h-full relative z-10 text-white">
