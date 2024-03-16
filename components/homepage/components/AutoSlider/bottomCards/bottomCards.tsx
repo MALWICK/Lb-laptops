@@ -114,7 +114,7 @@ const Card: React.FC<CardItem> = ({
       >
         <div className="section-title">
           <div className="section-title-text font-normal text-base flex gap-2 ml-2 mt-1 mb-3">
-            <p className="font-sans">{text}</p>
+            <p  className="font-sans text-black">{text}</p>
             <strong className="text-red-600">
               <p>{title}</p>
             </strong>
@@ -137,7 +137,7 @@ const Card: React.FC<CardItem> = ({
                   width={65}
                   height={48}
                 />
-                <p>{image.title}</p>
+                <p className="text-black">{image.title}</p>
               </div>
             ))}
           </div>
@@ -146,7 +146,7 @@ const Card: React.FC<CardItem> = ({
               {" "}
               {originalPrice}
             </p>
-            <p className="flex items-center justify-between w-full">
+            <p className="flex items-center justify-between w-full text-black">
               = {discountPrice}
             </p>
           </div>
@@ -175,11 +175,11 @@ const Card: React.FC<CardItem> = ({
   );
 };
 
+interface BottomCardsProps {
+  className?: string;
+}
 
-function BottomCards() {
-
-  
-  
+const BottomCards: React.FC<BottomCardsProps> = () => {
   return (
     <div className="w-full flex items-center relative p-0  justify-end">
       <div className="inner__cards w-[84%] flex items-center absolute right-[-8px] justify-center bottom-2 gap-[6px]">
@@ -197,6 +197,6 @@ function BottomCards() {
       </div>
     </div>
   );
-}
+};
 
 export default BottomCards;
