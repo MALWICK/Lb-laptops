@@ -154,7 +154,7 @@ const Card: React.FC<CardItem> = ({
       </div>
 
       {hoveredImage && (
-        <div className="hover-popup w-[50%]" onMouseEnter={handlePopupEnter} onMouseLeave={handlePopupLeave}>
+        <div className="hover-popup z-10 w-[50%]" onMouseEnter={handlePopupEnter} onMouseLeave={handlePopupLeave}>
           <div className="hover-popup-backdrop"></div>
           <div className="hover-popup-content w-[340px] h-[340px] absolute z-10 text-black">
             <Image
@@ -182,7 +182,7 @@ function BottomCards() {
   
   return (
     <div className="w-full flex items-center relative p-0  justify-end">
-      <div className="inner__cards w-[84%] flex items-center absolute right-[-8px] justify-center gap-[6px]">
+      <div className="inner__cards w-[84%] flex items-center absolute right-[-8px] justify-center bottom-2 gap-[6px]">
         {cardsItems.map((card, index) => (
           <Card
             key={index}
