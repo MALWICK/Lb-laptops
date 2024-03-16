@@ -66,26 +66,6 @@ const cardsItems: CardItem[] = [
     discountPrice: "$950",
     originalPrice: "$15000",
   },
-  {
-    backgroundImage:
-      "https://c1.neweggimages.com/WebResource/Themes/Nest/images/bgs/Combo_bg.png",
-    images: [
-  
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
-        title: "Desktop Memory",
-      },
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-145-477-01.jpg",
-        title: " Intel Motherb...",
-      },
-
-    ],
-    text: "INTEL 14th Gen COMBO",
-    title: "SAVINGS $110.00",
-    discountPrice: "$950",
-    originalPrice: "$15000",
-  },
 ];
 
 const Card: React.FC<CardItem> = ({
@@ -127,9 +107,9 @@ const Card: React.FC<CardItem> = ({
   };
 
   return (
-    <div className="cardcont w-full items-center justify-between gap-3" onMouseLeave={handleImageLeave}>
+    <div className="cardcont w-full items-center justify-between gap-[4px]" onMouseLeave={handleImageLeave}>
       <div
-        className="card flex flex-col shadow-md w-[23vw] h-[210px] rounded-md bg-cover bg-center relative"
+        className="card flex flex-col shadow-md w-[24.8vw] h-[210px] rounded-md bg-cover bg-center relative"
         style={backgroundImageStyle}
       >
         <div className="section-title">
@@ -201,8 +181,8 @@ function BottomCards() {
   
   
   return (
-    <div className="w-full flex items-center justify-center">
-      <div className="inner__cards w-4/5 flex items-center justify-center gap-2">
+    <div className="w-full flex items-center relative justify-end">
+      <div className="inner__cards w-4/5 flex items-center absolute justify-center gap-[2px]">
         {cardsItems.map((card, index) => (
           <Card
             key={index}
