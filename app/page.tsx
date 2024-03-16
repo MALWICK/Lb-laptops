@@ -28,7 +28,7 @@ const Page: React.FC = () => {
 
   return (
     <main
-      className={`w-full bg-red-400 h-[150vh] ${
+      className={`w-full bg-red-400 h-[150vh] outline-black	 ${
         isDarkMode ? "bg-black" : "bg-white"
       }`}
     >
