@@ -28,7 +28,7 @@ const Page: React.FC = () => {
 
   return (
     <main
-      className={`w-full bg-red-400 h-[150vh] ${
+      className={`w-full bg-red-400 h-full ${
         isDarkMode ? "bg-black" : "bg-white"
       }`}
     >
@@ -43,8 +43,8 @@ const Page: React.FC = () => {
         <RightSidebar />
         <ParentContainer />
       </div>
-      <div className="main__parent w-full flex items-center justify-center flex-col" >
-        <div className="cards__container w-full flex justify-center items-center gap-5 ">
+      <div className="main__parent  w-full flex items-center justify-center flex-col" >
+        <div className="cards__container w-[95%] flex justify-space items-center gap-5 ">
           <BottomCards/>
         </div>
         <TodaysDeals />
