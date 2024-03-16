@@ -82,7 +82,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
           {BannerData.map((data) => (
             <li
               key={data.title}
-              className="hove"
+              className="hove text-black"
               onClick={() => handleLinks(data.url)}
             >
               {data.title}
