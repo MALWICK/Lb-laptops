@@ -128,10 +128,10 @@ const DealsCard: React.FC = () => {
           <div className="container holder  h-[30.4rem] relative" style={{ backgroundImage: `url(${card.backgroundImage})` }} key={card.id}>
             <div className="fighter-compare-items flex">
             <div className=" fighter-compare-item-l absolute left-2 top-0 mt-2 transform perspective-[18px] scale-[1.04, 1.14] rotate-x-[358deg] origin-top-left">
-              <div className="fighter-product p-1 h-full relative z-10 text-white">
+              <div className="fighter-product p-1 h-full relative z-10 text-black	">
                 <div className="fighter-brandtext-sm leading-5 relative -right-2 font-medium mb-1 whitespace-nowrap ">Current Price</div>
                 <div className="goods-price is-horizontal mt-0"><div className="goods-price-was text-xl leading-7 -right-2 relative">$21.99</div></div>
-                <div className="fighter-compare-circle w-[32%] h-9 rounded-full border-2 border-white box-border absolute right-[-1.8rem] top-1/2 transform -translate-y-1/2 z-10 bg-gradient-to-r from-yellow-300 to-yellow-500 text-base font-bold text-white flex items-center justify-center text-shadow-xs" >
+                <div className="fighter-compare-circle w-[32% text-black	 h-9 rounded-full border-2 border-white box-border absolute right-[-1.8rem] top-1/2 transform -translate-y-1/2 z-10 bg-gradient-to-r from-yellow-300 to-yellow-500 text-base font-bold  flex items-center justify-center text-shadow-xs" >
                   VS</div>
               </div>
             </div>
