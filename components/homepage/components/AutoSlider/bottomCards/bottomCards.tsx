@@ -107,9 +107,9 @@ const Card: React.FC<CardItem> = ({
   };
 
   return (
-    <div className="cardcont w-full items-center justify-between gap-[4px]" onMouseLeave={handleImageLeave}>
+    <div className="cardcont w-[24vw] items-center justify-between gap-[4px]" onMouseLeave={handleImageLeave}>
       <div
-        className="card flex flex-col shadow-md w-[24.8vw] h-[210px] rounded-md bg-cover bg-center relative"
+        className="card flex flex-col shadow-md w-full h-[210px] rounded-md bg-cover bg-center relative"
         style={backgroundImageStyle}
       >
         <div className="section-title">
@@ -182,7 +182,7 @@ function BottomCards() {
   
   return (
     <div className="w-full flex items-center relative p-0  justify-end">
-      <div className="inner__cards w-4/5 flex items-center absolute justify-center gap-[2px]">
+      <div className="inner__cards w-[84%] flex items-center absolute right-[-8px] justify-center gap-[6px]">
         {cardsItems.map((card, index) => (
           <Card
             key={index}
