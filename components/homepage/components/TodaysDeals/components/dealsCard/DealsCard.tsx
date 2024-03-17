@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
 import { FaStar } from 'react-icons/fa';
-import "./deals.css"
+import "./deals.css";
+import Image from "next/image";
 
 
 interface DealsCard {
@@ -60,10 +61,10 @@ const cards: DealsCard[] = [
         "DIYPC DIY-S08-G Green USB 3.0 Steel / Tempered Glass ATX Mid Tower Computer Case, 1 x 120mm Fan x Rear (Pre-Installed)",
     },
     price: {
-      price: "$38",
+      price: "$3800",
       rebatePercentage: "Save 35%",
       rebate: "$59.9",
-      benefit: "",
+      benefit: "Winter deals",
     },
     shipping: "FREE SHIPPING",
   },
@@ -140,7 +141,7 @@ const DealsCard: React.FC = () => {
           <div key={card.id} className="flex flex-row-reverse justify-center items-center rounded-md bg-cyan-50 w-[48%] h-[240px] mb-1">
             {/* Render the card content */}
             <a href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024" className="goods-img" data-quicklink="true">
-              <img src="https://c1.neweggimages.com/productimage/nb300/mh2h_90226363-0334-40ed-af12-d879319de0ff.jpg" title="LIAN LI O11 Vision White Aluminum / Steel / Tempered Glass ATX Mid Tower Computer Case ----- O11VW" alt="LIAN LI O11 Vision White Aluminum / Steel / Tempered Glass ATX Mid Tower Computer Case ----- O11VW" />
+              <img src={card.imageUrl} title="LIAN LI O11 Vision White Aluminum / Steel / Tempered Glass ATX Mid Tower Computer Case ----- O11VW" alt="LIAN LI O11 Vision White Aluminum / Steel / Tempered Glass ATX Mid Tower Computer Case ----- O11VW" />
             </a>
             <div className="goods-info">
               <div className="goods-branding has-brand-store">
@@ -148,8 +149,18 @@ const DealsCard: React.FC = () => {
                   {Array.from({ length: card.rating.star }).map((_, index) => (
                     <FaStar className="text-yellow-400" key={index} />
                   ))}
-                  <span className="goods-rating-num font-s text-gray">(29)</span>
+                  <span className="goods-rating-num font-s text-gray">({card.rating.numberOfStars})</span>
                 </a>
+                <a href={card.href.link} className="goods-title font-l" title="View Details" data-quicklink="true">{card.href.title}</a>
+                <div className="savePrice w-full flex  flex-col">
+                    <div className="saving-cont flex gap-1 ">
+                      <span className="savebtn">{card.price.rebatePercentage}</span>
+                      <span className="savebtn">{card.price.rebate}</span>
+                    </div>
+                    <div className="originalPrice w-full flex flex-col gap-2">
+                    <span className="reduction">{card.price.price}</span>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
