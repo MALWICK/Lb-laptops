@@ -181,7 +181,7 @@ interface BottomCardsProps {
 
 const BottomCards: React.FC<BottomCardsProps> = () => {
   return (
-    <div className="w-full flex items-center relative p-0  justify-end">
+    <div className="w-full z-10 flex items-center relative p-0  justify-end">
       <div className="inner__cards w-[84%] flex items-center absolute right-[-8px] justify-center bottom-2 gap-[6px]">
         {cardsItems.map((card, index) => (
           <Card
