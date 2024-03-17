@@ -240,6 +240,7 @@
   position: relative;
   display: -webkit-flex;
   display: flex;
+  flex-direction: column;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: space-between;
@@ -247,4 +248,28 @@
   box-sizing: border-box;
   width: 100%;
   min-width: 0;
+  padding: 2px;
+  gap: 4px;
+}
+
+ .goods-title {
+  display: block;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  max-width: 100%;
+  box-sizing: border-box;
+  line-height: 1.375;
+  word-wrap: break-word;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  overflow: hidden;
+  max-height: 2.8em;
+  -webkit-line-clamp: 2;
+}
+
+.goods-title:hover {
+  text-decoration: underline;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
 }
