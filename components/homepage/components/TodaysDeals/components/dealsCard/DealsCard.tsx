@@ -35,7 +35,7 @@ const cards: DealsCard[] = [
     href: {
       link: "alibaba.com",
       title:
-        "SABRENT [6-Pack 22AWG Premium 6ft USB-C to USB A 2.0 Sync and Charge Cables [Black] (CB-C6X6)",
+        "Shop Now",
     },
     price: {
       price: "$200",
@@ -47,7 +47,7 @@ const cards: DealsCard[] = [
     },
     bonusItems: "https://c1.neweggimages.com/nobgproductcompressall300/AME8S22021111NLEYE4.jpg",
     shipping: "",
-    backgroundImage: "https://c1.neweggimages.com/WebResource/Themes/Nest/images/bgs/group-buy-bg-2h.png",
+    backgroundImage: "https://i5.walmartimages.com/dfw/4ff9c6c9-53a0/k2-_6accd1e8-3c29-4ac6-b37e-319856266cf2.v1.jpg",
   },
   {
     id: 2,
@@ -125,30 +125,12 @@ const DealsCard: React.FC = () => {
     <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
       {firstDivCards.map((card) =>
         <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]"  >
-          <div className="container holder  h-[30.4rem] relative" style={{ backgroundImage: `url(${card.backgroundImage})` }} key={card.id}>
-            <div className="fighter-compare-items flex">
-            <div className=" fighter-compare-item-l absolute left-2 top-0 mt-2 transform perspective-[18px] scale-[1.04, 1.14] rotate-x-[358deg] origin-top-left">
-              <div className="fighter-product p-1 h-full relative z-10 text-black	">
-                <div className="fighter-brandtext-sm leading-5 relative -right-2 font-medium mb-1 whitespace-nowrap ">Current Price</div>
-                <div className="goods-price is-horizontal mt-0"><div className="goods-price-was text-xl leading-7 -right-2 relative">$21.99</div></div>
-                <div className="fighter-compare-circle w-[32% text-black	 h-9 rounded-full border-2 border-white box-border absolute right-[-1.8rem] top-1/2 transform -translate-y-1/2 z-10 bg-gradient-to-r from-yellow-300 to-yellow-500 text-base font-bold  flex items-center justify-center text-shadow-xs" >
-                  VS</div>
-              </div>
-            </div>
-            <div className="fighter-compare-item-r">
-            <div className="fighter-product">
-              <div className="fighter-brand">Group Buy Price</div>
-              <div className="goods-price is-horizontal">
-              <div className="goods-price-current">
-                <span className="goods-price-symbol">$</span>
-                <span className="goods-price-value"><strong>14</strong><sup>.29</sup></span></div>
-              </div>
-            </div>
-            </div>
-            
-            </div>
+          <a href={card.href.link}>
+          <div className="container holder bg-cover bg-center h-[30.4rem] relative" style={{ backgroundImage: `url(${card.backgroundImage})` }} key={card.id}>
+           <span className="text-black absolute top-5 bg-white hover:bg-slate-700 cursor-pointer focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">{card.href.title}</span>
           
           </div>
+          </a>
         </div>
       )}
 

@@ -49,7 +49,7 @@
   border: 2px solid #fff;
   box-sizing: border-box;
   position: absolute;
-  right: -46px;
+  right: -18px;
   top: 50%;
   transform: translate(0, -50%);
   z-index: 2;
@@ -70,8 +70,8 @@
 .fighter-compare-item-r::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 10px;
+  top: -0px;
   width: 130px;
   height: 58px  ;
   background: linear-gradient(to right, #EC5800, #E19F57);
