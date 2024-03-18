@@ -126,22 +126,22 @@ const DealsCard: React.FC = () => {
       {firstDivCards.map((card) =>
         <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]"  >
           <div className="container holder h-[30.4rem] relative" style={{ backgroundImage: `url(${card.backgroundImage})` }} key={card.id}>
-            <div className="fighter-compare-items flex">
-            <div className=" fighter-compare-item-l absolute left-2 top-0 mt-2 transform perspective-[18px] scale-[1.04, 1.14] rotate-x-[358deg] origin-top-left">
+            <div className="fighter-compare-items flex items-center">
+            <div className=" fighter-compare-item-l pb-[2px]  transform perspective-[18px] scale-[1.04, 1.14] rotate-x-[358deg] origin-top-left">
               <div className="fighter-product p-1 h-full relative z-10 text-white">
                 <div className="fighter-brandtext-sm leading-5 relative -right-2 font-medium mb-1 whitespace-nowrap ">Current Price</div>
-                <div className="goods-price is-horizontal mt-0"><div className="goods-price-was text-xl leading-7 -right-2 relative">$21.99</div></div>
-                <div className="fighter-compare-circle w-[32%] h-9 rounded-full border-2 border-white box-border absolute right-[-1.8rem] top-1/2 transform -translate-y-1/2 z-10 bg-gradient-to-r from-yellow-300 to-yellow-500 text-base font-bold text-white flex items-center justify-center text-shadow-xs" >
+                <div className="goods-price is-horizontal mt-0"><div className="goods-price-was text-xl leading-7 -right-2 pb-[-12px] relative">$21.99</div></div>
+                <div className="fighter-compare-circle w-[32%] h-9 rounded-full border-2 border-white box-border transform -translate-y-1/2 z-10 bg-gradient-to-r from-yellow-300 to-yellow-500 text-base font-bold text-white flex items-center justify-center text-shadow-xs" >
                   VS</div>
               </div>
             </div>
-            <div className="fighter-compare-item-r">
+            <div className="fighter-compare-item-r pb-2">
             <div className="fighter-product">
               <div className="fighter-brand">Group Buy Price</div>
               <div className="goods-price is-horizontal">
-              <div className="goods-price-current">
-                <span className="goods-price-symbol">$</span>
-                <span className="goods-price-value"><strong>14</strong><sup>.29</sup></span></div>
+              <div className="goods-price-current mt-[5px] ">
+                <span className="goods-price-symbol text-xl leading-7 -right-2 relative">$</span>
+                <span className="goods-price-value text-xl leading-7 -right-2 relative"><strong>14</strong><sup>.29</sup></span></div>
               </div>
             </div>
             </div>
