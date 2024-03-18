@@ -66,26 +66,6 @@ const cardsItems: CardItem[] = [
     discountPrice: "$950",
     originalPrice: "$15000",
   },
-  {
-    backgroundImage:
-      "https://c1.neweggimages.com/WebResource/Themes/Nest/images/bgs/Combo_bg.png",
-    images: [
-  
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-119-660-08.png",
-        title: "Desktop Memory",
-      },
-      {
-        src: "https://c1.neweggimages.com/ProductImageCompressAll300/13-145-477-01.jpg",
-        title: " Intel Motherb...",
-      },
-
-    ],
-    text: "INTEL 14th Gen COMBO",
-    title: "SAVINGS $110.00",
-    discountPrice: "$950",
-    originalPrice: "$15000",
-  },
 ];
 
 const Card: React.FC<CardItem> = ({
@@ -127,14 +107,14 @@ const Card: React.FC<CardItem> = ({
   };
 
   return (
-    <div className="cardcont w-full items-center justify-between gap-3" onMouseLeave={handleImageLeave}>
+    <div className="cardcont w-[24vw] items-center justify-between gap-[4px]" onMouseLeave={handleImageLeave}>
       <div
-        className="card flex flex-col shadow-md w-[23vw] h-[210px] rounded-md bg-cover bg-center relative"
+        className="card flex flex-col shadow-md w-full h-[210px] rounded-md bg-cover bg-center relative"
         style={backgroundImageStyle}
       >
         <div className="section-title">
           <div className="section-title-text font-normal text-base flex gap-2 ml-2 mt-1 mb-3">
-            <p className="font-sans">{text}</p>
+            <p  className="font-sans text-black">{text}</p>
             <strong className="text-red-600">
               <p>{title}</p>
             </strong>
@@ -157,7 +137,7 @@ const Card: React.FC<CardItem> = ({
                   width={65}
                   height={48}
                 />
-                <p>{image.title}</p>
+                <p className="text-black">{image.title}</p>
               </div>
             ))}
           </div>
@@ -166,7 +146,7 @@ const Card: React.FC<CardItem> = ({
               {" "}
               {originalPrice}
             </p>
-            <p className="flex items-center justify-between w-full">
+            <p className="flex items-center justify-between w-full text-black">
               = {discountPrice}
             </p>
           </div>
@@ -174,7 +154,7 @@ const Card: React.FC<CardItem> = ({
       </div>
 
       {hoveredImage && (
-        <div className="hover-popup w-[50%]" onMouseEnter={handlePopupEnter} onMouseLeave={handlePopupLeave}>
+        <div className="hover-popup z-10 w-[50%]" onMouseEnter={handlePopupEnter} onMouseLeave={handlePopupLeave}>
           <div className="hover-popup-backdrop"></div>
           <div className="hover-popup-content w-[340px] h-[340px] absolute z-10 text-black">
             <Image
@@ -195,14 +175,14 @@ const Card: React.FC<CardItem> = ({
   );
 };
 
+interface BottomCardsProps {
+  className?: string;
+}
 
-function BottomCards() {
-
-  
-  
+const BottomCards: React.FC<BottomCardsProps> = () => {
   return (
-    <div className="w-full flex items-center justify-center">
-      <div className="inner__cards w-4/5 flex items-center justify-center gap-2">
+    <div className="w-full z-10 flex items-center relative p-0  justify-end">
+      <div className="inner__cards w-[84%] flex items-center absolute right-[-8px] justify-center bottom-2 gap-[6px]">
         {cardsItems.map((card, index) => (
           <Card
             key={index}
@@ -217,6 +197,6 @@ function BottomCards() {
       </div>
     </div>
   );
-}
+};
 
 export default BottomCards;

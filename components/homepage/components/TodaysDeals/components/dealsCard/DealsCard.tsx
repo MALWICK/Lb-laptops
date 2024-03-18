@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
-import "./deals.css"
+import { FaStar } from 'react-icons/fa';
+import "./deals.css";
+import Image from "next/image";
 
 
 interface DealsCard {
@@ -35,7 +37,7 @@ const cards: DealsCard[] = [
     href: {
       link: "alibaba.com",
       title:
-        "SABRENT [6-Pack 22AWG Premium 6ft USB-C to USB A 2.0 Sync and Charge Cables [Black] (CB-C6X6)",
+        "Shop Now",
     },
     price: {
       price: "$200",
@@ -47,7 +49,7 @@ const cards: DealsCard[] = [
     },
     bonusItems: "https://c1.neweggimages.com/nobgproductcompressall300/AME8S22021111NLEYE4.jpg",
     shipping: "",
-    backgroundImage: "https://c1.neweggimages.com/WebResource/Themes/Nest/images/bgs/group-buy-bg-2h.png",
+    backgroundImage: "https://i5.walmartimages.com/dfw/4ff9c6c9-53a0/k2-_6accd1e8-3c29-4ac6-b37e-319856266cf2.v1.jpg",
   },
   {
     id: 2,
@@ -59,10 +61,10 @@ const cards: DealsCard[] = [
         "DIYPC DIY-S08-G Green USB 3.0 Steel / Tempered Glass ATX Mid Tower Computer Case, 1 x 120mm Fan x Rear (Pre-Installed)",
     },
     price: {
-      price: "$38",
+      price: "$3800",
       rebatePercentage: "Save 35%",
       rebate: "$59.9",
-      benefit: "",
+      benefit: "Winter deals",
     },
     shipping: "FREE SHIPPING",
   },
@@ -125,37 +127,42 @@ const DealsCard: React.FC = () => {
     <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
       {firstDivCards.map((card) =>
         <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]"  >
-          <div className="container holder h-[30.4rem] relative" style={{ backgroundImage: `url(${card.backgroundImage})` }} key={card.id}>
-            <div className="fighter-compare-items flex items-center">
-            <div className=" fighter-compare-item-l pb-[2px]  transform perspective-[18px] scale-[1.04, 1.14] rotate-x-[358deg] origin-top-left">
-              <div className="fighter-product p-1 h-full relative z-10 text-white">
-                <div className="fighter-brandtext-sm leading-5 relative -right-2 font-medium mb-1 whitespace-nowrap ">Current Price</div>
-                <div className="goods-price is-horizontal mt-0"><div className="goods-price-was text-xl leading-7 -right-2 pb-[-12px] relative">$21.99</div></div>
-                <div className="fighter-compare-circle w-[32%] h-9 rounded-full border-2 border-white box-border transform -translate-y-1/2 z-10 bg-gradient-to-r from-yellow-300 to-yellow-500 text-base font-bold text-white flex items-center justify-center text-shadow-xs" >
-                  VS</div>
-              </div>
+          <a href={card.href.link}>
+            <div className="container holder bg-cover bg-center h-[30.4rem] relative" style={{ backgroundImage: `url(${card.backgroundImage})` }} key={card.id}>
+              <span className="text-black absolute top-5 bg-white hover:bg-slate-700 cursor-pointer focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">{card.href.title}</span>
+
             </div>
-            <div className="fighter-compare-item-r pb-2">
-            <div className="fighter-product">
-              <div className="fighter-brand">Group Buy Price</div>
-              <div className="goods-price is-horizontal">
-              <div className="goods-price-current mt-[5px] ">
-                <span className="goods-price-symbol text-xl leading-7 -right-2 relative">$</span>
-                <span className="goods-price-value text-xl leading-7 -right-2 relative"><strong>14</strong><sup>.29</sup></span></div>
-              </div>
-            </div>
-            </div>
-            
-            </div>
-          
-          </div>
+          </a>
         </div>
       )}
 
       <div className="flex container w-[58%] flex-wrap gap-[8px]">
         {secondDivCards.map((card) => (
-          <div key={card.id} className="flex justify-center items-center rounded-md bg-slate-700 w-[48%] h-[240px] bg-orange-900">
+          <div key={card.id} className="flex flex-row-reverse justify-center items-center rounded-md bg-cyan-50 w-[48%] h-[240px] mb-1">
             {/* Render the card content */}
+            <a href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024" className="goods-img" data-quicklink="true">
+              <img src={card.imageUrl} title="LIAN LI O11 Vision White Aluminum / Steel / Tempered Glass ATX Mid Tower Computer Case ----- O11VW" alt="LIAN LI O11 Vision White Aluminum / Steel / Tempered Glass ATX Mid Tower Computer Case ----- O11VW" />
+            </a>
+            <div className="goods-info">
+              <div className="goods-branding has-brand-store">
+                <a href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024#IsFeedbackTab" className="goods-rating flex gap-1 w-full" title="Rating + 4.8">
+                  {Array.from({ length: card.rating.star }).map((_, index) => (
+                    <FaStar className="text-yellow-400" key={index} />
+                  ))}
+                  <span className="goods-rating-num font-s text-gray">({card.rating.numberOfStars})</span>
+                </a>
+                <a href={card.href.link} className="goods-title font-l" title="View Details" data-quicklink="true">{card.href.title}</a>
+                <div className="savePrice w-full flex  flex-col">
+                    <div className="saving-cont flex gap-1 ">
+                      <span className="savebtn">{card.price.rebatePercentage}</span>
+                      <span className="savebtn">{card.price.rebate}</span>
+                    </div>
+                    <div className="originalPrice w-full flex flex-col gap-2">
+                    <span className="reduction">{card.price.price}</span>
+                    </div>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
