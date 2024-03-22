@@ -48,7 +48,7 @@ const cards: DealsCard[] = [
       rebatePercentage: "",
     },
     bonusItems: "https://c1.neweggimages.com/nobgproductcompressall300/AME8S22021111NLEYE4.jpg",
-    shipping: "",
+    shipping: "20% off shipping",
     backgroundImage: "https://i5.walmartimages.com/dfw/4ff9c6c9-53a0/k2-_6accd1e8-3c29-4ac6-b37e-319856266cf2.v1.jpg",
   },
   {
@@ -82,7 +82,7 @@ const cards: DealsCard[] = [
       rebate: "$59.9",
       benefit: "$38 Off W/ Code",
     },
-    shipping: "",
+    shipping: "20% off shipping",
   },
   {
     id: 4,
@@ -129,8 +129,7 @@ const DealsCard: React.FC = () => {
         <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]"  >
           <a href={card.href.link}>
             <div className="container holder bg-cover bg-center h-[30.4rem] relative" style={{ backgroundImage: `url(${card.backgroundImage})` }} key={card.id}>
-              <span className="text-black absolute top-5 bg-white hover:bg-slate-700 cursor-pointer focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">{card.href.title}</span>
-
+            <span className="text-black absolute top-5 bg-white hover:bg-slate-700 hover:text-white cursor-pointer focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 hover:bg-orange-500 focus:outline-none dark:focus:ring-blue-800">{card.href.title}</span>
             </div>
           </a>
         </div>
@@ -159,6 +158,7 @@ const DealsCard: React.FC = () => {
                     </div>
                     <div className="originalPrice w-full flex flex-col gap-2">
                     <span className="reduction">{card.price.price}</span>
+                    <span className="flex  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.5rem] w-auto items-center justify-center text-white	">{card.shipping}</span>
                     </div>
                 </div>
               </div>
