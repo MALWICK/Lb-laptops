@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import "./deals.css";
 import Image from "next/image";
@@ -27,6 +27,7 @@ interface DealsCard {
   bonusItems?: string;
   shipping?: string;
   backgroundImage?: string;
+  hoverImageUrl?:object;
 }
 
 const cards: DealsCard[] = [
@@ -67,6 +68,24 @@ const cards: DealsCard[] = [
       benefit: "Winter deals",
     },
     shipping: "FREE SHIPPING",
+    hoverImageUrl: {
+      image1: {
+        imageUrl: 'path/to/hover-image-2-1.jpg',
+        alt: 'Hover Image 2-1 Alt Text',
+      },
+      image2: {
+        imageUrl: 'path/to/hover-image-2-2.jpg',
+        alt: 'Hover Image 2-2 Alt Text',
+      },
+      image3: {
+        imageUrl: 'path/to/hover-image-2-3.jpg',
+        alt: 'Hover Image 2-3 Alt Text',
+      },
+      image4: {
+        imageUrl: 'path/to/hover-image-2-4.jpg',
+        alt: 'Hover Image 2-4 Alt Text',
+      },
+    },
   },
   {
     id: 3,
@@ -122,6 +141,16 @@ const DealsCard: React.FC = () => {
   const secondDivCards = cards.filter((card) => card.id !== 1);
   console.log(firstDivCards, "ssoisosoioisoiiso")
 
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
 
   return (
     <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
@@ -138,27 +167,38 @@ const DealsCard: React.FC = () => {
       <div className="flex container w-[58%] flex-wrap gap-[8px]">
         {secondDivCards.map((card) => (
           <div key={card.id} className="flex flex-row-reverse justify-center items-center rounded-md bg-cyan-50 w-[48%] h-[240px] mb-1">
-            {/* Render the card content */}
-            <a href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024" className="goods-img" data-quicklink="true">
-              <img src={card.imageUrl} title="LIAN LI O11 Vision White Aluminum / Steel / Tempered Glass ATX Mid Tower Computer Case ----- O11VW" alt="LIAN LI O11 Vision White Aluminum / Steel / Tempered Glass ATX Mid Tower Computer Case ----- O11VW" />
-            </a>
+          
+            <a
+            href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024"
+            className="goods-img"
+            data-quicklink="true"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img
+              src={hovered ? card.hoverImageUrl.imageUrl : card.imageUrl}
+              className="object-contain h-[18.5vh] w-[14.9vw] overflow-hidden"
+              title={card.title}
+              alt={card.alt}
+            />
+          </a>
             <div className="goods-info">
-              <div className="goods-branding has-brand-store">
-                <a href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024#IsFeedbackTab" className="goods-rating flex gap-1 w-full" title="Rating + 4.8">
+              <div className="goods-branding w-[50%] has-brand-store">
+                <a href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024#IsFeedbackTab" className="goods-rating flex items-center gap-2 w-full" title="Rating + 4.8">
                   {Array.from({ length: card.rating.star }).map((_, index) => (
                     <FaStar className="text-yellow-400" key={index} />
                   ))}
-                  <span className="goods-rating-num font-s text-gray">({card.rating.numberOfStars})</span>
+                  <span className="goods-rating-num font-s text-gray">({card.rating.numberOfStars})</span>8
                 </a>
                 <a href={card.href.link} className="goods-title font-l" title="View Details" data-quicklink="true">{card.href.title}</a>
                 <div className="savePrice w-full flex  flex-col">
-                    <div className="saving-cont flex gap-1 ">
+                    <div className="saving-cont flex items-center gap-2 leading-3	">
                       <span className="savebtn">{card.price.rebatePercentage}</span>
-                      <span className="savebtn bg-orange-950 text-white">{card.price.rebate}</span>
+                      <span className="savebtn bg-orange-950 p-2 rounded-lg text-white">{card.price.rebate}</span>
                     </div>
-                    <div className="originalPrice w-full flex flex-col gap-2">
+                    <div className="originalPrice w-full flex flex-col gap-2 leading-3">
                     <span className="reduction">{card.price.price}</span>
-                    <span className="flex  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.5rem] w-auto items-center justify-center text-white	">{card.shipping}</span>
+                    <span className="flex  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.4rem] w-[8vw] items-center justify-center text-white	">{card.shipping}</span>
                     </div>
                 </div>
               </div>
