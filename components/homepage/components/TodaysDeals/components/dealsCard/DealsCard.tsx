@@ -154,7 +154,7 @@ const DealsCard: React.FC = () => {
                 <div className="savePrice w-full flex  flex-col">
                     <div className="saving-cont flex gap-1 ">
                       <span className="savebtn">{card.price.rebatePercentage}</span>
-                      <span className="savebtn">{card.price.rebate}</span>
+                      <span className="savebtn bg-orange-950 text-white">{card.price.rebate}</span>
                     </div>
                     <div className="originalPrice w-full flex flex-col gap-2">
                     <span className="reduction">{card.price.price}</span>
