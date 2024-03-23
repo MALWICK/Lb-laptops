@@ -26,37 +26,14 @@ interface DealsCard {
   shipping?: string;
   backgroundImage?: string;
   hoverImageUrl: {
-    imageUrl: string;
+    imageUrl: string[];
     alt: string;
   }[];
   alt?: string;
 }
 
 const cards: DealsCard[] = [
-  {
-    id: 1,
-    imageUrl:
-      " https://c1.neweggimages.com/nobgproductcompressall300/ACCUS210811ieahq.jpg",
-    rating: { star: 4, numberOfStars: 150 },
-    href: {
-      link: "alibaba.com",
-      title: "Shop Now",
-    },
-    price: {
-      price: "$200",
-      rebate: "$150",
-      duration: "9hr",
-      dueDate: "2017-march",
-      benefit: "",
-      rebatePercentage: "",
-    },
-    bonusItems:
-      "https://c1.neweggimages.com/nobgproductcompressall300/AME8S22021111NLEYE4.jpg",
-    shipping: "20% off shipping",
-    backgroundImage:
-      "https://i5.walmartimages.com/dfw/4ff9c6c9-53a0/k2-_6accd1e8-3c29-4ac6-b37e-319856266cf2.v1.jpg",
-    hoverImageUrl: [],
-  },
+
   {
     id: 2,
     imageUrl:
@@ -76,25 +53,11 @@ const cards: DealsCard[] = [
     shipping: "FREE SHIPPING",
     hoverImageUrl: [
       {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/11-353-205-V13.jpg",
+        imageUrl:[  "https://c1.neweggimages.com/productimage/nb300/11-353-205-V13.jpg", "https://c1.neweggimages.com/productimage/nb300/19-113-793-03.png","https://c1.neweggimages.com/productimage/nb300/A6PFS2304240F0CRD7D.jpg", "https://c1.neweggimages.com/nobgproductcompressall300/20-215-329-V01.jpg",],
+        
         alt: "Hover Image 2-1 Alt Text",
       },
-      {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/19-113-793-03.png",
-        alt: "Hover Image 2-2 Alt Text",
-      },
-      {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/A6PFS2304240F0CRD7D.jpg",
-        alt: "Hover Image 2-3 Alt Text",
-      },
-      {
-        imageUrl:
-          "https://c1.neweggimages.com/nobgproductcompressall300/20-215-329-V01.jpg",
-        alt: "Hover Image 2-4 Alt Text",
-      },
+     
     ],
     alt: "jane",
   },
@@ -115,8 +78,8 @@ const cards: DealsCard[] = [
     shipping: "20% off shipping",
     hoverImageUrl: [
       {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/32-732-182-05.png",
+        imageUrl:[ "https://c1.neweggimages.com/productimage/nb300/32-732-182-05.png",],
+         
         alt: "Hover Image 2-1 Alt Text",
       },
     ],
@@ -137,8 +100,8 @@ const cards: DealsCard[] = [
     shipping: "FREE SHIPPING",
     hoverImageUrl: [
       {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/32-732-182-05.png",
+        imageUrl:[     "https://c1.neweggimages.com/productimage/nb300/32-732-182-05.png",],
+     
         alt: "Hover Image 2-1 Alt Text",
       },
     ],
@@ -161,8 +124,8 @@ const cards: DealsCard[] = [
     shipping: "FREE SHIPPING",
     hoverImageUrl: [
       {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/32-732-182-05.png",
+        imageUrl:[ "https://c1.neweggimages.com/productimage/nb300/32-732-182-05.png",],
+    
         alt: "Hover Image 2-1 Alt Text",
       },
     ],
@@ -174,15 +137,12 @@ const DealsCard: React.FC = () => {
   const secondDivCards = cards.filter((card) => card.id !== 1);
   console.log(firstDivCards, "ssoisosoioisoiiso");
 
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [hoveredCardId, setHoveredCardId] = useState<number | null>(null);
 
-  const handleMouseOver = (cardId: number) => {
-    setHoveredCard(cardId);
+  const handleCardHover = (cardId: number | null) => {
+    setHoveredCardId(cardId);
   };
-
-  const handleMouseOut = () => {
-    setHoveredCard(null);
-  };
+ 
 
   return (
     <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
@@ -190,21 +150,31 @@ const DealsCard: React.FC = () => {
 
       <div className="flex container w-[58%] flex-wrap gap-[8px]">
         {secondDivCards.map((card) => (
+          console.log(card.hoverImageUrl,"ssssssssssssssssssssssssssß"),
           <div
             key={card.id}
             className="flex flex-row-reverse justify-center items-center rounded-md bg-cyan-50 w-[48%] h-[240px] mb-1"
-            onMouseOver={() => handleMouseOver(card.id)}
-            onMouseOut={handleMouseOut}
+            onMouseEnter={() => handleCardHover(card.id)}
+            onMouseLeave={() => handleCardHover(null)}
           >
-            <a
+           <a
               href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024"
               className="goods-img"
               data-quicklink="true"
             >
-             <img
-                src={hoveredCard === card.id ? card.hoverImageUrl[0]?.imageUrl : card.imageUrl}
-                alt={card.hoverImageUrl[0]?.alt || card.alt}
-              />
+              {hoveredCardId === card.id ? (
+                <img
+                  src={card.hoverImageUrl[0].imageUrl[0]}
+                  alt={card.hoverImageUrl[0].alt}
+                  className="hover-image"
+                />
+              ) : (
+                <img
+                  src={card.imageUrl}
+                  alt={card.alt}
+                  className="default-image"
+                />
+              )}
             </a>
             <div className="goods-info">
               <div className="goods-branding w-[50%] has-brand-store">
