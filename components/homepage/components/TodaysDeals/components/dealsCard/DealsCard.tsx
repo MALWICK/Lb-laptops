@@ -233,11 +233,11 @@ const DealsCard: React.FC = () => {
           >
             <a
               href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024"
-              className="goods-img"
+              className="goods-img bg-red-700 w-[45%]"
               data-quicklink="true"
             >
               <img
-               className="object-contain scale-90 w-[200px] h-[200px]"
+               className="object-contain scale-90 w-[195px] h-[205px]"
                src={
                            isHovered && currentImageIndexes[index] !== undefined
                                ? card.hoverImageUrl[currentImageIndexes[index]]
@@ -246,8 +246,8 @@ const DealsCard: React.FC = () => {
                              alt="Hover Image"
               />
             </a>
-            <div className="goods-info">
-              <div className="goods-branding w-[50%] has-brand-store">
+            <div className="goods-info w-[55%]">
+              <div className="goods-branding w-[100%] has-brand-store">
                 <a
                   href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024#IsFeedbackTab"
                   className="goods-rating flex items-center gap-2 w-full"
@@ -279,7 +279,7 @@ const DealsCard: React.FC = () => {
                   </div>
                   <div className="originalPrice w-full flex flex-col gap-2 leading-3">
                     <span className="reduction">{card.price.price}</span>
-                    <span className="flex  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.4rem] w-[8vw] items-center justify-center text-white	">
+                    <span className="flex  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.6rem] w-[9.4vw] items-center justify-center text-white	">
                       {card.shipping}
                     </span>
                   </div>
