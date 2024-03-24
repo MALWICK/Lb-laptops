@@ -163,7 +163,7 @@ const DealsCard: React.FC = () => {
         currentIndexes[cardIndex] = (currentIndexes[cardIndex] + 1) % cards[cardIndex].hoverImageUrl.length;
         return currentIndexes;
       });
-    }, 2000);
+    }, 1000);
     setIntervalIds((prevIds) => ({ ...prevIds, [cardIndex]: id }));
   };
 
@@ -237,7 +237,7 @@ const DealsCard: React.FC = () => {
               data-quicklink="true"
             >
               <img
-               
+               className="object-contain scale-90 w-[200px] h-[200px]"
                src={
                            isHovered && currentImageIndexes[index] !== undefined
                                ? card.hoverImageUrl[currentImageIndexes[index]]
