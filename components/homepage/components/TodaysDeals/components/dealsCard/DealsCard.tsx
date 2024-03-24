@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import "./deals.css";
 
@@ -25,185 +25,225 @@ interface DealsCard {
   bonusItems?: string;
   shipping?: string;
   backgroundImage?: string;
-  hoverImageUrl: {
-    imageUrl: string;
-    alt: string;
-  }[];
+  hoverImageUrl: string[];
   alt?: string;
 }
 
-const cards: DealsCard[] = [
-  {
-    id: 1,
-    imageUrl:
-      " https://c1.neweggimages.com/nobgproductcompressall300/ACCUS210811ieahq.jpg",
-    rating: { star: 4, numberOfStars: 150 },
-    href: {
-      link: "alibaba.com",
-      title: "Shop Now",
-    },
-    price: {
-      price: "$200",
-      rebate: "$150",
-      duration: "9hr",
-      dueDate: "2017-march",
-      benefit: "",
-      rebatePercentage: "",
-    },
-    bonusItems:
-      "https://c1.neweggimages.com/nobgproductcompressall300/AME8S22021111NLEYE4.jpg",
-    shipping: "20% off shipping",
-    backgroundImage:
-      "https://i5.walmartimages.com/dfw/4ff9c6c9-53a0/k2-_6accd1e8-3c29-4ac6-b37e-319856266cf2.v1.jpg",
-    hoverImageUrl: [],
-  },
-  {
-    id: 2,
-    imageUrl:
-      "https://c1.neweggimages.com/productimage/nb300/11-353-205-V13.jpg",
-    rating: { star: 4, numberOfStars: 150 },
-    href: {
-      link: "alibaba.com",
-      title:
-        "DIYPC DIY-S08-G Green USB 3.0 Steel / Tempered Glass ATX Mid Tower Computer Case, 1 x 120mm Fan x Rear (Pre-Installed)",
-    },
-    price: {
-      price: "$3800",
-      rebatePercentage: "Save 35%",
-      rebate: "$59.9",
-      benefit: "Winter deals",
-    },
-    shipping: "FREE SHIPPING",
-    hoverImageUrl: [
-      {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/11-353-205-V13.jpg",
-        alt: "Hover Image 2-1 Alt Text",
-      },
-      {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/19-113-793-03.png",
-        alt: "Hover Image 2-2 Alt Text",
-      },
-      {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/A6PFS2304240F0CRD7D.jpg",
-        alt: "Hover Image 2-3 Alt Text",
-      },
-      {
-        imageUrl:
-          "https://c1.neweggimages.com/nobgproductcompressall300/20-215-329-V01.jpg",
-        alt: "Hover Image 2-4 Alt Text",
-      },
-    ],
-    alt: "jane",
-  },
-  {
-    id: 3,
-    imageUrl: "",
-    rating: { star: 4, numberOfStars: 150 },
-    href: {
-      link: "alibaba.com",
-      title: "H&R Block 2023 Premium Tax Software - PC/Mac",
-    },
-    price: {
-      price: "$380",
-      rebatePercentage: "Save 15%",
-      rebate: "$59.9",
-      benefit: "$38 Off W/ Code",
-    },
-    shipping: "20% off shipping",
-    hoverImageUrl: [
-      {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/32-732-182-05.png",
-        alt: "Hover Image 2-1 Alt Text",
-      },
-    ],
-  },
-  {
-    id: 4,
-    imageUrl: "",
-    rating: { star: 4, numberOfStars: 150 },
-    href: {
-      link: "alibaba.com",
-      title: "Xbox 3 Month Ultimate Game Pass - US Registered Account",
-    },
-    price: {
-      price: "$38",
-      rebatePercentage: "Save 35%",
-      rebate: "$59.9",
-    },
-    shipping: "FREE SHIPPING",
-    hoverImageUrl: [
-      {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/32-732-182-05.png",
-        alt: "Hover Image 2-1 Alt Text",
-      },
-    ],
-  },
-  {
-    id: 5,
-    imageUrl:
-      "https://c1.neweggimages.com/productimage/nb300/11-353-205-V13.jpg",
-    rating: { star: 4, numberOfStars: 150 },
-    href: {
-      link: "alibaba.com",
-      title:
-        "DIYPC DIY-S08-G Green USB 3.0 Steel / Tempered Glass ATX Mid Tower Computer Case, 1 x 120mm Fan x Rear (Pre-Installed)",
-    },
-    price: {
-      price: "$38",
-      rebatePercentage: "Save 35%",
-      rebate: "$59.9",
-    },
-    shipping: "FREE SHIPPING",
-    hoverImageUrl: [
-      {
-        imageUrl:
-          "https://c1.neweggimages.com/productimage/nb300/32-732-182-05.png",
-        alt: "Hover Image 2-1 Alt Text",
-      },
-    ],
-  },
-];
+
 
 const DealsCard: React.FC = () => {
+
+  const cards: DealsCard[] = [
+    {
+      id: 1,
+      imageUrl:
+        " https://c1.neweggimages.com/nobgproductcompressall300/ACCUS210811ieahq.jpg",
+      rating: { star: 4, numberOfStars: 150 },
+      href: {
+        link: "alibaba.com",
+        title: "Shop Now",
+      },
+      price: {
+        price: "$200",
+        rebate: "$150",
+        duration: "9hr",
+        dueDate: "2017-march",
+        benefit: "",
+        rebatePercentage: "",
+      },
+      bonusItems:
+        "https://c1.neweggimages.com/nobgproductcompressall300/AME8S22021111NLEYE4.jpg",
+      shipping: "20% off shipping",
+      backgroundImage:
+        "https://i5.walmartimages.com/dfw/4ff9c6c9-53a0/k2-_6accd1e8-3c29-4ac6-b37e-319856266cf2.v1.jpg",
+      hoverImageUrl: [],
+    },
+    {
+      id: 2,
+      imageUrl:
+        "https://c1.neweggimages.com/productimage/nb300/11-353-205-V13.jpg",
+      rating: { star: 4, numberOfStars: 150 },
+      href: {
+        link: "alibaba.com",
+        title:
+          "DIYPC DIY-S08-G Green USB 3.0 Steel / Tempered Glass ATX Mid Tower Computer Case, 1 x 120mm Fan x Rear (Pre-Installed)",
+      },
+      price: {
+        price: "$3800",
+        rebatePercentage: "Save 35%",
+        rebate: "$59.9",
+        benefit: "Winter deals",
+      },
+      shipping: "FREE SHIPPING",
+      hoverImageUrl: [
+                "https://c1.neweggimages.com/nobgproductcompressall300/20-215-329-V01.jpg",
+                "https://c1.neweggimages.com/nobgproductcompressall300/20-215-329-V02.jpg",
+                "https://c1.neweggimages.com/nobgproductcompressall300/20-215-329-V03.jpg",
+              ],
+      alt: "jane",
+    },
+  {
+      id: 3,
+      imageUrl: "",
+      rating: { star: 4, numberOfStars: 150 },
+      href: {
+        link: "alibaba.com",
+        title: "H&R Block 2023 Premium Tax Software - PC/Mac",
+      },
+      price: {
+        price: "$380",
+        rebatePercentage: "Save 15%",
+        rebate: "$59.9",
+        benefit: "$38 Off W/ Code",
+      },
+      shipping: "20% off shipping",
+      hoverImageUrl: [
+                "https://c1.neweggimages.com/productimage/nb300/19-113-793-03.png",
+                "https://c1.neweggimages.com/productimage/nb300/19-113-793-04.png",
+                "https://c1.neweggimages.com/productimage/nb300/19-113-793-05.png",
+              ],
+    },
+    {
+      id: 4,
+      imageUrl: "",
+      rating: { star: 4, numberOfStars: 150 },
+      href: {
+        link: "alibaba.com",
+        title: "Xbox 3 Month Ultimate Game Pass - US Registered Account",
+      },
+      price: {
+        price: "$38",
+        rebatePercentage: "Save 35%",
+        rebate: "$59.9",
+      },
+      shipping: "FREE SHIPPING",
+      hoverImageUrl: [
+                "https://c1.neweggimages.com/productimage/nb300/A6PFS2304240F0CRD7D.jpg",
+                "https://c1.neweggimages.com/productimage/nb300/A6PFS2304240F0CRD7D-1.jpg",
+                "https://c1.neweggimages.com/productimage/nb300/A6PFS2304240F0CRD7D-2.jpg",
+              ],
+    },
+    {
+      id: 5,
+      imageUrl:
+        "https://c1.neweggimages.com/productimage/nb300/11-353-205-V13.jpg",
+      rating: { star: 4, numberOfStars: 150 },
+      href: {
+        link: "alibaba.com",
+        title:
+          "DIYPC DIY-S08-G Green USB 3.0 Steel / Tempered Glass ATX Mid Tower Computer Case, 1 x 120mm Fan x Rear (Pre-Installed)",
+      },
+      price: {
+        price: "$38",
+        rebatePercentage: "Save 35%",
+        rebate: "$59.9",
+      },
+      shipping: "FREE SHIPPING",
+      hoverImageUrl: [
+                "https://c1.neweggimages.com/nobgproductcompressall300/20-215-329-V01.jpg",
+                "https://c1.neweggimages.com/nobgproductcompressall300/20-215-329-V02.jpg",
+                "https://c1.neweggimages.com/nobgproductcompressall300/20-215-329-V03.jpg",
+              ],
+    },
+  ];
   const firstDivCards = cards.filter((card) => card.id === 1);
   const secondDivCards = cards.filter((card) => card.id !== 1);
+
+  const [currentImageIndexes, setCurrentImageIndexes] = useState<Record<number, number>>({});
+  const [isHovered, setIsHovered] = useState(false);
+  const [intervalIds, setIntervalIds] = useState<Record<number, NodeJS.Timeout>>({});
   console.log(firstDivCards, "ssoisosoioisoiiso");
 
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  const handleMouseOver = (cardId: number) => {
-    setHoveredCard(cardId);
+
+  const startRotation = (cardIndex: number) => {
+    const id = setInterval(() => {
+      setCurrentImageIndexes((prevIndexes) => {
+        const currentIndexes = { ...prevIndexes };
+        currentIndexes[cardIndex] = (currentIndexes[cardIndex] + 1) % cards[cardIndex].hoverImageUrl.length;
+        return currentIndexes;
+      });
+    }, 2000);
+    setIntervalIds((prevIds) => ({ ...prevIds, [cardIndex]: id }));
   };
 
-  const handleMouseOut = () => {
-    setHoveredCard(null);
+  const stopRotation = (cardIndex: number) => {
+    clearInterval(intervalIds[cardIndex]);
+    setIntervalIds((prevIds) => {
+      const updatedIds = { ...prevIds };
+      delete updatedIds[cardIndex];
+      return updatedIds;
+    });
   };
+
+  const handleMouseEnter = (cardIndex: number) => {
+    setIsHovered(true);
+    setCurrentImageIndexes((prevIndexes) => ({
+      ...prevIndexes,
+      [cardIndex]: prevIndexes[cardIndex] || 0,
+    }));
+    startRotation(cardIndex);
+  };
+
+  const handleMouseLeave = (cardIndex: number) => {
+    setIsHovered(false);
+    setCurrentImageIndexes((prevIndexes) => {
+      const currentIndexes = { ...prevIndexes };
+      delete currentIndexes[cardIndex];
+      return currentIndexes;
+    });
+    stopRotation(cardIndex);
+  };
+
+  useEffect(() => {
+    return () => {
+      Object.keys(intervalIds).forEach((cardIndex) => {
+        stopRotation(Number(cardIndex));
+      });
+    };
+  }, [intervalIds]);
+
+ 
 
   return (
     <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
-    
+      {firstDivCards.map((card) => (
+        <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]">
+          <a href={card.href.link}>
+            <div
+              className="container holder bg-cover bg-center h-[30.4rem] relative"
+              style={{ backgroundImage: `url(${card.backgroundImage})` }}
+              key={card.id}
+            >
+              <span className="text-black absolute top-5 bg-white hover:bg-slate-700 cursor-pointer focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                {card.href.title}
+              </span>
+            </div>
+          </a>
+        </div>
+      ))}
 
       <div className="flex container w-[58%] flex-wrap gap-[8px]">
-        {secondDivCards.map((card) => (
+        {secondDivCards.map((card, index) => (
           <div
-            key={card.id}
+            key={index}
             className="flex flex-row-reverse justify-center items-center rounded-md bg-cyan-50 w-[48%] h-[240px] mb-1"
-            onMouseOver={() => handleMouseOver(card.id)}
-            onMouseOut={handleMouseOut}
+            onMouseEnter={() => handleMouseEnter(index)}
+            onMouseLeave={() => handleMouseLeave(index)}
           >
             <a
               href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024"
               className="goods-img"
               data-quicklink="true"
             >
-             <img
-                src={hoveredCard === card.id ? card.hoverImageUrl[0]?.imageUrl : card.imageUrl}
-                alt={card.hoverImageUrl[0]?.alt || card.alt}
+              <img
+               
+               src={
+                           isHovered && currentImageIndexes[index] !== undefined
+                               ? card.hoverImageUrl[currentImageIndexes[index]]
+                                 : card.hoverImageUrl[0]
+                           }
+                             alt="Hover Image"
               />
             </a>
             <div className="goods-info">
