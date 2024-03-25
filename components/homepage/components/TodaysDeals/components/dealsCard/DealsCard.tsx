@@ -238,11 +238,20 @@ const DealsCard: React.FC = () => {
     });
   };
 
+  // const handleMouseEnter = (cardIndex: number) => {
+  //   setIsHovered(true);
+  //   setCurrentImageIndexes((prevIndexes) => ({
+  //     ...prevIndexes,
+  //     [cardIndex]: cardIndex === 0 ? 1 : (prevIndexes[cardIndex] !== undefined ? prevIndexes[cardIndex] : 0),
+  //   }));
+  //   startRotation(cardIndex);
+  // };
+
   const handleMouseEnter = (cardIndex: number) => {
     setIsHovered(true);
     setCurrentImageIndexes((prevIndexes) => ({
       ...prevIndexes,
-      [cardIndex]: cardIndex === 0 ? 1 : (prevIndexes[cardIndex] !== undefined ? prevIndexes[cardIndex] : 0),
+      [cardIndex]: 1,
     }));
     startRotation(cardIndex);
   };
@@ -255,7 +264,7 @@ const DealsCard: React.FC = () => {
       delete currentIndexes[cardIndex];
       return currentIndexes;
     });
-    stopRotation(cardIndex); // Call stopRotation function here
+    stopRotation(cardIndex); 
   };
 
   useEffect(() => {
