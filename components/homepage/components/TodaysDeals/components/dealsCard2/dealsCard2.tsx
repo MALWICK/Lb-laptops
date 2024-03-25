@@ -291,7 +291,7 @@ const dealsCard2: React.FC = () => {
               data-quicklink="true"
             >
               <img
-               className="object-contain scale-90 w-[180px] overflow-hidden	 absolute -top-16 z-10 h-[180px]"
+               className="object-contain scale-90 w-[180px] overflow-hidden	 absolute -top-12 z-10 h-[180px]"
                src={
                 isHovered && currentImageIndexes[index] !== undefined && card.hoverImageUrl[currentImageIndexes[index]]
                   ? card.hoverImageUrl[currentImageIndexes[index]].value
