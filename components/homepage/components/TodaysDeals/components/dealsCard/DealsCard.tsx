@@ -238,14 +238,7 @@ const DealsCard: React.FC = () => {
     });
   };
 
-  // const handleMouseEnter = (cardIndex: number) => {
-  //   setIsHovered(true);
-  //   setCurrentImageIndexes((prevIndexes) => ({
-  //     ...prevIndexes,
-  //     [cardIndex]: cardIndex === 0 ? 1 : (prevIndexes[cardIndex] !== undefined ? prevIndexes[cardIndex] : 0),
-  //   }));
-  //   startRotation(cardIndex);
-  // };
+
 
   const handleMouseEnter = (cardIndex: number) => {
     setIsHovered(true);
