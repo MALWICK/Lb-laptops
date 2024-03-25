@@ -2,6 +2,7 @@
 import React from 'react'
 import "./TodaysDeal.css"
 import DealsCard from './components/dealsCard/DealsCard'
+import DealsCard2 from './components/dealsCard2/dealsCard2'
 
 interface TodaysDealsprop {
   className?: string;
@@ -18,6 +19,7 @@ const  TodaysDeals: React.FC<TodaysDealsprop> = () => {
             <div className="timer"> crease</div>
         </div>
         <DealsCard />
+        <DealsCard2 />
       </div>
     </div>
   )
