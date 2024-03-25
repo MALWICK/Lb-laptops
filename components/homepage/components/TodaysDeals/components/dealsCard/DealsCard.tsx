@@ -220,7 +220,7 @@ const DealsCard: React.FC = () => {
           cards[cardIndex].hoverImageUrl.length;
         return currentIndexes;
       });
-    }, 1000);
+    }, 3000);
     setIntervalIds((prevIds) => ({ ...prevIds, [cardIndex]: id }));
   };
 
