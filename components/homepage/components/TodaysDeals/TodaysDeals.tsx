@@ -20,7 +20,12 @@ const  TodaysDeals: React.FC<TodaysDealsprop> = () => {
         </div>
         <DealsCard />
         <DealsCard2 />
+        <div className=" w-full mt-4 flex items-center justify-center ">
+        <button className="w-[15vw] bg-blue-700 hover:bg-blue-900 rounded-full text-white font-medium p-2">See All Deals</button>
+           </div>
+       
       </div>
+
     </div>
   )
 }
