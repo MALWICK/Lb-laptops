@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 
+
 interface HoverImage {
   id: number;
   value: string;
@@ -286,11 +287,11 @@ const dealsCard2: React.FC = () => {
 
             <a
               href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024"
-              className=" w-[45%]"
+              className="w-full  bg-red flex items-start justify-end relative"
               data-quicklink="true"
             >
               <img
-               className="object-contain scale-90 w-[195px] h-[205px]"
+               className="object-contain scale-90 w-[180px] overflow-hidden	 absolute -top-16 z-10 h-[180px]"
                src={
                 isHovered && currentImageIndexes[index] !== undefined && card.hoverImageUrl[currentImageIndexes[index]]
                   ? card.hoverImageUrl[currentImageIndexes[index]].value
