@@ -10,4 +10,3 @@ function gridDeals() {
 }
 
 export default gridDeals
-4

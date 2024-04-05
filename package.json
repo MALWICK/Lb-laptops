@@ -15,6 +15,7 @@
     "@types/react-dom": "18.2.7",
     "antd": "^5.9.4",
     "bootstrap-icons": "^1.11.1",
+    "express": "^4.19.1",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.6.1",
     "next": "13.5.2",

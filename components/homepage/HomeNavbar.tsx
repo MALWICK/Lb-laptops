@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./HomeNavbar.css";
-import { BsList, BsX, BsSunFill } from "react-icons/bs";
+import {  BsSunFill } from "react-icons/bs";
+import { FaRegUser } from "react-icons/fa";
 import { WiMoonAltWaningCrescent2 } from "react-icons/wi";
-import {AiOutlineShoppingCart} from "react-icons/ai"
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import LogoImg from "@/assets/images/lB-logo.png";
 import Image from "next/image";
 import SearchBar from "./components/searchbar";
@@ -20,17 +21,16 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
   isDarkMode,
   toggleDarkMode,
 }) => {
-  const [showMenu, setShowMenu] = useState(false);
+ 
+  const [showSearchBar, setShowSearchBar] = useState(window.innerWidth > 599);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
-  // Function to handle menu toggle
-  const handleMenuToggle = () => {
-    setShowMenu(!showMenu);
-  };
+
 
   // Function to handle window resize
   const handleResize = () => {
     if (window.innerWidth > 600) {
-      setShowMenu(false);
+     
     }
   };
 
@@ -43,26 +43,72 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setShowSearchBar(window.innerWidth > 599);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleSize = () => {
+      setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    handleSize(); // Check screen size on initial render
+
+    window.addEventListener("resize", handleSize);
+
+    return () => {
+      window.removeEventListener("resize", handleSize);
+    };
+  }, []);
+
   return (
     <div className={`bg-${isDarkMode ? "black" : "white"} `}>
       <nav className="navbar w-full">
         <div className="container w-full ">
-          <Dropdown />
+          <Dropdown  />
           <div className="logo">
             <Image src={LogoImg} alt="logo" priority={true} />
           </div>
-          <SearchBar />
+          {showSearchBar && <SearchBar />}
 
-          <div className={`menu flex justify-around items-center gap-4  ${showMenu ? "show" : ""}`}>
+          <div
+            className={`menu flex justify-around items-center gap-4  `}
+          >
             <span className="notification">
               <NotificationIcon />
             </span>
-            <div className="loginsign flex items-center justify-around gap-2 ">
-              <button className="login">Login</button>
-              <button className="signup">SignUp</button>
-            </div>
-            <a href="#"> <AiOutlineShoppingCart /> </a>
-            <a href="#">Contact</a>
+            <>
+              {isSmallScreen ? (
+                <FaRegUser className="text-2xl" />
+              ) : (
+                <a
+                  href="#"
+                  className="flex"
+                >
+                  <div className="loginsign flex items-center justify-around gap-2">
+                    <button className="login">Login</button>
+                    <button className="signup">SignUp</button>
+                  </div>
+                </a>
+              )}
+            </>
+            <a href="#">
+              <AiOutlineShoppingCart />
+            </a>
+            <a
+              href="#"
+              className="flex flex-col font-medium text-xs hover:rounded-full p-[4px] w-24 items-center justify-center hover:bg-gray-200"
+            >
+              <span>Return&</span>
+              <span>Oder</span>
+            </a>
 
             <div></div>
           </div>
@@ -72,9 +118,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
           >
             {isDarkMode ? <BsSunFill /> : <WiMoonAltWaningCrescent2 />}
           </button>
-          <div className="hamburger-menu" onClick={handleMenuToggle}>
-            {showMenu ? <BsX /> : <BsList />}
-          </div>
+       
         </div>
       </nav>
       <div className="banner flex justify-center items-center ">
@@ -82,7 +126,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
           {BannerData.map((data) => (
             <li
               key={data.title}
-              className="hove text-black"
+              className="hove"
               onClick={() => handleLinks(data.url)}
             >
               {data.title}

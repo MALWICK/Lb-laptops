@@ -3,7 +3,6 @@ import { useRef, useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-import "./deals.css";
 
 interface HoverImage {
   id: number;
@@ -36,32 +35,8 @@ interface DealsCard {
   alt?: string;
 }
 
-const DealsCard: React.FC = () => {
+const dealsCard2: React.FC = () => {
   const cards: DealsCard[] = [
- {
-      id: 1,
-      imageUrl:
-        " https://c1.neweggimages.com/nobgproductcompressall300/ACCUS210811ieahq.jpg",
-      rating: { star: 4, numberOfStars: 150 },
-      href: {
-        link: "alibaba.com",
-        title: "Shop Now",
-      },
-      price: {
-        price: "$200",
-        rebate: "$150",
-        duration: "9hr",
-        dueDate: "2017-march",
-        benefit: "",
-        rebatePercentage: "",
-      },
-      bonusItems:
-        "https://c1.neweggimages.com/nobgproductcompressall300/AME8S22021111NLEYE4.jpg",
-      shipping: "20% off shipping",
-      backgroundImage:
-        "https://i5.walmartimages.com/dfw/4ff9c6c9-53a0/k2-_6accd1e8-3c29-4ac6-b37e-319856266cf2.v1.jpg",
-      hoverImageUrl: [],
-    },
     {
       id: 2,
       imageUrl: "",
@@ -95,8 +70,8 @@ const DealsCard: React.FC = () => {
         },
       ],
     },
-  
- {
+
+    {
       id: 3,
       imageUrl: "",
       rating: { star: 4, numberOfStars: 150 },
@@ -197,9 +172,6 @@ const DealsCard: React.FC = () => {
     },
   ];
 
-  const firstDivCards = cards.filter((card) => card.id === 1);
-  const secondDivCards = cards.filter((card) => card.id !== 1);
-
   const [currentImageIndexes, setCurrentImageIndexes] = useState<
     Record<number, number>
   >({});
@@ -207,7 +179,6 @@ const DealsCard: React.FC = () => {
   const [intervalIds, setIntervalIds] = useState<
     Record<number, NodeJS.Timeout>
   >({});
-
 
   const startRotation = (cardIndex: number) => {
     console.log("startRotation - cardIndex:", cardIndex);
@@ -224,9 +195,6 @@ const DealsCard: React.FC = () => {
     setIntervalIds((prevIds) => ({ ...prevIds, [cardIndex]: id }));
   };
 
-
-
-
   const stopRotation = (cardIndex: number) => {
     console.log("stopRotation - cardIndex:", cardIndex);
 
@@ -238,8 +206,6 @@ const DealsCard: React.FC = () => {
     });
   };
 
-
-
   const handleMouseEnter = (cardIndex: number) => {
     setIsHovered(true);
     setCurrentImageIndexes((prevIndexes) => ({
@@ -249,7 +215,6 @@ const DealsCard: React.FC = () => {
     startRotation(cardIndex);
   };
 
-
   const handleMouseLeave = (cardIndex: number) => {
     setIsHovered(false);
     setCurrentImageIndexes((prevIndexes) => {
@@ -257,7 +222,7 @@ const DealsCard: React.FC = () => {
       delete currentIndexes[cardIndex];
       return currentIndexes;
     });
-    stopRotation(cardIndex); 
+    stopRotation(cardIndex);
   };
 
   useEffect(() => {
@@ -267,63 +232,16 @@ const DealsCard: React.FC = () => {
       });
     };
   }, [intervalIds]);
-
   return (
-    <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
-    {firstDivCards.map((card) => (
-        <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]">
-          <a href={card.href.link}>
-            <div
-              className="container holder bg-cover bg-center h-[30.4rem] relative"
-              style={{ backgroundImage: `url(${card.backgroundImage})` }}
-              key={card.id}
-            >
-              <span className="text-black absolute top-5 bg-white hover:bg-slate-700 cursor-pointer focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                {card.href.title}
-              </span>
-            </div>
-          </a>
-        </div>
-      ))}
-
-      <div className="flex container w-[58%] flex-wrap gap-[8px]">
-        {secondDivCards.map((card, index) => (
-          <div
-            key={index}
-            className="flex flex-row-reverse justify-center items-center rounded-md bg-cyan-50 w-[48%] h-[240px] mb-1"
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
-          >
-            <a
-              href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024"
-              className="goods-img w-[45%]"
-              data-quicklink="true"
-            >
-              <img
-               className="object-contain scale-90 w-[195px] h-[205px]"
-               src={
-                isHovered && currentImageIndexes[index] !== undefined && card.hoverImageUrl[currentImageIndexes[index]]
-                  ? card.hoverImageUrl[currentImageIndexes[index]].value
-                  : card.hoverImageUrl[0]?.value
-              }
-                             alt="Hover Image"
-              />
-
-              {/* {isHovered && currentImageIndexes[index] !== undefined ? (
-                <img
-                  src={card.hoverImageUrl[currentImageIndexes[index]].value}
-                  alt={card.alt}
-                  className="absolute h-[240px] w-[100%] object-cover rounded-md transition duration-500 opacity-100"
-                />
-              ) : (
-                <img
-                  src={card.imageUrl}
-                  alt={card.alt}
-                  className="absolute h-[240px] w-[100%] object-cover rounded-md transition duration-500 opacity-100"
-                />
-              )} */}
-            </a>
-            <div className="goods-info w-[55%]">
+    <div className="flex container h-full w-full  gap-[16px] mt-4 rounded-md">
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className="flex  flex-col rounded-md bg-neutral-100 w-[23.2vw] h-[40vh] mb-1"
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={() => handleMouseLeave(index)}
+        >
+              <div className="goods-info w-full">
               <div className="goods-branding w-[100%] has-brand-store">
                 <a
                   href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024#IsFeedbackTab"
@@ -366,11 +284,30 @@ const DealsCard: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+
+            <a
+              href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024"
+              className="w-full  bg-red flex items-start justify-end relative"
+              data-quicklink="true"
+            >
+              <img
+               className="object-contain scale-90 w-[180px] overflow-hidden	 absolute -top-12 z-10 h-[180px]"
+               src={
+                isHovered && currentImageIndexes[index] !== undefined && card.hoverImageUrl[currentImageIndexes[index]]
+                  ? card.hoverImageUrl[currentImageIndexes[index]].value
+                  : card.hoverImageUrl[0]?.value
+              }
+                             alt="Hover Image"
+              />
+
+             
+            </a>
+         
+         
+        </div>
+      ))}
     </div>
   );
 };
 
-export default DealsCard;
+export default dealsCard2;

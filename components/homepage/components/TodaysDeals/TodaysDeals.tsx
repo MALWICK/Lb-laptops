@@ -2,6 +2,7 @@
 import React from 'react'
 import "./TodaysDeal.css"
 import DealsCard from './components/dealsCard/DealsCard'
+import DealsCard2 from './components/dealsCard2/dealsCard2'
 
 interface TodaysDealsprop {
   className?: string;
@@ -18,7 +19,13 @@ const  TodaysDeals: React.FC<TodaysDealsprop> = () => {
             <div className="timer"> crease</div>
         </div>
         <DealsCard />
+        <DealsCard2 />
+        <div className=" w-full mt-4 flex items-center justify-center ">
+        <button className="w-[15vw] bg-blue-700 hover:bg-blue-900 rounded-full text-white font-medium p-2">See All Deals</button>
+           </div>
+       
       </div>
+
     </div>
   )
 }

@@ -1,6 +1,7 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  
 }
 
 .dropdown-toggle {
@@ -44,4 +45,12 @@
   width: 50%;
   height: 100%;
   background-color: #f8f8f8;
+}
+
+@media(max-width:768px){
+  .dropdown {
+ margin-right: 4px;
+    
+  }
+  
 }
