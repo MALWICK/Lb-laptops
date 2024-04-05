@@ -6,10 +6,10 @@ import "primeflex/primeflex.css";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
-import ParentContainer from "@/components/homepage/components/parentcontainer/ParentContainer";
-import RightSidebar from "@/components/homepage/components/RigthSidebar/RightSidebar";
-import BottomCards from "@/components/homepage/components/AutoSlider/bottomCards/bottomCards";
-import TodaysDeals from "@/components/homepage/components/TodaysDeals/TodaysDeals";
+// import ParentContainer from "@/components/homepage/components/parentcontainer/ParentContainer";
+// import RightSidebar from "@/components/homepage/components/RigthSidebar/RightSidebar";
+// import BottomCards from "@/components/homepage/components/AutoSlider/bottomCards/bottomCards";
+// import TodaysDeals from "@/components/homepage/components/TodaysDeals/TodaysDeals";
 
 const Page: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -41,14 +41,14 @@ const Page: React.FC = () => {
       </button>
       <HomeNavbar isDarkMode={isDarkMode} toggleDarkMode={handleToggle} />
       <div className={`slide__container w-[95%] m-auto flex ${isDarkMode ? "dark" : ""}`}>
-        <RightSidebar />
-        <ParentContainer />
+        {/* <RightSidebar /> */}
+        {/* <ParentContainer /> */}
       </div>
       <div className={`main__parent w-full flex items-center justify-center flex-col ${isDarkMode ? "dark" : ""}`}>
         <div className={`cards__container w-[95%] flex justify-space items-center gap-5 ${isDarkMode ? "dark" : ""}`}>
-          <BottomCards className={isDarkMode ? "text-white" : "text-black"} />
+          {/* <BottomCards className={isDarkMode ? "text-white" : "text-black"} /> */}
         </div>
-        <TodaysDeals className={isDarkMode ? "text-white" : "text-black"} />
+        {/* <TodaysDeals className={isDarkMode ? "text-white" : "text-black"} /> */}
       </div>
     </main>
   );
