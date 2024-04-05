@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 import React, { useEffect, useState } from "react";
 import HomeNavbar from "@/components/homepage/HomeNavbar";
 import "primeflex/primeflex.css";
@@ -29,7 +28,7 @@ const Page: React.FC = () => {
 
   return (
     <main
-      className={`w-full bg-red-400 h-full ${
+      className={`w-full bg-red-400 ${
         isDarkMode ? "bg-black" : "bg-white"
       }`}
     >
@@ -40,15 +39,15 @@ const Page: React.FC = () => {
         {isDarkMode ? "Light Mode" : "Dark Mode"}
       </button>
       <HomeNavbar isDarkMode={isDarkMode} toggleDarkMode={handleToggle} />
-      <div className={`slide__container w-[95%] m-auto flex ${isDarkMode ? "dark" : ""}`}>
-        <RightSidebar />
-        <ParentContainer />
+      <div className="slide__container w-[95%] m-auto flex   ">
+        {/* <RightSidebar /> */}
+        {/* <ParentContainer /> */}
       </div>
-      <div className={`main__parent w-full flex items-center justify-center flex-col ${isDarkMode ? "dark" : ""}`}>
-        <div className={`cards__container w-[95%] flex justify-space items-center gap-5 ${isDarkMode ? "dark" : ""}`}>
-          <BottomCards className={isDarkMode ? "text-white" : "text-black"} />
+      <div className="main__parent w-full flex items-center justify-center flex-col" >
+        <div className="cards__container w-[95%] flex justify-space items-center gap-5 ">
+          {/* <BottomCards/> */}
         </div>
-        <TodaysDeals className={isDarkMode ? "text-white" : "text-black"} />
+        {/* <TodaysDeals /> */}
       </div>
     </main>
   );
