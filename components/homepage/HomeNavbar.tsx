@@ -21,7 +21,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
   toggleDarkMode,
 }) => {
   const [showMenu, setShowMenu] = useState(false);
-  const [showSearchBar, setShowSearchBar] = useState(window.innerWidth > 768);
+  const [showSearchBar, setShowSearchBar] = useState(window.innerWidth > 599);
 
   // Function to handle menu toggle
   const handleMenuToggle = () => {
@@ -48,7 +48,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 
   useEffect(() => {
     const handleResize = () => {
-      setShowSearchBar(window.innerWidth > 768);
+      setShowSearchBar(window.innerWidth > 599);
     };
   
     window.addEventListener('resize', handleResize);
