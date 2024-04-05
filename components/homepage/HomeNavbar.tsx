@@ -11,6 +11,7 @@ import SearchBar from "./components/searchbar";
 import Dropdown from "./components/Dropdown";
 import BannerData from "@/data/BannerData";
 import NotificationIcon from "./components/notificationdropdown/NotificationIcon";
+import HamburgerMenu from "./components/hamBurgerMenu/hamburgerMenu"
 
 interface HomeNavbarProps {
   isDarkMode: boolean;
@@ -73,6 +74,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
       <nav className="navbar w-full">
         <div className="container w-full ">
           <Dropdown  />
+          <HamburgerMenu />
           <div className="logo">
             <Image src={LogoImg} alt="logo" priority={true} />
           </div>
