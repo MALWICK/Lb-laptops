@@ -25,6 +25,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
  
   const [showSearchBar, setShowSearchBar] = useState(window.innerWidth > 599);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [replaceDropdown, setReplaceDropdown] = useState(false);
 
 
 
@@ -69,12 +70,34 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
     };
   }, []);
 
+  useEffect(() => {
+    const handleSize = () => {
+      setReplaceDropdown(window.innerWidth <= 768);
+    };
+
+    handleSize(); // Check screen size on initial render
+
+    window.addEventListener("resize", handleSize);
+
+    return () => {
+      window.removeEventListener("resize", handleSize);
+    };
+  }, []);
+
   return (
     <div className={`bg-${isDarkMode ? "black" : "white"} `}>
       <nav className="navbar w-full">
         <div className="container w-full ">
-          <Dropdown  />
-          <HamburgerMenu />
+
+        <>
+              {replaceDropdown ? (
+                
+                <HamburgerMenu />
+              ) : (
+                <Dropdown  />
+              )}
+            </>
+          
           <div className="logo">
             <Image src={LogoImg} alt="logo" priority={true} />
           </div>

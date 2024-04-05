@@ -68,13 +68,13 @@ const hamburgerMenu = () => {
   ];
 
   return (
-    <div className="dropdown">
+    <div className="dropdown" ref={dropdownRef}>
       <button className="dropdown-toggle" onClick={toggleDropdown}>
         <i className="bi bi-list"></i>
       </button>
 
       {isOpen && (
-        <div className="w-[100vw] absolute  h-[436px] overflow-y-scroll flex flex-col  z-[1000] left-[-33px] bg-red-700">
+        <div className="w-[100vw] absolute  h-[436px] overflow-y-scroll flex flex-col  z-[1000] left-[-33px] bg-slate-400">
           <div className="">
             <ul className="">
               {pageLinks.map((link) => (
