@@ -21,6 +21,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
   toggleDarkMode,
 }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showSearchBar, setShowSearchBar] = useState(window.innerWidth > 768);
 
   // Function to handle menu toggle
   const handleMenuToggle = () => {
@@ -38,10 +39,26 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
     window.location.href = url;
   };
 
+  
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowSearchBar(window.innerWidth > 768);
+    };
+  
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
+  
 
   return (
     <div className={`bg-${isDarkMode ? "black" : "white"} `}>
@@ -51,7 +68,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
           <div className="logo">
             <Image src={LogoImg} alt="logo" priority={true} />
           </div>
-          <SearchBar />
+          {showSearchBar && <SearchBar />}
 
           <div className={`menu flex justify-around items-center gap-4  ${showMenu ? "show" : ""}`}>
             <span className="notification">
@@ -82,7 +99,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
           {BannerData.map((data) => (
             <li
               key={data.title}
-              className="hove text-black"
+              className="hove"
               onClick={() => handleLinks(data.url)}
             >
               {data.title}
