@@ -74,9 +74,9 @@ const hamburgerMenu = () => {
       </button>
 
       {isOpen && (
-        <div className="w-[100vw] absolute  h-[436px] overflow-y-scroll flex flex-col  z-[1000] left-[-33px] bg-slate-400">
+        <div className="w-[100vw] absolute  h-[436px] overflow-y-scroll flex flex-col  z-[1000] left-[-8px] p-2 bg-slate-400">
           <div className="">
-            <ul className="">
+            <ul className="flex flex-col gap-3 ">
               {pageLinks.map((link) => (
                 <li key={link.title} onClick={() => handleItemClick(link.url)}>
                   {link.title}
@@ -84,10 +84,10 @@ const hamburgerMenu = () => {
               ))}
 
               <div className="">
-                <h2 className="text-xl font-extrabold underline">
+                <h2 className="text-xl font-extrabold underline mb-2">
                   All Products
                 </h2>
-                <ul className="">
+                <ul className="flex flex-col gap-3">
                   {AllProductsLinks.map((productlink) => (
                     <li
                       key={productlink.title}

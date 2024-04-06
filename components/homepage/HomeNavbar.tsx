@@ -23,7 +23,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
   toggleDarkMode,
 }) => {
  
-  const [showSearchBar, setShowSearchBar] = useState(window.innerWidth > 599);
+  const [showSearchBar, setShowSearchBar] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [replaceDropdown, setReplaceDropdown] = useState(false);
 
@@ -49,8 +49,11 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
     const handleResize = () => {
       setShowSearchBar(window.innerWidth > 599);
     };
-
+  
+    handleResize(); // Check window size on initial render
+  
     window.addEventListener("resize", handleResize);
+  
     return () => {
       window.removeEventListener("resize", handleResize);
     };
