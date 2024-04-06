@@ -9,6 +9,8 @@ import ParentContainer from "@/components/homepage/components/parentcontainer/Pa
 import RightSidebar from "@/components/homepage/components/RigthSidebar/RightSidebar";
 import BottomCards from "@/components/homepage/components/AutoSlider/bottomCards/bottomCards";
 import TodaysDeals from "@/components/homepage/components/TodaysDeals/TodaysDeals";
+import SlidingThumbnail from "@/components/homepage/components/TodaysDeals/components/SlidingThumbnail";
+import BannerItem from "@/data/BannerData";
 
 const Page: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -48,6 +50,7 @@ const Page: React.FC = () => {
           {/* <BottomCards/> */}
         </div>
         {/* <TodaysDeals /> */}
+        <SlidingThumbnail />
       </div>
     </main>
   );

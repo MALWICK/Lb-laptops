@@ -12,6 +12,7 @@ import Dropdown from "./components/Dropdown";
 import BannerData from "@/data/BannerData";
 import NotificationIcon from "./components/notificationdropdown/NotificationIcon";
 import HamburgerMenu from "./components/hamBurgerMenu/hamburgerMenu"
+import SlidingThumbnail from "./components/TodaysDeals/components/SlidingThumbnail";
 
 interface HomeNavbarProps {
   isDarkMode: boolean;
@@ -162,6 +163,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
           ))}
         </ul>
       </div>
+
     </div>
   );
 };
