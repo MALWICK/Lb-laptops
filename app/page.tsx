@@ -40,14 +40,14 @@ const Page: React.FC = () => {
       </button>
       <HomeNavbar isDarkMode={isDarkMode} toggleDarkMode={handleToggle} />
       <div className="slide__container w-[95%] m-auto flex   ">
-        {/* <RightSidebar /> */}
-        {/* <ParentContainer /> */}
+        <RightSidebar />
+        <ParentContainer />
       </div>
       <div className="main__parent w-full flex items-center justify-center flex-col" >
         <div className="cards__container w-[95%] flex justify-space items-center gap-5 ">
-          {/* <BottomCards/> */}
+          <BottomCards/>
         </div>
-        {/* <TodaysDeals /> */}
+        <TodaysDeals />
       </div>
     </main>
   );
