@@ -24,7 +24,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
       }, [displayItems]);
       
   return (
-    <div className="banner flex justify-center items-center  w-full">
+    <div className=" flex justify-center items-center  w-full">
     <ul className="innerbanner flex justify-around items-center   text-base cursor-pointer">
     {displayItems.map((item, index) => (
         <div key={index}>
