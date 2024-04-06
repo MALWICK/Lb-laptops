@@ -28,7 +28,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
     <ul className="innerbanner flex justify-around items-center   text-base cursor-pointer">
     {displayItems.map((item, index) => (
         <div key={index}>
-          <a href={item.url}>{item.title}</a>
+          <a onClick={() => handleLinks(item.url)} href={item.url}>{item.title}</a>
         </div>
       ))}
     </ul>
