@@ -1,15 +1,15 @@
 .slideshow {
-  height: 80vh !important;
+  height: 600px;
   width: 100%;
   background: rgba(175, 174, 174, 0.445);
 }
 
 .slide {
   margin-bottom: 1rem;
-  height: 100% !important;
+  height: 100%;
   width: 100%;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   object-fit: cover;
   display: flex;
@@ -66,4 +66,30 @@
 
 .big__icon {
   font-size: 30px;
+}
+
+@media(max-width:768px) {
+  .slideshow {
+    height: 400px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background: rgba(175, 174, 174, 0.445);
+  }
+  
+  .slide {
+    margin-bottom: 1rem;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
 }
