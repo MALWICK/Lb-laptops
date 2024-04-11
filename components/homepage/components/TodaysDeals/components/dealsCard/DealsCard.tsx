@@ -38,7 +38,7 @@ interface DealsCard {
 
 const DealsCard: React.FC = () => {
   const cards: DealsCard[] = [
-    {
+ {
       id: 1,
       imageUrl:
         " https://c1.neweggimages.com/nobgproductcompressall300/ACCUS210811ieahq.jpg",
@@ -95,8 +95,8 @@ const DealsCard: React.FC = () => {
         },
       ],
     },
-
-    {
+  
+ {
       id: 3,
       imageUrl: "",
       rating: { star: 4, numberOfStars: 150 },
@@ -208,6 +208,7 @@ const DealsCard: React.FC = () => {
     Record<number, NodeJS.Timeout>
   >({});
 
+
   const startRotation = (cardIndex: number) => {
     console.log("startRotation - cardIndex:", cardIndex);
 
@@ -223,6 +224,9 @@ const DealsCard: React.FC = () => {
     setIntervalIds((prevIds) => ({ ...prevIds, [cardIndex]: id }));
   };
 
+
+
+
   const stopRotation = (cardIndex: number) => {
     console.log("stopRotation - cardIndex:", cardIndex);
 
@@ -234,6 +238,8 @@ const DealsCard: React.FC = () => {
     });
   };
 
+
+
   const handleMouseEnter = (cardIndex: number) => {
     setIsHovered(true);
     setCurrentImageIndexes((prevIndexes) => ({
@@ -243,6 +249,7 @@ const DealsCard: React.FC = () => {
     startRotation(cardIndex);
   };
 
+
   const handleMouseLeave = (cardIndex: number) => {
     setIsHovered(false);
     setCurrentImageIndexes((prevIndexes) => {
@@ -250,7 +257,7 @@ const DealsCard: React.FC = () => {
       delete currentIndexes[cardIndex];
       return currentIndexes;
     });
-    stopRotation(cardIndex);
+    stopRotation(cardIndex); 
   };
 
   useEffect(() => {
@@ -262,9 +269,9 @@ const DealsCard: React.FC = () => {
   }, [intervalIds]);
 
   return (
-    <div className="short-video-box grid direction-column container gap-20px col-w-3 col-w-m-2 col-w-xs-1 col-h-240px grid-h-2x grid-h-m-3x grid-h-xs-auto">
-      {firstDivCards.map((card) => (
-        <div className="rounded-md  rond bg-cover  bg-slate-800 w-[47%]">
+    <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
+    {firstDivCards.map((card) => (
+        <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]">
           <a href={card.href.link}>
             <div
               className="container holder bg-cover bg-center h-[30.4rem] relative"
@@ -279,81 +286,11 @@ const DealsCard: React.FC = () => {
         </div>
       ))}
 
-      {secondDivCards.map((card, index) => (
-        <div
-          key={index}
-          className="flex  responsiveCard flex-row-reverse justify-center items-center rounded-md bg-cyan-50 w-[526px]  grid-col radius-m bg-gradient-lightblue"
-          onMouseEnter={() => handleMouseEnter(index)}
-          onMouseLeave={() => handleMouseLeave(index)}
-        >
-          <a
-            href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024"
-            className="goods-img w-[45%] "
-            data-quicklink="true"
-          >
-            <img
-              className="object-contain scale-90 w-[195px] h-[205px]"
-              src={
-                isHovered &&
-                currentImageIndexes[index] !== undefined &&
-                card.hoverImageUrl[currentImageIndexes[index]]
-                  ? card.hoverImageUrl[currentImageIndexes[index]].value
-                  : card.hoverImageUrl[0]?.value
-              }
-              alt="Hover Image"
-            />
-          </a>
-          <div className="goods-info w-[45%]">
-            <div className="goods-branding w-[100%] has-brand-store">
-              <a
-                href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024#IsFeedbackTab"
-                className="goods-rating flex items-center gap-2 w-full"
-                title="Rating + 4.8"
-              >
-                {Array.from({ length: card.rating.star }).map((_, index) => (
-                  <FaStar className="text-yellow-400" key={index} />
-                ))}
-                <span className="goods-rating-num font-s text-gray">
-                  ({card.rating.numberOfStars})
-                </span>
-              </a>
-              <a
-                href={card.href.link}
-                className="goods-title font-l"
-                title="View Details"
-                data-quicklink="true"
-              >
-                {card.href.title}
-              </a>
-              <div className="savePrice w-full flex  flex-col">
-                <div className="saving-cont flex items-center gap-2 leading-3 mb-2	">
-                  <span className="savebtn border-orange-500 border-2 border-solid p-2 rounded-lg text-black ">
-                    {card.price.rebatePercentage}
-                  </span>
-                  <FaArrowRightLong className="text-orange-500" />
-                  <span className="savebtn border-orange-950 p-2 rounded-lg text-black">
-                    {card.price.rebate}
-                  </span>
-                </div>
-                <div className="originalPrice w-full flex flex-col gap-2 leading-3">
-                  <span className="reduction text-xl font-medium text-stone-600	 mt-1 mb-1">
-                    {card.price.price}
-                  </span>
-                  <span className="flex  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.6rem] w-[9.4vw] items-center justify-center text-white	">
-                    {card.shipping}
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-
-      {/* <div className="responsiveCard flex container w-[58%] flex-wrap gap-[8px]">
+      <div className="flex container w-[58%] flex-wrap gap-[8px]">
         {secondDivCards.map((card, index) => (
           <div
             key={index}
-            className="flex  responsiveCard flex-row-reverse justify-center items-center rounded-md bg-cyan-50 w-[48%] h-[240px] mb-1"
+            className="flex flex-row-reverse justify-center items-center rounded-md bg-cyan-50 w-[48%] h-[240px] mb-1"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
           >
@@ -371,6 +308,20 @@ const DealsCard: React.FC = () => {
               }
                              alt="Hover Image"
               />
+
+              {/* {isHovered && currentImageIndexes[index] !== undefined ? (
+                <img
+                  src={card.hoverImageUrl[currentImageIndexes[index]].value}
+                  alt={card.alt}
+                  className="absolute h-[240px] w-[100%] object-cover rounded-md transition duration-500 opacity-100"
+                />
+              ) : (
+                <img
+                  src={card.imageUrl}
+                  alt={card.alt}
+                  className="absolute h-[240px] w-[100%] object-cover rounded-md transition duration-500 opacity-100"
+                />
+              )} */}
             </a>
             <div className="goods-info w-[55%]">
               <div className="goods-branding w-[100%] has-brand-store">
@@ -417,7 +368,7 @@ const DealsCard: React.FC = () => {
             </div>
           </div>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
