@@ -350,8 +350,8 @@ const DealsCard: React.FC = () => {
                     <span className="savebtn border-orange-500 border-2 border-solid p-2 rounded-lg text-black ">
                       {card.price.rebatePercentage}
                     </span>
-                    <FaArrowRightLong className="text-orange-500" />
-                    <span className="savebtn border-orange-950 p-2 rounded-lg text-black">
+                    <FaArrowRightLong className="text-orange-500 icon-left" />
+                    <span className="savebtn dts border-orange-950 p-2 rounded-lg text-black">
                       {card.price.rebate}
                     </span>
                   </div>
@@ -359,7 +359,7 @@ const DealsCard: React.FC = () => {
                     <span className="reduction text-xl font-medium text-stone-600	 mt-1 mb-1">
                       {card.price.price}
                     </span>
-                    <span className="flex  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.6rem] w-[9.4vw] items-center justify-center text-white	">
+                    <span className="flex bandaner  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.6rem] w-[9.4vw] items-center justify-center text-white	">
                       {card.shipping}
                     </span>
                   </div>

@@ -278,3 +278,25 @@
   transition: 0.4s ease-in-out;
   cursor: pointer;
 }
+
+@media(max-width:1024px) {
+  .saving-cont{
+    width: 176px !important;
+    font-size: small !important;
+  }
+
+  .bandaner {
+  width: 13vw !important;
+    font-size: small !important;
+  }
+
+  /* .icon-left {
+    display: none !important;
+        width: 13vw;
+    font-size: small;
+  }
+
+  .dts {
+    display: none !important;
+  } */
+}
