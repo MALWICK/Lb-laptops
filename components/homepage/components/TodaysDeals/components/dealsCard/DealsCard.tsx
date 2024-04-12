@@ -269,7 +269,7 @@ const DealsCard: React.FC = () => {
   }, [intervalIds]);
 
   return (
-    <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
+    <div className="lex flex-col md:flex-row  container h-[100%] w-[100%] bg-red-800 p-0">
     {firstDivCards.map((card) => (
         <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]">
           <a href={card.href.link}>

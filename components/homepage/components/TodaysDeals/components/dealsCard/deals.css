@@ -300,3 +300,11 @@
     display: none !important;
   } */
 }
+
+@media(max-width:768px) {
+  .mainContainer {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column;
+  }
+}
