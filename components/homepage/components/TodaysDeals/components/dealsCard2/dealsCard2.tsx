@@ -242,7 +242,7 @@ const dealsCard2: React.FC = () => {
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}
         >
-              <div className="goods-info w-full">
+              <div className="goods-info cl w-full">
               <div className="goods-branding w-[100%] has-brand-store">
                 <a
                   href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024#IsFeedbackTab"
@@ -288,11 +288,11 @@ const dealsCard2: React.FC = () => {
 
             <a
               href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024"
-              className="w-full  bg-red flex items-start justify-end relative"
+              className="w-full img  bg-red flex items-start justify-end relative"
               data-quicklink="true"
             >
               <img
-               className="object-contain scale-90 w-[180px] overflow-hidden	 absolute -top-12 z-10 h-[180px]"
+               className="object-contain scale-90 w-[180px] img overflow-hidden	 absolute -top-12 z-10 h-[180px]"
                src={
                 isHovered && currentImageIndexes[index] !== undefined && card.hoverImageUrl[currentImageIndexes[index]]
                   ? card.hoverImageUrl[currentImageIndexes[index]].value
