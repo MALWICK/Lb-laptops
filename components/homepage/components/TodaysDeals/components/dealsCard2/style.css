@@ -1,0 +1,15 @@
+@media(max-width:768px) {
+    .mobileV {
+        display: flex;
+        flex-wrap: wrap !important;
+        align-items: center;
+        justify-content: center;
+        background: red !important;
+        width: 100vw;
+        
+    }
+
+    .cardv {
+        width: 47vw !important;
+    }
+}

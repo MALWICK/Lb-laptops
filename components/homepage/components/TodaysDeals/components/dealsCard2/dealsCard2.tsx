@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import "./style.css"
 
 
 interface HoverImage {
@@ -233,11 +234,11 @@ const dealsCard2: React.FC = () => {
     };
   }, [intervalIds]);
   return (
-    <div className="flex container h-full w-full  gap-[16px] mt-4 rounded-md">
+    <div className="flex container h-full w-full mobileV  gap-[16px] mt-4 rounded-md">
       {cards.map((card, index) => (
         <div
           key={index}
-          className="flex  flex-col rounded-md bg-neutral-100 w-[23.2vw] h-[40vh] mb-1"
+          className="flex cardv  flex-col rounded-md bg-neutral-100 w-[23.2vw] h-[40vh] mb-1"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}
         >
