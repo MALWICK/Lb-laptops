@@ -269,9 +269,9 @@ const DealsCard: React.FC = () => {
   }, [intervalIds]);
 
   return (
-    <div className="flex flex-col md:flex-row  container h-[100%] w-[100%] bg-red-800 p-0">
+    <div className="flex flex-col md:flex-row mainContainer  container h-[100%] w-[100%] bg-red-800 p-0">
     {firstDivCards.map((card) => (
-        <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]">
+        <div className="rounded-md rond bg-cover  big-card bg-slate-800 w-[47%]">
           <a href={card.href.link}>
             <div
               className="container holder bg-cover bg-center h-[30.4rem] relative"
@@ -286,7 +286,7 @@ const DealsCard: React.FC = () => {
         </div>
       ))}
 
-      <div className="flex container w-[58%] flex-wrap gap-[8px]">
+      <div className="flex container small-cont w-[58%] flex-wrap gap-[8px]">
         {secondDivCards.map((card, index) => (
           <div
             key={index}

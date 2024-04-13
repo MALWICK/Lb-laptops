@@ -305,6 +305,17 @@
   .mainContainer {
     width: 100% !important;
     display: flex !important;
-    flex-direction: column;
+    flex-direction: column !important;
+  }
+
+  .big-card{
+    width: 100%;
+  }
+
+  .small-cont {
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
