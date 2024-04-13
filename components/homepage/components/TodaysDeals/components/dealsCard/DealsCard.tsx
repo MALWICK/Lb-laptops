@@ -269,9 +269,9 @@ const DealsCard: React.FC = () => {
   }, [intervalIds]);
 
   return (
-    <div className="flex container h-[100%] w-[100%] bg-red-800 p-0">
+    <div className="flex flex-col md:flex-row mainContainer  container h-[100%] w-[100%] bg-red-800 p-0">
     {firstDivCards.map((card) => (
-        <div className="rounded-md rond bg-cover  bg-slate-800 w-[47%]">
+        <div className="rounded-md rond bg-cover  big-card bg-slate-800 w-[47%]">
           <a href={card.href.link}>
             <div
               className="container holder bg-cover bg-center h-[30.4rem] relative"
@@ -286,7 +286,7 @@ const DealsCard: React.FC = () => {
         </div>
       ))}
 
-      <div className="flex container w-[58%] flex-wrap gap-[8px]">
+      <div className="flex container small-cont w-[58%] flex-wrap gap-[8px]">
         {secondDivCards.map((card, index) => (
           <div
             key={index}
@@ -350,8 +350,8 @@ const DealsCard: React.FC = () => {
                     <span className="savebtn border-orange-500 border-2 border-solid p-2 rounded-lg text-black ">
                       {card.price.rebatePercentage}
                     </span>
-                    <FaArrowRightLong className="text-orange-500" />
-                    <span className="savebtn border-orange-950 p-2 rounded-lg text-black">
+                    <FaArrowRightLong className="text-orange-500 icon-left" />
+                    <span className="savebtn dts border-orange-950 p-2 rounded-lg text-black">
                       {card.price.rebate}
                     </span>
                   </div>
@@ -359,7 +359,7 @@ const DealsCard: React.FC = () => {
                     <span className="reduction text-xl font-medium text-stone-600	 mt-1 mb-1">
                       {card.price.price}
                     </span>
-                    <span className="flex  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.6rem] w-[9.4vw] items-center justify-center text-white	">
+                    <span className="flex bandaner  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.6rem] w-[9.4vw] items-center justify-center text-white	">
                       {card.shipping}
                     </span>
                   </div>

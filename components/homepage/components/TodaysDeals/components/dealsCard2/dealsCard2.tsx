@@ -2,6 +2,7 @@
 import { useRef, useState, useEffect } from "react";
 import { FaStar } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import "./style.css"
 
 
 interface HoverImage {
@@ -233,15 +234,15 @@ const dealsCard2: React.FC = () => {
     };
   }, [intervalIds]);
   return (
-    <div className="flex container h-full w-full  gap-[16px] mt-4 rounded-md">
+    <div className="flex container h-full w-full mobileV  gap-[16px] mt-4 rounded-md">
       {cards.map((card, index) => (
         <div
           key={index}
-          className="flex  flex-col rounded-md bg-neutral-100 w-[23.2vw] h-[40vh] mb-1"
+          className="flex cardv  flex-col rounded-md bg-neutral-100 w-[23.2vw] h-[40vh] mb-1"
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={() => handleMouseLeave(index)}
         >
-              <div className="goods-info w-full">
+              <div className="goods-info cl w-full">
               <div className="goods-branding w-[100%] has-brand-store">
                 <a
                   href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024#IsFeedbackTab"
@@ -277,7 +278,7 @@ const dealsCard2: React.FC = () => {
                     <span className="reduction text-xl font-medium text-stone-600	 mt-1 mb-1">
                       {card.price.price}
                     </span>
-                    <span className="flex  rounded-tl-[122px] rounded-br-[455px] bg-orange-500 p-[0.6rem] w-[9.4vw] items-center justify-center text-white	">
+                    <span className="flex  rounded-tl-[122px] rounded-br-[455px] shipping bg-orange-500 p-[0.6rem] w-[9.4vw] items-center justify-center text-white	">
                       {card.shipping}
                     </span>
                   </div>
@@ -287,11 +288,11 @@ const dealsCard2: React.FC = () => {
 
             <a
               href="https://www.newegg.com/p/2AM-000Z-000B9?Item=2AM-000Z-000B9&amp;cm_sp=Homepage_SS-_-P1_2AM-000Z-000B9-_-03172024"
-              className="w-full  bg-red flex items-start justify-end relative"
+              className="w-full img  bg-red flex items-start justify-end relative"
               data-quicklink="true"
             >
               <img
-               className="object-contain scale-90 w-[180px] overflow-hidden	 absolute -top-12 z-10 h-[180px]"
+               className="object-contain scale-90 w-[180px] img overflow-hidden	 absolute -top-12 z-10 h-[180px]"
                src={
                 isHovered && currentImageIndexes[index] !== undefined && card.hoverImageUrl[currentImageIndexes[index]]
                   ? card.hoverImageUrl[currentImageIndexes[index]].value

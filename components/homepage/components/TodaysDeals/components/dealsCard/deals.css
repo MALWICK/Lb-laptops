@@ -278,3 +278,44 @@
   transition: 0.4s ease-in-out;
   cursor: pointer;
 }
+
+@media(max-width:1024px) {
+  .saving-cont{
+    width: 176px !important;
+    font-size: small !important;
+  }
+
+  .bandaner {
+  width: 13vw !important;
+    font-size: small !important;
+  }
+
+  /* .icon-left {
+    display: none !important;
+        width: 13vw;
+    font-size: small;
+  }
+
+  .dts {
+    display: none !important;
+  } */
+}
+
+@media(max-width:768px) {
+  .mainContainer {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .big-card{
+    width: 100%;
+  }
+
+  .small-cont {
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

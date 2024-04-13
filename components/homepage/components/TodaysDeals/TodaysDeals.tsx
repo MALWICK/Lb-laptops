@@ -10,7 +10,7 @@ interface TodaysDealsprop {
 
 const  TodaysDeals: React.FC<TodaysDealsprop> = () => {
   return (
-    <div className='w-[94%]   flex items-center justify-center mt-[2.4%] mb-2'>
+    <div className='w-[100%] containers   flex items-center justify-center mt-[2.4%] mb-2'>
       <div className="innerDeals__cont w-[100vw]">
         <div className="first__row w-full flex items-center justify-between p-2">
             <div className="deals__heading">
@@ -21,7 +21,7 @@ const  TodaysDeals: React.FC<TodaysDealsprop> = () => {
         <DealsCard />
         <DealsCard2 />
         <div className=" w-full mt-4 flex items-center justify-center ">
-        <button className="w-[15vw] bg-blue-700 hover:bg-blue-900 rounded-full text-white font-medium p-2">See All Deals</button>
+        <button className="w-[15vw] bg-blue-700 hover:bg-blue-900 rounded-full text-white bl-btn font-medium p-2">See All Deals</button>
            </div>
        
       </div>

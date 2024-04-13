@@ -43,8 +43,8 @@ const Page: React.FC = () => {
         <RightSidebar />
         <ParentContainer />
       </div>
-      <div className="main__parent w-full flex items-center justify-center flex-col" >
-        <div className="cards__container w-[95%] flex justify-space items-center gap-5 ">
+      <div className="main__parent w-[100vw] flex items-center flex-col" >
+        <div className="cards__container w-[90%] flex justify-space items-center gap-5 ">
           <BottomCards/>
         </div>
         <TodaysDeals />
