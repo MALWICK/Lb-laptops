@@ -9,6 +9,8 @@
 
 
 
-.containers {
-
+@media(max-width:768px) {
+    .bl-btn {
+        width: 24vw !important;
+    }
 }
