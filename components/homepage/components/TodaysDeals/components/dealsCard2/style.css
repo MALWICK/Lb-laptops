@@ -36,8 +36,17 @@
     }
 
     .img img {
-    width: 90% !important;
-    height: 33vh !important;
+    width: 50vw !important;
+    height: 90vw !important;
     position: relative !important;
+    max-width: 90% !important;
+    max-height: 90% !important;
+    object-fit: contain !important;
+    }
+
+    .shipping {
+        width: 14vw;
+        font-size: small;
+        line-height: 1;
     }
 }
