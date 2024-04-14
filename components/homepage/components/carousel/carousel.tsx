@@ -9,7 +9,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 
-export function CarouselSize() {
+ function CarouselSize() {
   return (
     <Carousel
       opts={{
@@ -35,3 +35,5 @@ export function CarouselSize() {
     </Carousel>
   )
 }
+
+export default  CarouselSize;
