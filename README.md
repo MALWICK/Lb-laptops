@@ -14,6 +14,35 @@ pnpm dev
 bun dev
 ```
 
+# Project Name
+LB-Laptop
+
+This project is a Newegg-inspired ecommerce website for computer gadgets, laptops, home equipment, and accessories.
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Installation](yarn dev, npm install)
+- [Usage](#usage)
+- [Technologies Used](#Nextjs,Typescript,tailwindcss)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Project Overview
+
+This project aims to create a user-friendly ecommerce platform that allows users to browse and purchase computer gadgets, laptops, home equipment, and accessories. It incorporates various features commonly found in ecommerce websites, such as product listings, search functionality, shopping cart, and user authentication.
+
+![Newegg](./assets/images/newegg.png)
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/your-project.git
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
