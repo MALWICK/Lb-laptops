@@ -26,7 +26,10 @@ const TodaysDeals: React.FC<TodaysDealsprop> = () => {
             See All Deals
           </button>
         </div>
+        <div className="caro w-full items-center justify-center">
         <Carousel />
+        </div>
+        
       </div>
     </div>
   );
