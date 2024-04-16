@@ -1,40 +1,57 @@
-import * as React from "react"
+import React, { useState } from 'react';
+import ProductCard from  "../productcard/productcard";
 
-import { Card, CardContent } from "@/components/ui/card"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-
- function CarouselSize() {
-  return (
-    <Carousel
-      opts={{
-        align: "start",
-      }}
-      className="w-full "
-    >
-      <CarouselContent className="bg-neutral-100 mt-6 w-full">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-3xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className="w-[40px] rounded-full flex items-center justify-center h-[40px]  left-2" />
-      <CarouselNext className="w-[40px] rounded-full flex items-center justify-center h-[40px]    right-4"   />
-    </Carousel>
-  )
+interface Product {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
 }
 
+interface ProductCarouselProps {
+  products: Product[];
+}
 
-export default  CarouselSize;
+const ProductCarousel: React.FC<ProductCarouselProps> = ({ products }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === products.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? products.length - 1 : prevIndex - 1));
+  };
+
+  return (
+    <div className="flex items-center justify-center">
+      <button
+        className={`${
+          currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'
+        }`}
+        onClick={goToPrevious}
+        disabled={currentIndex === 0}
+      >
+        Previous
+      </button>
+      <div className="mx-4">
+        <ProductCard
+          image={products[currentIndex].image}
+          title={products[currentIndex].title}
+          description={products[currentIndex].description}
+        />
+      </div>
+      <button
+        className={`${
+          currentIndex === products.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'
+        }`}
+        onClick={goToNext}
+        disabled={currentIndex === products.length - 1}
+      >
+        Next
+      </button>
+    </div>
+  );
+};
+
+export default ProductCarousel;
