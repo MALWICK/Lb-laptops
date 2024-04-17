@@ -3,7 +3,8 @@ import React from "react";
 import "./TodaysDeal.css";
 import DealsCard from "./components/dealsCard/DealsCard";
 import DealsCard2 from "./components/dealsCard2/dealsCard2";
-import Carousel from "@/components/homepage/components/carousel/carousel";
+import ProductCarousel from "../carousel/carousel";
+import Products from "@/data/products";
 
 interface TodaysDealsprop {
   className?: string;
@@ -27,7 +28,7 @@ const TodaysDeals: React.FC<TodaysDealsprop> = () => {
           </button>
         </div>
         <div className="caro w-full items-center justify-center">
-        <Carousel />
+        <ProductCarousel products={Products}   />
         </div>
         
       </div>

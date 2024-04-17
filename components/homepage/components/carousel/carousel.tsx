@@ -12,7 +12,7 @@ interface ProductCarouselProps {
   products: Product[];
 }
 
-const ProductCarousel: React.FC<ProductCarouselProps> = ({ products }) => {
+const ProductCarousel: React.FC<ProductCarouselProps> = ({  products }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNext = () => {
