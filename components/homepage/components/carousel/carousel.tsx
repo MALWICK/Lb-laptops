@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import ProductCard from  "../productcard/productcard";
+import { useRef, useState } from 'react';
 
 interface Product {
   id: number;
@@ -8,44 +7,95 @@ interface Product {
   description: string;
 }
 
-interface ProductCarouselProps {
-  products: Product[];
-}
+const products: Product[] = [
+  {
+    id: 1,
+    image: 'product1.jpg',
+    title: 'Product 1',
+    description: 'Description for Product 1',
+  },
+  {
+    id: 2,
+    image: 'product2.jpg',
+    title: 'Product 2',
+    description: 'Description for Product 2',
+  },
 
-const ProductCarousel: React.FC<ProductCarouselProps> = ({  products }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  {
+      id: 3,
+      image: 'product1.jpg',
+      title: 'Product 1',
+      description: 'Description for Product 1',
+    },
+    {
+      id: 4,
+      image: 'product2.jpg',
+      title: 'Product 2',
+      description: 'Description for Product 2',
+    },
+    
+  // Add more products as needed
+];
 
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === products.length - 1 ? 0 : prevIndex + 1));
+const Carousel = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const handleNext = () => {
+
+    if (currentIndex < products.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      if (carouselRef.current) {
+        carouselRef.current.scrollBy({ left: 200, behavior: 'smooth' });
+      }
+    }
+    
   };
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? products.length - 1 : prevIndex - 1));
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+
+      if (carouselRef.current) {
+        carouselRef.current.scrollBy({ left: -200, behavior: 'smooth' });
+      }
+    }
+    
   };
 
   return (
     <div className="flex items-center justify-center">
       <button
-        className={`${
-          currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'
+        className={`p-2 border rounded-md ${
+          currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
         }`}
-        onClick={goToPrevious}
+        onClick={handlePrevious}
         disabled={currentIndex === 0}
       >
         Previous
       </button>
-      <div className="mx-4">
-        <ProductCard
-          image={products[currentIndex].image}
-          title={products[currentIndex].title}
-          description={products[currentIndex].description}
-        />
+      <div
+        className="flex flex-row space-x-4 overflow-x-auto"
+        style={{ maxWidth: '600px' }}
+        ref={carouselRef}
+      >
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="p-4 border rounded-md"
+            style={{ minWidth: '200px' }}
+          >
+            <img src={product.image} alt={product.title} className="mb-2" />
+            <h3 className="text-lg font-bold">{product.title}</h3>
+            <p>{product.description}</p>
+          </div>
+        ))}
       </div>
       <button
-        className={`${
-          currentIndex === products.length - 1 ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'
-        }`}
-        onClick={goToNext}
+               className={`p-2 border rounded-md ${
+                currentIndex === products.length - 1 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
+              }`}      
+        onClick={handleNext}
         disabled={currentIndex === products.length - 1}
       >
         Next
@@ -54,4 +104,4 @@ const ProductCarousel: React.FC<ProductCarouselProps> = ({  products }) => {
   );
 };
 
-export default ProductCarousel;
+export default Carousel;
