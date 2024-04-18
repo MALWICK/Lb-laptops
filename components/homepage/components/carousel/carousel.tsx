@@ -33,6 +33,44 @@ const products: Product[] = [
       title: 'Product 2',
       description: 'Description for Product 2',
     },
+
+    {
+      id: 5,
+      image: 'product2.jpg',
+      title: 'Product 2',
+      description: 'Description for Product 2',
+    },
+    {
+      id: 6,
+      image: 'product2.jpg',
+      title: 'Product 2',
+      description: 'Description for Product 2',
+    },
+    {
+      id: 7,
+      image: 'product2.jpg',
+      title: 'Product 2',
+      description: 'Description for Product 2',
+    },
+    {
+      id: 8,
+      image: 'product2.jpg',
+      title: 'Product 2',
+      description: 'Description for Product 2',
+    },
+    {
+      id: 9,
+      image: 'product2.jpg',
+      title: 'Product 2',
+      description: 'Description for Product 2',
+    },
+    {
+      id: 10,
+      image: 'product2.jpg',
+      title: 'Product 2',
+      description: 'Description for Product 2',
+    },
+
     
   // Add more products as needed
 ];
@@ -64,7 +102,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center container p-4">
       <button
         className={`p-2 border rounded-md ${
           currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
@@ -75,8 +113,8 @@ const Carousel = () => {
         Previous
       </button>
       <div
-        className="flex flex-row space-x-4 overflow-x-auto"
-        style={{ maxWidth: '600px' }}
+        className="flex flex-row w-full  space-x-4 overflow-x-auto"
+       
         ref={carouselRef}
       >
         {products.map((product) => (
