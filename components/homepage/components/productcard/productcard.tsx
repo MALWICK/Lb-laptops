@@ -48,7 +48,7 @@ export default function Product(props: {
         </div>
         <div className="info-carde p-2 ">
       
-        {/* <p>{props.description}</p> */}
+      
         <p>gain</p>
         <p>
           <span>{props.price}</span>
