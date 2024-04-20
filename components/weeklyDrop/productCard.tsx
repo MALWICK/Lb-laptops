@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCirclePlus } from "react-icons/fa6";
-import "./style.css";
+
 
 export default function ProductCard(props: {
   url: string | undefined;
