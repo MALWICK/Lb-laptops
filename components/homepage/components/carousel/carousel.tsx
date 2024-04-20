@@ -160,7 +160,7 @@ function carousel() {
   ));
 
   return (
-    <div className="mt-[4rem]	App">
+    <div className="mt-[4rem]	App p-2">
       <h1>React multi carousel</h1>
       <Carousel showDots={true} responsive={responsive}>
         {product}
