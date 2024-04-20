@@ -8,7 +8,8 @@
   }
   
   .carde {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
     max-width: 320px;
     margin: auto 1rem;
     text-align: center;
