@@ -4,6 +4,7 @@ import "./TodaysDeal.css";
 import DealsCard from "./components/dealsCard/DealsCard";
 import DealsCard2 from "./components/dealsCard2/dealsCard2";
 import Carousel from "../carousel/carousel";
+import WeeklyDropParent from "@/components/weeklyDrop/WeeklyDropParent";
 
 
 interface TodaysDealsprop {
@@ -29,6 +30,7 @@ const TodaysDeals: React.FC<TodaysDealsprop> = () => {
         </div>
         <div className="caro w-full items-center justify-center">
         </div>
+       <WeeklyDropParent />
         <Carousel />
       </div>
     </div>
