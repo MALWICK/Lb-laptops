@@ -19,7 +19,7 @@ function carousel() {
     <div className="mt-[4rem]	App p-2">
       <div className="title-hoder w-full p-4 flex items-center  gap-3">
         <h1 className="text-2xl	 text-blue-950	font-bold">New at Newegg – New Arrivals</h1>
-        <span className='flex items-center justify-normal gap-0 text-sm text-slate-500 hover:underline cursor-pointer'>See More <FaCaretRight/></span>      </div>
+        <span className='flex items-center justify-normal gap-0 text-sm text-slate-500 hover:underline cursor-pointer'>See More <FaCaretRight/></span> </div>
       <Carousel  responsive={responsive}>
         {product}
       </Carousel>
