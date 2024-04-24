@@ -32,8 +32,9 @@ const TodaysDeals: React.FC<TodaysDealsprop> = () => {
         <div className="caro w-full items-center justify-center">
         </div>
        <WeeklyDropParent />
+       <BannerImage />
         <Carousel />
-        <BannerImage />
+       
       </div>
     </div>
   );
