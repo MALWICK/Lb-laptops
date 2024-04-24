@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface BannerData {
     backgroundimage: string;
@@ -7,19 +7,35 @@ interface BannerData {
 
 const Data: BannerData[] = [
     {
-        backgroundimage: "https://images.unsplash.com/photo-1630911111411-888888888888?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        backgroundimage: "https://promotions.newegg.com/nepro/23-0738/800x120@2x.jpg",
         title: "Title 1"
     },
     {
-        backgroundimage: "https://images.unsplash.com/photo-1630911111411-888888888888?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        backgroundimage: "https://promotions.newegg.com/Group6/24-0418/800x120@2x.jpg",
         title: "Title 2"
     }
-]
+];
 
-const bannerImage = () => {
-  return (
-    <div>bannerImage</div>
-  )
-}
+const BannerImage = () => {
+    return (
+        <div className='container'> 
+            {
+                Data.map((item, index) => {
+                    const style = {
+                        backgroundImage: `url(${item.backgroundimage})`,
+                    };
+                    return (
+                        <div className="container flex w-full items-center justify-center gap-2 mt-2">
+                              <div className='banner-image w-[48%] rounded-lg bg-cover bg-no-repeat bg-center ' key={index} style={style}>
+                            <h2>{item.title}</h2>
+                        </div>
+                        </div>
+                      
+                    );
+                })
+            }
+        </div>
+    );
+};
 
-export default bannerImage
+export default BannerImage;
