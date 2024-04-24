@@ -18,16 +18,16 @@ const Data: BannerData[] = [
 
 const BannerImage = () => {
     return (
-        <div className='container'> 
+        <div className=' w-full p-4 flex items-center justify-center h-[18vh]'> 
             {
                 Data.map((item, index) => {
                     const style = {
                         backgroundImage: `url(${item.backgroundimage})`,
                     };
                     return (
-                        <div className="container flex w-full items-center justify-center gap-2 mt-2">
-                              <div className='banner-image w-[48%] rounded-lg bg-cover bg-no-repeat bg-center ' key={index} style={style}>
-                            <h2>{item.title}</h2>
+                        <div className=" flex w-full h-[90%] items-center justify-center gap-0 mt-2">
+                              <div className='banner-image w-[49vw] h-[100%] rounded-xl	 bg-contain bg-no-repeat bg-center ' key={index} style={style}>
+                          
                         </div>
                         </div>
                       

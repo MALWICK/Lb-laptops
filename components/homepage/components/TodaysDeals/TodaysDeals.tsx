@@ -5,6 +5,7 @@ import DealsCard from "./components/dealsCard/DealsCard";
 import DealsCard2 from "./components/dealsCard2/dealsCard2";
 import Carousel from "../carousel/carousel";
 import WeeklyDropParent from "@/components/weeklyDrop/WeeklyDropParent";
+import BannerImage from "../bannerImage/bannerImage";
 
 
 interface TodaysDealsprop {
@@ -32,6 +33,7 @@ const TodaysDeals: React.FC<TodaysDealsprop> = () => {
         </div>
        <WeeklyDropParent />
         <Carousel />
+        <BannerImage />
       </div>
     </div>
   );
