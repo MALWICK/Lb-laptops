@@ -26,7 +26,7 @@ const BannerImage = () => {
                     };
                     return (
                         <div className="container flex w-full items-center justify-center gap-2 mt-2">
-                              <div className='banner-image' key={index} style={style}>
+                              <div className='banner-image w-[48%] rounded-lg bg-cover bg-no-repeat bg-center ' key={index} style={style}>
                             <h2>{item.title}</h2>
                         </div>
                         </div>
