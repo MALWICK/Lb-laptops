@@ -1,15 +1,26 @@
-import React from 'react'
+import React from "react";
 
 const Welcomedeals = () => {
   return (
-    <div className='flex items-center justify-center  w-full   h-[50vh]  bg-slate-500'>
-      <div className="innercontainer w-[80%] flex items-center justify-center h-[30vh] bg-red-700 ">
-     <div className="w-[19vw] bg-orange-200	 flex flex-col p-1 rounded-lg flex-1">
-    <a href="#" className='no-underline	w-full h-full'></a>
-     </div>
+    <div className="flex items-center justify-center  w-full   bg-slate-500">
+      <div className="innercontainer w-[100%] flex items-center justify-center  bg-red-700 ">
+        <div className="w-[24%] bg-red-600 flex flex-col p-1  flex-1">
+          <a
+            href="#"
+            className="no-underline	 h-full cursor-pointer bg-transparent"
+          >
+            <div className="h-[570px] w-[350px] p-4 rounded-lg flex flex-wrap bg-orange-200	">
+              <div className="text-wrap break-normal flex flex-col">
+              <span className="text-2xl font-extrabold overflow-hidden truncate text-rose-900">Welcome Deal</span>
+              <span className=" text-base font-normal">Your exclusive price</span>
+              </div>
+            </div>
+            <div className="flex items-center justify-center"></div>
+          </a>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Welcomedeals
+export default Welcomedeals;
