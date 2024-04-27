@@ -11,10 +11,11 @@ const Welcomedeals = () => {
           >
             <div className="h-[570px] w-[350px] p-4 rounded-lg flex flex-wrap bg-orange-200	">
               <div className="text-wrap break-normal flex flex-col">
-              <span className="text-2xl font-extrabold overflow-hidden truncate text-rose-900">Your text goes here</span>
+              <span className="text-2xl font-extrabold overflow-hidden truncate text-rose-900">Welcome Deal</span>
               <span className=" text-base font-normal">Your exclusive price</span>
               </div>
             </div>
+            <div className="flex items-center justify-center"></div>
           </a>
         </div>
       </div>
