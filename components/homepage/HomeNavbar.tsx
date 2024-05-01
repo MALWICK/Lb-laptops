@@ -3,7 +3,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "./HomeNavbar.css";
 import { BsList, BsX, BsSunFill } from "react-icons/bs";
 import { WiMoonAltWaningCrescent2 } from "react-icons/wi";
-import {AiOutlineShoppingCart} from "react-icons/ai"
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import LogoImg from "@/assets/images/lB-logo.png";
 import Image from "next/image";
 import SearchBar from "./components/searchbar";
@@ -53,7 +53,11 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
           </div>
           <SearchBar />
 
-          <div className={`menu flex justify-around items-center gap-4  ${showMenu ? "show" : ""}`}>
+          <div
+            className={`menu flex justify-around items-center gap-4  ${
+              showMenu ? "show" : ""
+            }`}
+          >
             <span className="notification">
               <NotificationIcon />
             </span>
@@ -61,7 +65,10 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
               <button className="login">Login</button>
               <button className="signup">SignUp</button>
             </div>
-            <a href="#"> <AiOutlineShoppingCart /> </a>
+            <a href="#">
+              {" "}
+              <AiOutlineShoppingCart />{" "}
+            </a>
             <a href="#">Contact</a>
 
             <div></div>
