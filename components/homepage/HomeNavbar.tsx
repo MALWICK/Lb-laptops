@@ -10,7 +10,8 @@ import SearchBar from "./components/searchbar";
 import Dropdown from "./components/Dropdown";
 import BannerData from "@/data/BannerData";
 import NotificationIcon from "./components/notificationdropdown/NotificationIcon";
-
+import "/node_modules/flag-icons/css/flag-icons.min.css";
+import { Modal } from "antd";
 interface HomeNavbarProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
@@ -21,6 +22,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
   toggleDarkMode,
 }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Function to handle menu toggle
   const handleMenuToggle = () => {
@@ -32,6 +34,18 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
     if (window.innerWidth > 600) {
       setShowMenu(false);
     }
+  };
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
   };
 
   const handleLinks = (url: string) => {
@@ -61,6 +75,136 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
             <span className="notification">
               <NotificationIcon />
             </span>
+            <span
+              className="change-country"
+              title="Change Country"
+              onClick={showModal}
+            >
+              <span className="fi fi-cm" style={{ height: 16, width: 16 }} />
+            </span>
+            <Modal
+              className="Modal-container"
+              title="COUNTRIES & REGIONS"
+              open={isModalOpen}
+              onOk={handleOk}
+              onCancel={handleCancel}
+            >
+              <label className="select-text">
+                Please select a country / region to shop:
+              </label>
+              <div className="selectCountries-content">
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-cm"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Cameroon</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-ci"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Ivory Coast</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-gh"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Ghana</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-za"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">South Africa</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-eg"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Egypt</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-rw"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Rwanda</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-sl"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Sierra Leone</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-tg"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Togo</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-ke"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Kenya</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-ng"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Nigeria</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-tz"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Tanzania</p>
+                  </div>
+                  <input type="radio" />
+                </div>
+              </div>
+            </Modal>
             <div className="loginsign flex items-center justify-around gap-2 ">
               <button className="login">Login</button>
               <button className="signup">SignUp</button>
