@@ -3,7 +3,10 @@ import React from "react";
 import "./TodaysDeal.css";
 import DealsCard from "./components/dealsCard/DealsCard";
 import DealsCard2 from "./components/dealsCard2/dealsCard2";
-import Carousel from "@/components/homepage/components/carousel/carousel";
+import Carousel from "../carousel/carousel";
+import WeeklyDropParent from "@/components/weeklyDrop/WeeklyDropParent";
+import BannerImage from "../bannerImage/bannerImage";
+
 
 interface TodaysDealsprop {
   className?: string;
@@ -27,9 +30,11 @@ const TodaysDeals: React.FC<TodaysDealsprop> = () => {
           </button>
         </div>
         <div className="caro w-full items-center justify-center">
-        <Carousel />
         </div>
-        
+       <WeeklyDropParent />
+       <BannerImage />
+        <Carousel />
+       
       </div>
     </div>
   );

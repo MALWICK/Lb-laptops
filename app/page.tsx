@@ -9,6 +9,7 @@ import ParentContainer from "@/components/homepage/components/parentcontainer/Pa
 import RightSidebar from "@/components/homepage/components/RigthSidebar/RightSidebar";
 import BottomCards from "@/components/homepage/components/AutoSlider/bottomCards/bottomCards";
 import TodaysDeals from "@/components/homepage/components/TodaysDeals/TodaysDeals";
+import Welcomedeals from "@/components/homepage/components/welcomeDeals/Welcomedeals"
 
 const Page: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -45,9 +46,19 @@ const Page: React.FC = () => {
       </div>
       <div className="main__parent w-[100vw] flex items-center flex-col" >
         <div className="cards__container w-[90%] flex justify-space items-center gap-5 ">
+        
           <BottomCards/>
+          
         </div>
+      
         <TodaysDeals />
+      </div>
+      <div className="container w-full bg-orange-400 flex items-center justify-center">
+
+      <div className="w-[90%] container bg-orange-400 flex items-center justify-center">
+      <Welcomedeals />
+      </div>
+     
       </div>
     </main>
   );

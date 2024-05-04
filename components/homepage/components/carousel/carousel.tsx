@@ -1,40 +1,30 @@
-import * as React from "react"
+import React from 'react'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import Product from "../productcard/productcard";
+import { productData, responsive } from "@/data/Products";
+import { FaCaretRight } from "react-icons/fa6";
 
-import { Card, CardContent } from "@/components/ui/card"
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+function carousel() {
+  const product = productData.map((item) => (
+    <Product
+      name={item.name}
+      url={item.imageurl}
+      price={item.price}
+      description={item.description}
+    />
+  ));
 
- function CarouselSize() {
   return (
-    <Carousel
-      opts={{
-        align: "start",
-      }}
-      className="w-full "
-    >
-      <CarouselContent className="bg-neutral-100 mt-6 w-full">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-3xl font-semibold">{index + 1}</span>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className="w-[40px] rounded-full flex items-center justify-center h-[40px]  left-2" />
-      <CarouselNext className="w-[40px] rounded-full flex items-center justify-center h-[40px]    right-4"   />
-    </Carousel>
-  )
+    <div className="mt-[4rem]	App p-2">
+      <div className="title-hoder w-full p-4 flex items-center  gap-3">
+        <h1 className="text-2xl	 text-blue-950	font-bold">New at Newegg – New Arrivals</h1>
+        <span className='flex items-center justify-normal gap-0 text-sm text-slate-500 hover:underline cursor-pointer'>See More <FaCaretRight/></span> </div>
+      <Carousel  responsive={responsive}>
+        {product}
+      </Carousel>
+    </div>
+  );
 }
 
-
-export default  CarouselSize;
+export default carousel

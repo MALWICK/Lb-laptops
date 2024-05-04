@@ -49,7 +49,7 @@ const images = [
 function parentcontainer() {
   return (
     <div className="w-full parent bg-red flex items-center justify-center flex-col ">
-      <div className="parentinner bg-red flex items-center justify-center flex-col ">
+      <div className="parentinner bg-red w-full flex items-center justify-center flex-col ">
         <div className="swipe-container flex w-[100%] relative">
          
           <Slideshow images={images}  />
