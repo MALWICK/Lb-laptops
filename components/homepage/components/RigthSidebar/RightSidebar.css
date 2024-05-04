@@ -6,3 +6,16 @@
     background-color: #f2f2f2;
 
 }
+
+@media(max-width:1440px){
+    .p-megamenu.p-megamenu-vertical {
+        width: 16.5rem;
+        padding: 0.25rem 0;
+    }
+}
+
+@media(max-width:768px) {
+    .card {
+        display: none !important;
+    }
+}

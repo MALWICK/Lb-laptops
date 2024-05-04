@@ -21,16 +21,17 @@
   padding: 0 20px;
   background-color: white;
   max-width: 1740px;
+  gap: 4px !important;
 }
 
 .logo {
   font-size: 24px;
-  width: 300px;
+  width: 18vw;
 }
 
 .logo img {
-  height: 70px;
-  width: 150px;
+  height: 8vh;
+  width: 9.5vw;
   object-fit: cover;
 }
 
@@ -52,6 +53,10 @@
   width: 30px;
   height: 21px;
   cursor: pointer;
+}
+
+.cart {
+  font-size: 22px !important;
 }
 
 .bar {
@@ -257,12 +262,19 @@
   .loginsign {
     display: none !important;
   }
-  .banner {
-    display: none !important;
+ 
+
+
+  .menu {
+    gap: 0.8rem !important;
   }
 
-  .banner .flex {
-    display: none !important;
+  .menu a {
+    margin-left: 1px;
+  }
+
+  .container {
+    padding: 0px 12px !important;
   }
 }
 
@@ -295,8 +307,8 @@
     background-color: #f1f1f1;
   }
 
-  .logo {
+  /* .logo {
     font-size: 24px;
     width: 213px;
-  }
+  } */
 }

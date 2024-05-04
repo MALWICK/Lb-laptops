@@ -2,8 +2,7 @@
 import React from "react";
 import "./parentCOntainer.css";
 import Slideshow from "../AutoSlider/Slideshow";
-/* import RightSidebar from "../RigthSidebar/RightSidebar"; */
-/* import BottomCards from "../AutoSlider/bottomCards/bottomCards"; */
+
 
 
 const images = [
@@ -52,10 +51,10 @@ function parentcontainer() {
     <div className="w-full parent bg-red flex items-center justify-center flex-col ">
       <div className="parentinner bg-red flex items-center justify-center flex-col ">
         <div className="swipe-container flex w-[100%] relative">
-          {/*  <RightSidebar /> */}
+         
           <Slideshow images={images}  />
         </div>
-     {/*  <BottomCards/> */}
+   
       </div>
     </div>
   );
