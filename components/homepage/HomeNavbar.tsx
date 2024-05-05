@@ -73,13 +73,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
     <div className={`bg-${isDarkMode ? "black" : "white"} `}>
       <nav className="navbar w-full">
         <div className="container w-full ">
-          <>
-            {replaceDropdown ? (
-              <HamburgerMenu />
-            ) : (
-              <Dropdown />
-            )}
-          </>
+          <>{replaceDropdown ? <HamburgerMenu /> : <Dropdown />}</>
           <div className="logo">
             <Image src={LogoImg} alt="logo" priority={true} />
           </div>
@@ -223,50 +217,47 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                 </div>
               </div>
             </Modal>
-            <div className="loginsign flex items-center justify-around gap-2 ">
-              <button className="login">Login</button>
-              <button className="signup">SignUp</button>
-            </div>
             <a href="#">
               {" "}
               <AiOutlineShoppingCart />{" "}
             </a>
             <a href="#">Contact</a>
-          <div className="menu flex justify-around items-center gap-4">
-            <span className="notification">
-              <NotificationIcon />
-            </span>
-            <>
-              {isSmallScreen ? (
-                <FaRegUser className="text-2xl" />
-              ) : (
-                <a href="#" className="flex">
-                  <div className="loginsign flex items-center justify-around gap-2">
-                    <button className="login">Login</button>
-                    <button className="signup">SignUp</button>
-                  </div>
-                </a>
-              )}
-            </>
-            <a href="#">
-              <AiOutlineShoppingCart />
-            </a>
-            <a
-              href="#"
-              className="flex flex-col font-medium text-xs hover:rounded-full p-[4px] w-24 items-center justify-center hover:bg-gray-200"
-            >
-              <span>Return&</span>
-              <span>Oder</span>
-            </a>
+            <div className="menu flex justify-around items-center gap-4">
+              <span className="notification">
+                <NotificationIcon />
+              </span>
+              <>
+                {isSmallScreen ? (
+                  <FaRegUser className="text-2xl" />
+                ) : (
+                  <a href="#" className="flex">
+                    <div className="loginsign flex items-center justify-around gap-2">
+                      <button className="login">Login</button>
+                      <button className="signup">SignUp</button>
+                    </div>
+                  </a>
+                )}
+              </>
+              <a href="#">
+                <AiOutlineShoppingCart />
+              </a>
+              <a
+                href="#"
+                className="flex flex-col font-medium text-xs hover:rounded-full p-[4px] w-24 items-center justify-center hover:bg-gray-200"
+              >
+                <span>Return&</span>
+                <span>Oder</span>
+              </a>
 
-            <div></div>
+              <div></div>
+            </div>
+            <button
+              className="top-4 right-4 p-2 rounded-full bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-200"
+              onClick={toggleDarkMode}
+            >
+              {isDarkMode ? <BsSunFill /> : <WiMoonAltWaningCrescent2 />}
+            </button>
           </div>
-          <button
-            className="top-4 right-4 p-2 rounded-full bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-200"
-            onClick={toggleDarkMode}
-          >
-            {isDarkMode ? <BsSunFill /> : <WiMoonAltWaningCrescent2 />}
-          </button>
         </div>
       </nav>
       <div className="banner flex justify-center items-center">
