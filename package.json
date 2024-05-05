@@ -21,6 +21,7 @@
     "clsx": "^2.1.0",
     "embla-carousel-react": "^8.0.2",
     "express": "^4.19.1",
+    "flag-icons": "^7.2.1",
     "flowbite": "^1.8.1",
     "flowbite-react": "^0.6.1",
     "lucide-react": "^0.368.0",
