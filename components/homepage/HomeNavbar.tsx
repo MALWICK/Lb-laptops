@@ -217,15 +217,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                 </div>
               </div>
             </Modal>
-            <a href="#">
-              {" "}
-              <AiOutlineShoppingCart />{" "}
-            </a>
-            <a href="#">Contact</a>
             <div className="menu flex justify-around items-center gap-4">
-              <span className="notification">
-                <NotificationIcon />
-              </span>
               <>
                 {isSmallScreen ? (
                   <FaRegUser className="text-2xl" />

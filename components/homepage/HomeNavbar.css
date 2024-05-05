@@ -154,7 +154,7 @@
 
 .Modal-container {
   position: absolute;
-  right: 29.9%;
+  right: 29.3%;
   top: 6.5%;
   max-width: 400px;
 }
@@ -262,8 +262,6 @@
   .loginsign {
     display: none !important;
   }
- 
-
 
   .menu {
     gap: 0.8rem !important;
