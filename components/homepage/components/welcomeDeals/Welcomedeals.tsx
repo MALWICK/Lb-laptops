@@ -23,8 +23,8 @@ const Welcomedeals = () => {
                   <a href="#" className="flex items-center relative flex-col rounded-lg">
                     <div className="relative overflow-hidden rounded-md">
                       <img
-                        src="https://ae01.alicdn.com/kf/Se60bac2d087e4ea2911cd368ed1992c6G.jpg_350x350.jpg_.webp"
-                        className="max-w-[224px] max-h-[224px] w-full h-full object-cover rounded-lg aspect-auto"
+                        src="https://c1.neweggimages.com/productimage/nb300/11-854-133-01.jpg"
+                        className=""
                         alt="Magcubic Projector HY300 PRO 4K Android 11 Dual Wifi6 260ANSI Allwinner H713 BT5.0 1080P 1280*720P Home Cinema Outdoor Projetor"
                       />
                     </div>
