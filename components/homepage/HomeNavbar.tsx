@@ -15,7 +15,6 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { Modal } from "antd";
 import HamburgerMenu from "./components/hamBurgerMenu/hamburgerMenu";
 import SlidingThumbnail from "./components/TodaysDeals/components/SlidingThumbnail";
-
 interface HomeNavbarProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
@@ -96,10 +95,16 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
             </span>
             <Modal
               className="Modal-container"
-              title="COUNTRIES & REGIONS"
+              title="Countries & Regions"
               open={isModalOpen}
               onOk={handleOk}
               onCancel={handleCancel}
+              okButtonProps={{
+                style: { display: "none" },
+              }}
+              cancelButtonProps={{
+                style: { display: "none" },
+              }}
             >
               <label className="select-text">
                 Please select a country / region to shop:
@@ -113,7 +118,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                     />
                     <p className="name">Cameroon</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
@@ -121,9 +126,9 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                       className="fi fi-ci"
                       style={{ height: 16, width: 16 }}
                     />
-                    <p className="name">Ivory Coast</p>
+                    <p className="name">Côte d'Ivoire</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
@@ -133,7 +138,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                     />
                     <p className="name">Ghana</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
@@ -143,7 +148,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                     />
                     <p className="name">South Africa</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
@@ -153,7 +158,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                     />
                     <p className="name">Egypt</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
@@ -163,7 +168,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                     />
                     <p className="name">Rwanda</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
@@ -173,7 +178,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                     />
                     <p className="name">Sierra Leone</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
@@ -183,7 +188,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                     />
                     <p className="name">Togo</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
@@ -193,7 +198,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                     />
                     <p className="name">Kenya</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
@@ -203,7 +208,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                     />
                     <p className="name">Nigeria</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex gap-1 items-center">
@@ -213,9 +218,124 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                     />
                     <p className="name">Tanzania</p>
                   </div>
-                  <input type="radio" />
+                  <input type="radio" name="Radio" className="radio-mark" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-gw"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Guinea-Bissau</p>
+                  </div>
+                  <input type="radio" name="Radio" className="radio-mark" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-ml"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Mali</p>
+                  </div>
+                  <input type="radio" name="Radio" className="radio-mark" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-sc"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Seychelles</p>
+                  </div>
+                  <input type="radio" name="Radio" className="radio-mark" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-mz"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Mozambique</p>
+                  </div>
+                  <input type="radio" name="Radio" className="radio-mark" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-cf"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Central African Republic</p>
+                  </div>
+                  <input type="radio" name="Radio" className="radio-mark" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-cv"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Cabo Verde</p>
+                  </div>
+                  <input type="radio" name="Radio" className="radio-mark" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-zw"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Zimbabwe</p>
+                  </div>
+                  <input type="radio" name="Radio" className="radio-mark" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-ao"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Angola</p>
+                  </div>
+                  <input type="radio" name="Radio" className="radio-mark" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-mg"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Madagascar</p>
+                  </div>
+                  <input type="radio" name="Radio" className="radio-mark" />
+                </div>
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-1 items-center">
+                    <span
+                      className="fi fi-bw"
+                      style={{ height: 16, width: 16 }}
+                    />
+                    <p className="name">Botswana</p>
+                  </div>
+                  <input type="radio" name="Radio" className="radio-mark" />
                 </div>
               </div>
+              <hr className="mx-3" />
+              <div className="flex justify-center mb-3 mt-4">
+                <button className="save-button">Save Preferences</button>
+              </div>
+              <p className="text-center">
+                International Shopping &amp; Shipping,{" "}
+                <a
+                  href="#"
+                  className="underline hover:bg-gray-200 hover:text-blue-700"
+                  title="go to LB-Tronz Global site"
+                >
+                  LB-Tronz Global
+                </a>
+                .
+              </p>
             </Modal>
             <div className="menu flex justify-around items-center gap-4">
               <>
@@ -238,10 +358,8 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                 className="flex flex-col font-medium text-xs hover:rounded-full p-[4px] w-24 items-center justify-center hover:bg-gray-200"
               >
                 <span>Return&</span>
-                <span>Oder</span>
+                <span>Orders</span>
               </a>
-
-              <div></div>
             </div>
             <button
               className="top-4 right-4 p-2 rounded-full bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-200"

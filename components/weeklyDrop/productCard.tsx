@@ -1,8 +1,9 @@
 import React from "react";
-import {  FaPlus } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
 
 export default function ProductCard(props: {
+  id: number | string;
   url: string | undefined;
   name:
     | string
@@ -50,7 +51,6 @@ export default function ProductCard(props: {
 
         <div className="items-name flex items-center justify-between p-2">
           <h2>{props.name}</h2>
-
         </div>
         <div className="info-carde p-2">
           <p className="mt-[2px]">gain</p>
