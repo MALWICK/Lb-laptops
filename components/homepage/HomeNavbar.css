@@ -160,6 +160,7 @@
   position: absolute;
   right: 27.8%;
   top: 6.5%;
+  z-index: -5;
 }
 
 .Modal-container:before {
@@ -172,6 +173,24 @@
   position: absolute;
   right: 9.5%;
   width: 0;
+}
+
+.Modal-container ::-webkit-scrollbar {
+  width: 7px;
+}
+
+.Modal-container ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.Modal-container ::-webkit-scrollbar-thumb {
+  background: #858585;
+  border-radius: 10px;
+  height: 50%;
+}
+
+.Modal-container ::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .title-text {

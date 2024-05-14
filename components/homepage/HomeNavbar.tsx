@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./HomeNavbar.css";
 import { BsSunFill } from "react-icons/bs";
@@ -20,12 +20,39 @@ interface HomeNavbarProps {
   toggleDarkMode: () => void;
 }
 
+const Countries = [
+  { name: "Cameroon", icon: "fi fi-cm" },
+  { name: "Côte d'Ivoire", icon: "fi fi-ci" },
+  { name: "Ghana", icon: "fi fi-gh" },
+  { name: "South Africa", icon: "fi fi-za" },
+  { name: "Egypt", icon: "fi fi-eg" },
+  { name: "Rwanda", icon: "fi fi-rw" },
+  { name: "Sierra Leone", icon: "fi fi-sl" },
+  { name: "Togo", icon: "fi fi-tg" },
+  { name: "Kenya", icon: "fi fi-ke" },
+  { name: "Nigeria", icon: "fi fi-ng" },
+  { name: "Tanzania", icon: "fi fi-tz" },
+  { name: "Guinea-Bissau", icon: "fi fi-gw" },
+  { name: "Mali", icon: "fi fi-ml" },
+  { name: "Seychelles", icon: "fi fi-sc" },
+  { name: "Mozambique", icon: "fi fi-mz" },
+  { name: "Central African Republic", icon: "fi fi-cf" },
+  { name: "Cabo Verde", icon: "fi fi-cv" },
+  { name: "Zimbabwe", icon: "fi fi-zw" },
+  { name: "Angola", icon: "fi fi-ao" },
+  { name: "Madagascar", icon: "fi fi-mg" },
+  { name: "Botswana", icon: "fi fi-bw" },
+];
+
 const HomeNavbar: React.FC<HomeNavbarProps> = ({
   isDarkMode,
   toggleDarkMode,
 }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const radioRefs = useRef<Array<HTMLInputElement | null>>(
+    Array(Countries.length).fill(null)
+  );
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [replaceDropdown, setReplaceDropdown] = useState(false);
@@ -62,6 +89,12 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 
   const handleCancel = () => {
     setIsModalOpen(false);
+  };
+
+  const handleRadioSelection = (index: number) => {
+    if (radioRefs.current[index] !== null) {
+      radioRefs.current[index]!.checked = true;
+    }
   };
 
   const handleLinks = (url: string) => {
@@ -111,216 +144,28 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                   Please select a country / region to shop:
                 </label>
                 <div className="selectCountries-content">
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-cm"
-                        style={{ height: 16, width: 16 }}
+                  {Countries.map((country, index) => (
+                    <div
+                      key={index}
+                      className="selectCountries-radio"
+                      onClick={() => handleRadioSelection(index)}
+                    >
+                      <div className="flex gap-1 items-center">
+                        <span
+                          className={country.icon}
+                          style={{ height: 16, width: 16 }}
+                        />
+                        <p className="name">{country.name}</p>
+                      </div>
+                      <input
+                        type="radio"
+                        name="Radio"
+                        className="radio-mark"
+                        ref={(el) => (radioRefs.current[index] = el)}
+                        // defaultChecked={false}
                       />
-                      <p className="name">Cameroon</p>
                     </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-ci"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Côte d'Ivoire</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-gh"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Ghana</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-za"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">South Africa</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-eg"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Egypt</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-rw"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Rwanda</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-sl"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Sierra Leone</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-tg"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Togo</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-ke"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Kenya</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-ng"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Nigeria</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-tz"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Tanzania</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-gw"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Guinea-Bissau</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-ml"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Mali</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-sc"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Seychelles</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-mz"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Mozambique</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-cf"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Central African Republic</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-cv"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Cabo Verde</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-zw"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Zimbabwe</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-ao"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Angola</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-mg"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Madagascar</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
-                  <div className="selectCountries-radio">
-                    <div className="flex gap-1 items-center">
-                      <span
-                        className="fi fi-bw"
-                        style={{ height: 16, width: 16 }}
-                      />
-                      <p className="name">Botswana</p>
-                    </div>
-                    <input type="radio" name="Radio" className="radio-mark" />
-                  </div>
+                  ))}
                 </div>
                 <hr />
                 <div className="flex justify-center mb-3 mt-4">
