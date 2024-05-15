@@ -50,13 +50,16 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const radioRefs = useRef<Array<HTMLInputElement | null>>(
-    Array(Countries.length).fill(null)
+  const [selectCountryIndex, setSelectCountryIndex] = useState<number | null>(
+    null
   );
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [replaceDropdown, setReplaceDropdown] = useState(false);
   const [isSliderThumbnail, setIsSliderThumbnail] = useState(false);
+  const radioRefs = useRef<Array<HTMLInputElement | null>>(
+    Array(Countries.length).fill(null)
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -94,6 +97,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
   const handleRadioSelection = (index: number) => {
     if (radioRefs.current[index] !== null) {
       radioRefs.current[index]!.checked = true;
+      setSelectCountryIndex(index);
     }
   };
 
@@ -138,16 +142,18 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                 style: { display: "none" },
               }}
             >
-              <div style={{ margin: "10px 20px" }}>
+              <div style={{ margin: "10px 15px 20px 15px" }}>
                 <h1 className="title-text">Countries & Regions</h1>
-                <label className="select-text">
+                <p className="select-text">
                   Please select a country / region to shop:
-                </label>
+                </p>
                 <div className="selectCountries-content">
                   {Countries.map((country, index) => (
                     <div
                       key={index}
-                      className="selectCountries-radio"
+                      className={`selectCountries-radio ${
+                        selectCountryIndex === index ? "selected" : " "
+                      }`}
                       onClick={() => handleRadioSelection(index)}
                     >
                       <div className="flex gap-1 items-center">
@@ -157,13 +163,14 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                         />
                         <p className="name">{country.name}</p>
                       </div>
-                      <input
-                        type="radio"
-                        name="Radio"
-                        className="radio-mark"
-                        ref={(el) => (radioRefs.current[index] = el)}
-                        // defaultChecked={false}
-                      />
+                      <label className="radio-button">
+                        <input
+                          type="radio"
+                          name="Radio"
+                          ref={(el) => (radioRefs.current[index] = el)}
+                        />
+                        <span className="radio-mark"></span>
+                      </label>
                     </div>
                   ))}
                 </div>

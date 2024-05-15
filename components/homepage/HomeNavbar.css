@@ -198,21 +198,23 @@
   font-size: 16px;
   font-style: italic;
   font-weight: 800;
-  line-height: 22px;
-  margin-bottom: 15px;
+  /* line-height: 22px; */
+  margin-bottom: 20px;
 }
 
 .select-text {
   color: #707070;
   font-size: 14px;
   letter-spacing: 0.005em;
+  margin-bottom: -5px;
 }
 
 .selectCountries-content {
   display: flex;
   flex-direction: column;
   height: 425px;
-  margin: 10px auto 25px auto;
+  margin: 10px auto 20px auto;
+  padding: 5px 0;
   overflow-y: scroll;
   width: 100%;
 }
@@ -221,9 +223,13 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
-  line-height: 2.5;
+  line-height: 2;
   padding: 6px 15px 6px 10px;
   transition: 0.2s;
+}
+
+.selectCountries-radio.selected {
+  background-color: #e8e8e8;
 }
 
 .selectCountries-radio:hover {
@@ -231,14 +237,56 @@
   cursor: pointer;
 }
 
+.radio-button {
+  cursor: pointer;
+  display: block;
+  font-size: 22px;
+  margin-bottom: 12px;
+  padding-left: 12px;
+  position: relative;
+}
+
+.radio-button input {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
 .radio-mark {
   border: 1px solid #d1d1d1;
-  cursor: pointer;
+  border-radius: 50%;
   height: 16px;
+  left: 0;
+  position: absolute;
+  top: 0;
   width: 16px;
 }
 
-.radio-mark:hover {
+.radio-mark:after {
+  content: "";
+  display: none;
+  position: absolute;
+}
+
+.radio-button input:checked ~ .radio-mark:after {
+  display: block;
+}
+
+.radio-button input[type="radio"]:checked ~ .radio-mark {
+  background-color: #1946b8;
+  border: 2px solid #1946b8;
+}
+
+.radio-button .radio-mark:after {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 6px;
+  left: 3px;
+  top: 3px;
+  width: 6px;
+}
+
+.radio-button:hover input ~ .radio-mark {
   background-color: #e3eafc;
   border-color: #a9c1f4;
 }
