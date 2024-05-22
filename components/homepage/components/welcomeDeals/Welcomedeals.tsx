@@ -2,14 +2,11 @@ import React from "react";
 
 const Welcomedeals = () => {
   return (
-    <div className="flex items-center justify-center  w-full   bg-slate-500">
-      <div className="innercontainer w-[100%] flex items-center justify-center  bg-red-700 ">
-        <div className="w-[24%] bg-red-600 flex flex-col p-1  flex-1">
-          <a
-            href="#"
-            className="no-underline	 h-full cursor-pointer bg-transparent"
-          >
-            <div className="h-[570px] w-[350px]  rounded-lg flex flex-wrap bg-orange-200	">
+    <div className="flex items-center justify-center w-full bg-slate-500">
+      <div className="innercontainer w-[100%] flex items-center justify-center bg-red-700 ">
+        <div className="w-[24%] bg-red-600 flex flex-col p-1 flex-1">
+          <div className="no-underline h-full cursor-pointer bg-transparent">
+            <div className="h-[570px] w-[350px] rounded-lg flex flex-wrap bg-orange-200	">
               <div className="text-wrap break-normal w-full h-[14%] bg-green-500 flex flex-col">
                 <span className="text-2xl font-extrabold overflow-hidden truncate text-rose-900">
                   Welcome Deal
@@ -20,7 +17,7 @@ const Welcomedeals = () => {
               </div>
               <div className="flex flex-col items-center justify-around w-full h-[80%]">
                 <div className="">
-                  <a href="#" className="flex items-center relative flex-col rounded-lg">
+                  <div className="flex items-center relative flex-col rounded-lg">
                     <div className="relative overflow-hidden rounded-md">
                       <img
                         src="https://ae01.alicdn.com/kf/Se60bac2d087e4ea2911cd368ed1992c6G.jpg_350x350.jpg_.webp"
@@ -35,11 +32,11 @@ const Welcomedeals = () => {
                       </div>
                       <div className="flex absolute"></div>
                     </div>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </div>
     </div>
