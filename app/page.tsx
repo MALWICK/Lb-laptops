@@ -9,10 +9,11 @@ import ParentContainer from "@/components/homepage/components/parentcontainer/Pa
 import RightSidebar from "@/components/homepage/components/RigthSidebar/RightSidebar";
 import BottomCards from "@/components/homepage/components/AutoSlider/bottomCards/bottomCards";
 import TodaysDeals from "@/components/homepage/components/TodaysDeals/TodaysDeals";
-import Welcomedeals from "@/components/homepage/components/welcomeDeals/Welcomedeals"
+import Welcomedeals from "@/components/homepage/components/welcomeDeals/Welcomedeals";
 
 const Page: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     const prefersDarkTheme = window.matchMedia(
@@ -20,6 +21,7 @@ const Page: React.FC = () => {
     ).matches;
     setIsDarkMode(prefersDarkTheme);
     document.documentElement.classList.add(prefersDarkTheme ? "dark" : "light");
+    setIsClient(true);
   }, []);
 
   const handleToggle = (): void => {
@@ -29,9 +31,7 @@ const Page: React.FC = () => {
 
   return (
     <main
-      className={`w-full bg-red-400 ${
-        isDarkMode ? "bg-black" : "bg-white"
-      }`}
+      className={`w-full bg-red-400 ${isDarkMode ? "bg-black" : "bg-white"}`}
     >
       <button
         className="fixed top-4 right-4 p-2 rounded-full bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-200"
@@ -44,22 +44,19 @@ const Page: React.FC = () => {
         <RightSidebar />
         <ParentContainer />
       </div>
-      <div className="main__parent w-[100vw] flex items-center flex-col" >
+      <div className="main__parent w-[100vw] flex items-center flex-col">
         <div className="cards__container w-[90%] flex justify-space items-center gap-5 ">
-        
-          <BottomCards/>
-          
+          <BottomCards />
         </div>
-      
+
         <TodaysDeals />
       </div>
       <div className="container w-full bg-orange-400 flex items-center justify-center">
-
-      <div className="w-[90%] container bg-orange-400 flex items-center justify-center">
-      <Welcomedeals />
+        <div className="w-[90%] container bg-orange-400 flex items-center justify-center">
+          <Welcomedeals />
+        </div>
       </div>
-     
-      </div>
+      <h1>{isClient ? "This is never prerendered" : "Prerendered"}</h1>
     </main>
   );
 };

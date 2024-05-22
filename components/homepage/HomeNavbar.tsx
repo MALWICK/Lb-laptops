@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./HomeNavbar.css";
 import { BsSunFill } from "react-icons/bs";
@@ -15,11 +15,34 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 import { Modal } from "antd";
 import HamburgerMenu from "./components/hamBurgerMenu/hamburgerMenu";
 import SlidingThumbnail from "./components/TodaysDeals/components/SlidingThumbnail";
-
 interface HomeNavbarProps {
   isDarkMode: boolean;
   toggleDarkMode: () => void;
 }
+
+const Countries = [
+  { name: "Cameroon", icon: "fi fi-cm" },
+  { name: "Côte d'Ivoire", icon: "fi fi-ci" },
+  { name: "Ghana", icon: "fi fi-gh" },
+  { name: "South Africa", icon: "fi fi-za" },
+  { name: "Egypt", icon: "fi fi-eg" },
+  { name: "Rwanda", icon: "fi fi-rw" },
+  { name: "Sierra Leone", icon: "fi fi-sl" },
+  { name: "Togo", icon: "fi fi-tg" },
+  { name: "Kenya", icon: "fi fi-ke" },
+  { name: "Nigeria", icon: "fi fi-ng" },
+  { name: "Tanzania", icon: "fi fi-tz" },
+  { name: "Guinea-Bissau", icon: "fi fi-gw" },
+  { name: "Mali", icon: "fi fi-ml" },
+  { name: "Seychelles", icon: "fi fi-sc" },
+  { name: "Mozambique", icon: "fi fi-mz" },
+  { name: "Central African Republic", icon: "fi fi-cf" },
+  { name: "Cabo Verde", icon: "fi fi-cv" },
+  { name: "Zimbabwe", icon: "fi fi-zw" },
+  { name: "Angola", icon: "fi fi-ao" },
+  { name: "Madagascar", icon: "fi fi-mg" },
+  { name: "Botswana", icon: "fi fi-bw" },
+];
 
 const HomeNavbar: React.FC<HomeNavbarProps> = ({
   isDarkMode,
@@ -27,10 +50,16 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectCountryIndex, setSelectCountryIndex] = useState<number | null>(
+    null
+  );
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [replaceDropdown, setReplaceDropdown] = useState(false);
   const [isSliderThumbnail, setIsSliderThumbnail] = useState(false);
+  const radioRefs = useRef<Array<HTMLInputElement | null>>(
+    Array(Countries.length).fill(null)
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -65,6 +94,13 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
     setIsModalOpen(false);
   };
 
+  const handleRadioSelection = (index: number) => {
+    if (radioRefs.current[index] !== null) {
+      radioRefs.current[index]!.checked = true;
+      setSelectCountryIndex(index);
+    }
+  };
+
   const handleLinks = (url: string) => {
     window.location.href = url;
   };
@@ -96,125 +132,63 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
             </span>
             <Modal
               className="Modal-container"
-              title="COUNTRIES & REGIONS"
               open={isModalOpen}
               onOk={handleOk}
               onCancel={handleCancel}
+              okButtonProps={{
+                style: { display: "none" },
+              }}
+              cancelButtonProps={{
+                style: { display: "none" },
+              }}
             >
-              <label className="select-text">
-                Please select a country / region to shop:
-              </label>
-              <div className="selectCountries-content">
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-cm"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">Cameroon</p>
-                  </div>
-                  <input type="radio" />
+              <div style={{ margin: "10px 15px 20px 15px" }}>
+                <h1 className="title-text">Countries & Regions</h1>
+                <p className="select-text">
+                  Please select a country / region to shop:
+                </p>
+                <div className="selectCountries-content">
+                  {Countries.map((country, index) => (
+                    <div
+                      key={index}
+                      className={`selectCountries-radio ${
+                        selectCountryIndex === index ? "selected" : " "
+                      }`}
+                      onClick={() => handleRadioSelection(index)}
+                    >
+                      <div className="flex gap-1 items-center">
+                        <span
+                          className={country.icon}
+                          style={{ height: 16, width: 16 }}
+                        />
+                        <p className="name">{country.name}</p>
+                      </div>
+                      <label className="radio-button">
+                        <input
+                          type="radio"
+                          name="Radio"
+                          ref={(el) => (radioRefs.current[index] = el)}
+                        />
+                        <span className="radio-mark"></span>
+                      </label>
+                    </div>
+                  ))}
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-ci"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">Ivory Coast</p>
-                  </div>
-                  <input type="radio" />
+                <hr />
+                <div className="flex justify-center mb-3 mt-4">
+                  <button className="save-button">Save Preferences</button>
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-gh"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">Ghana</p>
-                  </div>
-                  <input type="radio" />
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-za"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">South Africa</p>
-                  </div>
-                  <input type="radio" />
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-eg"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">Egypt</p>
-                  </div>
-                  <input type="radio" />
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-rw"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">Rwanda</p>
-                  </div>
-                  <input type="radio" />
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-sl"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">Sierra Leone</p>
-                  </div>
-                  <input type="radio" />
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-tg"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">Togo</p>
-                  </div>
-                  <input type="radio" />
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-ke"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">Kenya</p>
-                  </div>
-                  <input type="radio" />
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-ng"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">Nigeria</p>
-                  </div>
-                  <input type="radio" />
-                </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-1 items-center">
-                    <span
-                      className="fi fi-tz"
-                      style={{ height: 16, width: 16 }}
-                    />
-                    <p className="name">Tanzania</p>
-                  </div>
-                  <input type="radio" />
-                </div>
+                <p className="link-text">
+                  International Shopping &amp; Shipping,{" "}
+                  <a
+                    href="#"
+                    className="underline hover:bg-gray-200 hover:text-blue-700"
+                    title="go to LB-Tronz Global site"
+                  >
+                    LB-Tronz Global
+                  </a>
+                  .
+                </p>
               </div>
             </Modal>
             <div className="menu flex justify-around items-center gap-4">
@@ -238,10 +212,8 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                 className="flex flex-col font-medium text-xs hover:rounded-full p-[4px] w-24 items-center justify-center hover:bg-gray-200"
               >
                 <span>Return&</span>
-                <span>Oder</span>
+                <span>Orders</span>
               </a>
-
-              <div></div>
             </div>
             <button
               className="top-4 right-4 p-2 rounded-full bg-gray-300 dark:bg-gray-800 text-gray-600 dark:text-gray-200"
