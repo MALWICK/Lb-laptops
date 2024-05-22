@@ -1,4 +1,6 @@
 import React from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
+
 import "./style.css"
 
 const Welcomedeals = () => {
@@ -22,16 +24,16 @@ const Welcomedeals = () => {
           <div className="new-user--card--2l9bT00 cardss">
             <div className="new-user--cardTitle--1vaqt9G small-conts">Up to 70% off</div>
             <div
-              className="new-user--cardSubtitle--2YvzJT3"
+              className="new-user--cardSubtitle--2YvzJT3 font-medium"
             
             >
               Welcome deal
             </div>
             <div
-              className="new-user--cardButton--mX3jj97"
+              className="new-user--cardButton--mX3jj97 absolute right-[24px] lft-btn"
               
             >
-              <img src="https://ae01.alicdn.com/kf/S948c53c58f3f456bb087ee24b9602affq/30x23.png" />
+              <FaArrowRightLong  />
             </div>
           </div>
         </a>
