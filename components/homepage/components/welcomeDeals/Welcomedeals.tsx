@@ -6,13 +6,13 @@ import "./style.css"
 const Welcomedeals = () => {
   return (
     <div className="flex items-center justify-center w-full ">
-      <div className="innercontainer w-[100%] flex items-center p-4  h-[338px]  rounded-3xl gap-1 bg-orange-500  ">
+      <div className="innercontainer w-[100%] flex items-center p-4  h-[338px]  rounded-3xl gap-1 bg-orange-400  ">
         <a
           href="#"
-          className="w-[441px] pt-5  pr-5 pb-5 pl-5 h-[304px] relative bg-red-400"
+          className="w-[441px] pt-5  pr-5 pb-5 pl-5 h-[304px] relative bg-orange-400"
         >
           <img
-            className="new-user--iconImg--hPKNeKH absolute w-[182px] h-[140px] left-[306px] top-[-11px] object-contain"
+            className="new-user--iconImg--hPKNeKH absolute w-[146px] h-[140px] left-[306px] rounded-2xl top-[-11px] object-contain"
             src="https://upload.shop-bit.com/header/brand_background/1708421400582.png"
           />
           <div className="new-user--title--1-OZSf text-white font-medium  max-w-[299px]  w-full text-4xl  leading-tight display-flex overflow-hidden text-ellipsis">

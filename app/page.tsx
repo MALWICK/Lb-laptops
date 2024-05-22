@@ -48,14 +48,16 @@ const Page: React.FC = () => {
         <div className="cards__container w-[90%] flex justify-space items-center gap-5 ">
           <BottomCards />
         </div>
+        
 
         <TodaysDeals />
-      </div>
-      <div className="container w-full bg-orange-400 flex items-center justify-center">
-        <div className="w-[90%] container bg-orange-400 flex items-center justify-center">
+        <div className="container w-full  flex items-center justify-center">
+        <div className="w-[90%] container  flex items-center justify-center">
           <Welcomedeals />
         </div>
       </div>
+      </div>
+     
       <h1>{isClient ? "This is never prerendered" : "Prerendered"}</h1>
     </main>
   );
