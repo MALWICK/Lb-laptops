@@ -26,7 +26,7 @@ const cards = () => {
   return (
     <div className="">
       {Data.map((cardItem,id) => (
-        <a key={id} className="w-[214px] h-[298px] mr-4 ml-4 bg-white rounded-md p-2 flex flex-col items-center no-underline shadow-slate-50">
+        <a key={id} className="w-[214px] h-[298px] mr-4 ml-4 bg-white rounded-md p-2 flex flex-col  no-underline shadow-slate-50">
           <div className="w-[198px] h-[198px] rounded-md relative overflow-hidden filter contrast-90 bg-white">
             <img
               src={cardItem.productImage}
@@ -34,9 +34,11 @@ const cards = () => {
               alt="shoe"
             />
           </div>
-          <div className="newuser-discount" 
+          <div className="newuser-discount mt-2 w-[100px] h-[36px] flex items-center justify-center bg-no-repeat  text-24 font-semibold leading-36 px-12 pl-31.5 mt-30 mr-4 bg-contain bg-center  text-white" 
            style={{ backgroundImage: `url(${cardItem.backgroundImage})` }}
-          ></div>
+          >
+            {cardItem.newUserDiscountPercentage}
+          </div>
         </a>
       ))}
     </div>
