@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Cards from "./components/cards";
 
 import "./style.css"
 
@@ -37,6 +38,7 @@ const Welcomedeals = () => {
             </div>
           </div>
         </a>
+        <Cards />
       </div>
     </div>
   );
