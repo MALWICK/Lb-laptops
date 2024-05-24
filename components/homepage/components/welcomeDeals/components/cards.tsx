@@ -39,6 +39,10 @@ const cards = () => {
           >
             {cardItem.newUserDiscountPercentage}
           </div>
+          <div className="flex mt-2 gap-2">
+            <span className="text-base font-medium text-black">{cardItem.newUserPrice}</span>
+            <span className=" line-through text-base font-medium text-gray-500 ">{cardItem.reductionPrice}</span>
+          </div>
         </a>
       ))}
     </div>
