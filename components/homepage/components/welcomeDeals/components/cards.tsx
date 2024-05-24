@@ -34,7 +34,7 @@ const cards = () => {
               alt="shoe"
             />
           </div>
-          <div className="newuser-discount mt-2 w-[100px] h-[36px] flex items-center justify-center bg-no-repeat  text-24 font-semibold leading-36 px-12 pl-31.5 mt-30 mr-4 bg-contain bg-center  text-white" 
+          <div className="newuser-discount mt-2 w-[100px] h-[36px] flex items-center justify-end bg-no-repeat text-xl font-semibold leading-36 p-2 mt-30 mr-4 bg-contain bg-center object-contain text-white pr-3 pl-9" 
            style={{ backgroundImage: `url(${cardItem.backgroundImage})` }}
           >
             {cardItem.newUserDiscountPercentage}
