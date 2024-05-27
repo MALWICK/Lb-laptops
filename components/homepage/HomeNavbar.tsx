@@ -181,7 +181,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
                 <p className="link-text">
                   International Shopping &amp; Shipping,{" "}
                   <a
-                    href="#"
+                    href="http://localhost:3000/"
                     className="underline hover:bg-gray-200 hover:text-blue-700"
                     title="go to LB-Tronz Global site"
                   >
