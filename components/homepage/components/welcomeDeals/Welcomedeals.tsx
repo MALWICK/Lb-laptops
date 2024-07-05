@@ -38,7 +38,11 @@ const Welcomedeals = () => {
             </div>
           </div>
         </a>
+        <div className=" flex items-center justify-center">
         <Cards />
+
+        </div>
+       
       </div>
     </div>
   );
