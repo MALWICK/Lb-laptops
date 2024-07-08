@@ -7,7 +7,7 @@ import "./style.css"
 const Welcomedeals = () => {
   return (
     <div className="flex items-center justify-center w-full ">
-      <div className="innercontainer w-[100%] flex items-center p-4  h-[338px]  rounded-3xl gap-1 bg-orange-400  ">
+     <div className="innercontainer w-[100%] flex items-center p-4 h-[338px] rounded-3xl gap-1 bg-orange-400 ">
         <a
           href="#"
           className="w-[441px] pt-5  pr-5 pb-5 pl-5 h-[304px] relative bg-orange-400"
@@ -38,7 +38,11 @@ const Welcomedeals = () => {
             </div>
           </div>
         </a>
+        <div className=" flex items-center justify-center">
         <Cards />
+
+        </div>
+       
       </div>
     </div>
   );
