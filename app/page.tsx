@@ -10,6 +10,7 @@ import RightSidebar from "@/components/homepage/components/RigthSidebar/RightSid
 import BottomCards from "@/components/homepage/components/AutoSlider/bottomCards/bottomCards";
 import TodaysDeals from "@/components/homepage/components/TodaysDeals/TodaysDeals";
 import Welcomedeals from "@/components/homepage/components/welcomeDeals/Welcomedeals";
+import Categories from "@/components/homepage/components/categories/categories";
 
 const Page: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -52,8 +53,9 @@ const Page: React.FC = () => {
 
         <TodaysDeals />
         <div className="container w-full  flex items-center justify-center">
-        <div className="w-[90%] container  flex items-center justify-center">
+        <div className="w-[90%] container flex-col  flex ">
           <Welcomedeals />
+          <Categories />
         </div>
       </div>
       </div>
