@@ -3,7 +3,7 @@ import Card from "./component/card";
 
 const categories = () => {
   return (
-    <div className=' gap-20px col-w-4 col-w-sm-2 flex flex-row flex-wrap'>
+    <div className=' w-[100%]  flex  justify-center items-center flex-wrap  mt-6'>
         <Card />
     </div>
   )
