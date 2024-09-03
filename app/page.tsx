@@ -11,6 +11,7 @@ import BottomCards from "@/components/homepage/components/AutoSlider/bottomCards
 import TodaysDeals from "@/components/homepage/components/TodaysDeals/TodaysDeals";
 import Welcomedeals from "@/components/homepage/components/welcomeDeals/Welcomedeals";
 import Categories from "@/components/homepage/components/categories/categories";
+import Footer from "@/components/homepage/components/Footer";
 
 const Page: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -59,6 +60,7 @@ const Page: React.FC = () => {
         </div>
       </div>
       </div>
+    <Footer />
      
       <h1>{isClient ? "This is never prerendered" : "Prerendered"}</h1>
     </main>
